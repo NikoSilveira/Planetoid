@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &939166727
 GameObject:
@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 939166730}
   - component: {fileID: 939166729}
   - component: {fileID: 939166728}
+  - component: {fileID: 939166734}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -330,11 +331,25 @@ Transform:
   m_GameObject: {fileID: 939166727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.43, y: -5.735, z: 4.21}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
-  m_Children: []
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_Children:
+  - {fileID: 963194228}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &939166734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939166727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5c8a999ac59f7d4988f61fd6d4f5228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +401,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -411,13 +426,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: -6.06, z: 1.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.656059, y: 0, z: 0, w: 0.75470966}
+  m_LocalPosition: {x: 0, y: 50, z: -8.5}
+  m_LocalScale: {x: 33.333336, y: 33.333344, z: 33.333344}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 939166733}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 82, y: 0, z: 0}
 --- !u!1001 &1398079257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -428,7 +443,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 5784c5f8daeb1e9429d00fa5a9bf2163,
         type: 3}
       propertyPath: m_Name
-      value: planetoidSB_00
+      value: Planetoid1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5784c5f8daeb1e9429d00fa5a9bf2163,
         type: 3}
@@ -468,7 +483,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5784c5f8daeb1e9429d00fa5a9bf2163,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5784c5f8daeb1e9429d00fa5a9bf2163,
         type: 3}
