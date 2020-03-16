@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+
+        if (Input.GetKeyDown("space"))
+        {
+            //For testing
+        }
     }
 
     private void FixedUpdate()
