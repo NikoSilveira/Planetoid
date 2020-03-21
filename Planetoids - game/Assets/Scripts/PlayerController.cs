@@ -8,9 +8,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //Movement
     public float moveSpeed;
     private Vector3 moveDir;
+
+    //Position
 
     private void Start()
     {
@@ -32,4 +34,5 @@ public class PlayerController : MonoBehaviour
     {
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + GetComponent<Transform>().TransformDirection(moveDir) * moveSpeed * Time.fixedDeltaTime);
     }
+
 }
