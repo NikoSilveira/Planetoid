@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TransitionController : MonoBehaviour
+public class TargetCollision : MonoBehaviour
 {
 
     public GameObject victory;
@@ -16,11 +16,12 @@ public class TransitionController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         victory.SetActive(true);
-        Invoke("load", 2.0f);
+        StartCoroutine(loadLevel());
     }
 
-    private void load()
+    IEnumerator loadLevel()
     {
+        yield return new WaitForSeconds(2.0f);
         FindObjectOfType<LevelLoader>().loadTargetLevel(0);
     }
 }
