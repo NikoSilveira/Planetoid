@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * Script to control the game timer
+ */
+
 public class Timer : MonoBehaviour
 {
 

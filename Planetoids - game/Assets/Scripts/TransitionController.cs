@@ -7,13 +7,13 @@ public class TransitionController : MonoBehaviour
 {
 
     private bool collisionControl;
-    // Start is called before the first frame update
+    public GameObject victory;
+
     void Start()
     {
         collisionControl = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -23,9 +23,18 @@ public class TransitionController : MonoBehaviour
     {
         if (collisionControl)
         {
+            victory.SetActive(true);
+            Invoke("load", 2.0f);
+
             //collisionControl = false;
-            SceneManager.LoadScene(0);
+            
+            //FindObjectOfType<LevelChanger>().FadeToLevel();
         }
         
+    }
+
+    private void load()
+    {
+        SceneManager.LoadScene(0);
     }
 }
