@@ -4,15 +4,18 @@ using UnityEngine;
 
 /*
  * Player Controller Script
+ * -Movement
  */
 
 public class PlayerController : MonoBehaviour
 {
     //Movement
-    public float moveSpeed;
+    public Joystick joystick;
     private Vector3 moveDir;
+    public float moveSpeed;
+    private float horizontalInput;
+    private float VerticalInput;
 
-    //Position
 
     private void Start()
     {
@@ -22,7 +25,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        moveDir = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical")).normalized;
+        //Joystick deadzone (horizontal)
+        if(joystick.Horizontal >= 0.15f || joystick.Horizontal <= -0.15f)
+        {
+            horizontalInput = joystick.Horizontal;
+        }
+        else
+        {
+            horizontalInput = 0f;
+        }
+
+        //Joystick deadzone (vertical)
+        if (joystick.Vertical >= 0.15f || joystick.Vertical <= -0.15f)
+        {
+            VerticalInput = joystick.Vertical;
+        }
+        else
+        {
+            VerticalInput = 0f;
+        }
+
+        moveDir = new Vector3(horizontalInput, 0, VerticalInput).normalized;    //Input.GetAxisRaw("Vertical/Horizontal") for keyboard input
 
         if (Input.GetKeyDown("space"))
         {
