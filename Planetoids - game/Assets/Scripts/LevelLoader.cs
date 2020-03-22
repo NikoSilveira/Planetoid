@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+ * Script for level loading management
+ */
+
 public class LevelLoader : MonoBehaviour
 {
     //Pass crossfade in levelloader object to transition
@@ -15,8 +19,7 @@ public class LevelLoader : MonoBehaviour
     }
 
     //Call for level transition
-
-    public void loadTargetLevel(int targetLevelIndex)
+    public void LoadTargetLevel(int targetLevelIndex)
     {
         StartCoroutine(LoadLevel(targetLevelIndex));
     }

@@ -11,9 +11,10 @@ public class Timer : MonoBehaviour
 {
 
     float currentTime = 0f;
-    public float startingTime = 10f;
+    public float startingTime = 21f;
 
     public Text timerText;
+    public GameObject timeExpired;
 
     private void Start()
     {
@@ -26,7 +27,18 @@ public class Timer : MonoBehaviour
         {
             currentTime = currentTime - 1 * Time.deltaTime;
         }
+        else
+        {
+            timeExpired.SetActive(true);
+            StartCoroutine(LoadLevel());
+        }
         
         timerText.text = currentTime.ToString("0");
+    }
+
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
     }
 }

@@ -16,12 +16,12 @@ public class TargetCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         victory.SetActive(true);
-        StartCoroutine(loadLevel());
+        StartCoroutine(LoadLevel());
     }
 
-    IEnumerator loadLevel()
+    IEnumerator LoadLevel()
     {
-        yield return new WaitForSeconds(2.0f);
-        FindObjectOfType<LevelLoader>().loadTargetLevel(0);
+        yield return new WaitForSeconds(1.5f);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
     }
 }
