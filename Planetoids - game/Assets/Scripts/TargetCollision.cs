@@ -7,16 +7,21 @@ public class TargetCollision : MonoBehaviour
 {
 
     public GameObject victory;
+    private bool singleCollision;
 
     void Start()
     {
-
+        singleCollision = true;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        victory.SetActive(true);
-        StartCoroutine(LoadLevel());
+        if (singleCollision)
+        {
+            singleCollision = false;
+            victory.SetActive(true);
+            StartCoroutine(LoadLevel());
+        }
     }
 
     IEnumerator LoadLevel()
