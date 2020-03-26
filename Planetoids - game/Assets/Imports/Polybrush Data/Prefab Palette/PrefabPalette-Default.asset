@@ -15,16 +15,16 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 131956, guid: 43ac926c2709a4b4e9868e88f7f97a61, type: 3}
     settings:
-      m_Strength: 100
+      m_Strength: 54.804348
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 0.1, y: 0.1, z: 0.1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
       m_UniformScale: {x: 0.1, y: 0.1}
       m_UniformBool: 1
-      m_XRotationBool: 0
-      m_YRotationBool: 0
-      m_ZRotationBool: 0
+      m_XRotationBool: 1
+      m_YRotationBool: 1
+      m_ZRotationBool: 1
       m_XScaleBool: 0
       m_YScaleBool: 0
       m_ZScaleBool: 0
@@ -48,12 +48,12 @@ MonoBehaviour:
     name: TerrainPatchGreen
   - gameObject: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
     settings:
-      m_Strength: 83
+      m_Strength: 24.67391
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 0.075, y: 0.075}
+      m_UniformScale: {x: 0.05, y: 0.07}
       m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
@@ -64,13 +64,13 @@ MonoBehaviour:
     name: RockGrey1
   - gameObject: {fileID: 137496, guid: 8e29574f61c003a45a3cc9a571582336, type: 3}
     settings:
-      m_Strength: 17
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 1, y: 1}
-      m_UniformBool: 0
+      m_UniformScale: {x: 0.8, y: 1}
+      m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
       m_ZRotationBool: 0
@@ -94,3 +94,99 @@ MonoBehaviour:
       m_YScaleBool: 0
       m_ZScaleBool: 0
     name: Fence Type6 Small
+  - gameObject: {fileID: 100000, guid: ab34fd65b601dab41915f4e874408d28, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower06
+  - gameObject: {fileID: 100000, guid: f1c3f8e347f55f44e98e7ea73efac66e, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower05
+  - gameObject: {fileID: 100000, guid: 821158ae724ce854e920539f935295b8, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower04
+  - gameObject: {fileID: 100000, guid: b332dc24cbb08144da2f112f82406700, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower03
+  - gameObject: {fileID: 100000, guid: 41ba2a6f1d128f94eba95e5213a81254, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 0
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower02
+  - gameObject: {fileID: 100000, guid: da1981c3ee8ea7e4186a753e15495628, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 2, y: 2}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: flower01

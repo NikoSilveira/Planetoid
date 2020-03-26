@@ -773,7 +773,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.8
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1457,14 +1457,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.656059, y: 0, z: 0, w: 0.75470966}
-  m_LocalPosition: {x: 0, y: 160, z: -24}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 90, z: 0}
   m_LocalScale: {x: 33.333336, y: 33.333344, z: 33.333344}
   m_Children:
   - {fileID: 606644195}
   m_Father: {fileID: 939166733}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 82, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1047404707
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,7 +6059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09148b399a805146a76e0c654b52eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 25
+  startingTime: 200
   timerText: {fileID: 2114036133}
   timeExpired: {fileID: 2083239914}
 --- !u!114 &2114036133
