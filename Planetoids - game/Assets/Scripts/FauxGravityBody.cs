@@ -9,11 +9,13 @@ using UnityEngine;
 public class FauxGravityBody : MonoBehaviour
 {
 
-    public FauxGravityAttractor attractor;
+    private FauxGravityAttractor attractor;
     private Transform myTransform;
 
     void Start()
     {
+        attractor = GameObject.Find("Planet").GetComponent<FauxGravityAttractor>();
+
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         GetComponent<Rigidbody>().useGravity = false;
         myTransform = transform;
