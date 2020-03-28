@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //Adjust value to modify player speed
-        moveSpeed = 1.5f;
+        moveSpeed = 1.0f;
     }
 
     void Update()
@@ -46,11 +46,6 @@ public class PlayerController : MonoBehaviour
         }
 
         moveDir = new Vector3(horizontalInput, 0, VerticalInput).normalized;    //Input.GetAxisRaw("Vertical/Horizontal") for keyboard input
-
-        if (Input.GetKeyDown("space"))
-        {
-            //For testing
-        }
     }
 
     private void FixedUpdate()

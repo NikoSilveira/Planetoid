@@ -20,15 +20,13 @@ public class EnemySpawner : MonoBehaviour
         {
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
+
+        SpawnControl(4);
     }
 
     private void Update()
     {
-        //Delete later
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnEnemy();
-        }
+        
     }
 
     //Function to create an enemy
@@ -42,5 +40,14 @@ public class EnemySpawner : MonoBehaviour
 
         int randomSpawn = Random.Range(0, 3);
         Instantiate(prefab, spawnPoint[randomSpawn].transform.position, Quaternion.identity);
+    }
+
+    //Function to control spawn mechanics
+    private void SpawnControl(int numToSpawn)
+    {
+        for(int i=0; i < numToSpawn; i++)
+        {
+            SpawnEnemy();
+        }
     }
 }

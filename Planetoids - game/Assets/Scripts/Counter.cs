@@ -42,6 +42,11 @@ public class Counter : MonoBehaviour
         return counter;
     }
 
+    public int getTargetCount()
+    {
+        return targetCount;
+    }
+
     //Load level upon reaching win condition
     IEnumerator LoadLevel()
     {
