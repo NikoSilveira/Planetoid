@@ -9,7 +9,7 @@ public class TargetController : MonoBehaviour
 {
 
     public float upForce = 1f;
-    public float sideForce = .1f;
+    public float sideForce = .2f;
 
     void Start()
     {
@@ -32,6 +32,7 @@ public class TargetController : MonoBehaviour
         if(collision.collider.tag == "Player")
         {
             FindObjectOfType<Score>().setScore(10);
+            FindObjectOfType<Counter>().setCounter();
             Destroy(gameObject);
         }
         

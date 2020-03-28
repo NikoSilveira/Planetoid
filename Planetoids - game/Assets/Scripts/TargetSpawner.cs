@@ -24,6 +24,7 @@ public class TargetSpawner : MonoBehaviour
 
     void Update()
     {
+        //Delete later
         if (Input.GetKeyDown(KeyCode.D))
         {
             SpawnTarget();

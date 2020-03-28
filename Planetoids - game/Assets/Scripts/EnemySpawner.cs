@@ -24,6 +24,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
+        //Delete later
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SpawnEnemy();
