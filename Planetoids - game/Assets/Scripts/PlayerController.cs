@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 moveDir;
     public float moveSpeed;
     private float horizontalInput;
-    private float VerticalInput;
+    private float verticalInput;
 
 
     private void Start()
@@ -25,27 +25,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Joystick deadzone (horizontal)
-        if(joystick.Horizontal >= 0.15f || joystick.Horizontal <= -0.15f)
-        {
-            horizontalInput = joystick.Horizontal;
-        }
-        else
-        {
-            horizontalInput = 0f;
-        }
+        horizontalInput = joystick.Horizontal;
+        verticalInput = joystick.Vertical;
 
-        //Joystick deadzone (vertical)
-        if (joystick.Vertical >= 0.15f || joystick.Vertical <= -0.15f)
-        {
-            VerticalInput = joystick.Vertical;
-        }
-        else
-        {
-            VerticalInput = 0f;
-        }
-
-        moveDir = new Vector3(horizontalInput, 0, VerticalInput).normalized;    //Input.GetAxisRaw("Vertical/Horizontal") for keyboard input
+        moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;    //Input.GetAxisRaw("Vertical/Horizontal") for keyboard input
     }
 
     private void FixedUpdate()
