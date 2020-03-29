@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //Adjust value to modify player speed
-        moveSpeed = 1.0f;
+        moveSpeed = 1.1f;
     }
 
     void Update()

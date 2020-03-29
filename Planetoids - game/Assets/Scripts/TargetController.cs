@@ -7,9 +7,6 @@ using UnityEngine;
  */
 public class TargetController : MonoBehaviour
 {
-    //Spawn force variables
-    public float upForce = 1f;
-    public float sideForce = .2f;
 
     //Movement variables
     private Vector3 moveDir;
@@ -19,23 +16,31 @@ public class TargetController : MonoBehaviour
 
     void Start()
     {
-        //Spawn force
-        float xForce = Random.Range(-sideForce, sideForce);
-        float yForce = Random.Range(upForce / 2f, upForce);
-        float zForce = Random.Range(-sideForce, sideForce);
+        moveSpeed = 0.6f;
+        
+        //Random horizontal direction
+        if(Random.Range(0,2) == 0)
+        {
+            horizontalInput = Random.Range(0.75f,1f);
+        }
+        else
+        {
+            horizontalInput = Random.Range(-1f,-0.75f);
+        }
 
-        Vector3 force = new Vector3(xForce, yForce, zForce);
-
-        GetComponent<Rigidbody>().velocity = force;
-
-        //Movement
-        moveSpeed = 0.8f;
+        //Random vertical direction
+        if(Random.Range(0,2) == 0)
+        {
+            verticalInput = Random.Range(0.75f, 1f);
+        }
+        else
+        {
+            verticalInput = Random.Range(-1f, -0.75f);
+        }
     }
 
     void Update()
     {
-        horizontalInput = Random.Range(0.45f,0.6f);
-        verticalInput = Random.Range(0.45f,0.6f);
         moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
     }
 
@@ -44,6 +49,7 @@ public class TargetController : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + GetComponent<Transform>().TransformDirection(moveDir) * moveSpeed * Time.fixedDeltaTime);
     }
 
+    //Player - target collisison
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Player")
@@ -55,5 +61,4 @@ public class TargetController : MonoBehaviour
         
     }
 
-    
 }

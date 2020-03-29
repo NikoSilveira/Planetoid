@@ -25,7 +25,7 @@ public class TargetSpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        SpawnControl(3);    //Spawn 3 at start
+        StartCoroutine(SpawnControl(3));    //Spawn 3 at start
     }
 
     void Update()
@@ -33,14 +33,15 @@ public class TargetSpawner : MonoBehaviour
         if (FindObjectOfType<Counter>().getCounter() == 3 && spawnControl1 == true) 
         {
             //Spawn 4 after first 3
-            SpawnControl(4);
+            StartCoroutine(SpawnControl(4));
             spawnControl1 = false;
         }
         else if (FindObjectOfType<Counter>().getCounter() == 7 && spawnControl2 == true)
         {
             //Spawn the rest
             int numToSpawn = FindObjectOfType<Counter>().getTargetCount() - FindObjectOfType<Counter>().getCounter();
-            SpawnControl(numToSpawn);
+
+            StartCoroutine(SpawnControl(numToSpawn));
             spawnControl2 = false;
         }
     }
@@ -59,11 +60,12 @@ public class TargetSpawner : MonoBehaviour
     }
 
     //Function to control spawn mechanics
-    private void SpawnControl(int numToSpawn)
+    IEnumerator SpawnControl(int numToSpawn)
     {
-        for (int i=0; i < numToSpawn; i++)
+        for (int i = 0; i < numToSpawn; i++)
         {
             SpawnTarget();
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }

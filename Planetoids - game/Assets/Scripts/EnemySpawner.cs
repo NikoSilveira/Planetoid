@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        SpawnControl(4);
+        StartCoroutine(SpawnControl(4));
     }
 
     private void Update()
@@ -43,11 +43,12 @@ public class EnemySpawner : MonoBehaviour
     }
 
     //Function to control spawn mechanics
-    private void SpawnControl(int numToSpawn)
+    IEnumerator SpawnControl(int numToSpawn)
     {
-        for(int i=0; i < numToSpawn; i++)
+        for (int i = 0; i < numToSpawn; i++)
         {
             SpawnEnemy();
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
