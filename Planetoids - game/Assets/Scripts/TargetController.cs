@@ -14,6 +14,9 @@ public class TargetController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
+    //Timer
+    float time = 0f;
+
     void Start()
     {
         moveSpeed = 0.6f;
@@ -41,6 +44,25 @@ public class TargetController : MonoBehaviour
 
     void Update()
     {
+        //Random direction change
+        time = time + 1 * Time.deltaTime;
+
+        if(time >= 5)
+        {
+            time = 0f;
+
+            //New random horizontal direction
+            if (Random.Range(0, 2) == 0)
+            {
+                horizontalInput = Random.Range(0.75f, 1f);
+            }
+            else
+            {
+                horizontalInput = Random.Range(-1f, -0.75f);
+            }
+        }
+
+        //Constant input
         moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
     }
 

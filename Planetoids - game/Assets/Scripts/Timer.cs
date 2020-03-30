@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
 {
 
     float currentTime = 0f;
-    public float startingTime = 21f;
+    public float startingTime;
 
     public Text timerText;
     public GameObject timeExpired;
