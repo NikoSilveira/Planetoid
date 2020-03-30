@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private float verticalInput;
 
     //Timer
-    float time = 0f;
+    float pivotTime = 0f;
 
     void Start()
     {
@@ -45,11 +45,11 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //Random direction change
-        time = time + 1 * Time.deltaTime;
+        pivotTime = pivotTime + 1 * Time.deltaTime;
 
-        if (time >= 4)
+        if (pivotTime >= 4)
         {
-            time = 0f;
+            pivotTime = 0f;
 
             //New random horizontal direction
             if (Random.Range(0, 2) == 0)

@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour
         if(collision.collider.tag == "Player")
         {
             Destroy(gameObject);
-            FindObjectOfType<Score>().setScore(100);
+            FindObjectOfType<Score>().setScore(100, false);
         }
     }
 }

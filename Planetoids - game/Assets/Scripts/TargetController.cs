@@ -15,7 +15,8 @@ public class TargetController : MonoBehaviour
     private float verticalInput;
 
     //Timer
-    float time = 0f;
+    private float pivotTime = 0f;
+
 
     void Start()
     {
@@ -45,11 +46,11 @@ public class TargetController : MonoBehaviour
     void Update()
     {
         //Random direction change
-        time = time + 1 * Time.deltaTime;
+        pivotTime = pivotTime + 1 * Time.deltaTime;
 
-        if(time >= 5)
+        if(pivotTime >= 5)
         {
-            time = 0f;
+            pivotTime = 0f;
 
             //New random horizontal direction
             if (Random.Range(0, 2) == 0)
@@ -71,16 +72,15 @@ public class TargetController : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + GetComponent<Transform>().TransformDirection(moveDir) * moveSpeed * Time.fixedDeltaTime);
     }
 
-    //Player - target collisison
+    //Player - target collisison (eat target)
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Player")
         {
-            FindObjectOfType<Score>().setScore(10);
+            FindObjectOfType<Score>().setScore(10, true);
             FindObjectOfType<Counter>().setCounter();
             Destroy(gameObject);
         }
-        
     }
 
 }
