@@ -41,7 +41,7 @@ public class Score : MonoBehaviour
         scoreText.text = score.ToString();
     }
 
-    public void setScore(int scoreToAdd, bool isCombo)
+    public void SetScore(int scoreToAdd, bool isCombo)
     {
         if (isCombo)
         {
@@ -54,7 +54,7 @@ public class Score : MonoBehaviour
         score = score + scoreToAdd;
     }
 
-    public int getScore()
+    public int GetScore()
     {
         return score;
     }

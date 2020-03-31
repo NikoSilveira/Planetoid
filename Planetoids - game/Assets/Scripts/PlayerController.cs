@@ -23,14 +23,16 @@ public class PlayerController : MonoBehaviour
     private float boostTimer;
     private bool boostEnd;
 
-    //Stats
+    //Control
     private bool isAlive;
     private bool isInvincible;
+    private bool levelIsActive;
     public GameObject defeat;
 
     private void Start()
     {
         isAlive = true;
+        levelIsActive = true;
 
         moveSpeed = 1.1f;
         originalSpeed = moveSpeed;
@@ -40,6 +42,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive)
+        {
+            levelIsActive = false;
+        }
+
         //Speed boost
         if(boostTimer > 0f)
         {
@@ -101,6 +108,25 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
+    }
+
+    //---------------------
+    //  GETTERS & SETTERS
+    //---------------------
+
+    public bool GetIsAlive()
+    {
+        return isAlive;
+    }
+
+    public bool GetLevelIsActive()
+    {
+        return levelIsActive;
+    }
+
+    public void SetLevelIsActive(bool isActive)
+    {
+        levelIsActive = isActive;
     }
 
 }

@@ -6,7 +6,7 @@ public class SpeedBooster : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
         {
             FindObjectOfType<PlayerController>().BoostSpeed();
             Destroy(gameObject);

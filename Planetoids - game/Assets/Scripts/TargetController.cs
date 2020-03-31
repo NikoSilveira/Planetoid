@@ -48,7 +48,7 @@ public class TargetController : MonoBehaviour
         //Random direction change
         pivotTime = pivotTime + 1 * Time.deltaTime;
 
-        if(pivotTime >= 5)
+        if(pivotTime >= 4)
         {
             pivotTime = 0f;
 
@@ -75,9 +75,9 @@ public class TargetController : MonoBehaviour
     //Player - target collisison (eat target)
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
         {
-            FindObjectOfType<Score>().setScore(10, true);
+            FindObjectOfType<Score>().SetScore(10, true);
             FindObjectOfType<Counter>().setCounter();
             Destroy(gameObject);
         }

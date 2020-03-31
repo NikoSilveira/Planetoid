@@ -26,6 +26,7 @@ public class Counter : MonoBehaviour
 
         if (counter == targetCount)
         {
+            FindObjectOfType<PlayerController>().SetLevelIsActive(false);
             victory.SetActive(true);
             StartCoroutine(LoadLevel());
         }

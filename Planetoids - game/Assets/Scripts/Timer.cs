@@ -25,10 +25,14 @@ public class Timer : MonoBehaviour
     {
         if (currentTime > 0)
         {
-            currentTime = currentTime - 1 * Time.deltaTime;
+            if (FindObjectOfType<PlayerController>().GetLevelIsActive())
+            {
+                currentTime = currentTime - 1 * Time.deltaTime;
+            }
         }
         else
         {
+            FindObjectOfType<PlayerController>().SetLevelIsActive(false);
             timeExpired.SetActive(true);
             StartCoroutine(LoadLevel());
         }

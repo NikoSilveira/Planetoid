@@ -47,7 +47,7 @@ public class EnemyController : MonoBehaviour
         //Random direction change
         pivotTime = pivotTime + 1 * Time.deltaTime;
 
-        if (pivotTime >= 4)
+        if (pivotTime >= 3)
         {
             pivotTime = 0f;
 
@@ -74,7 +74,7 @@ public class EnemyController : MonoBehaviour
     //Enemy - target collision
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
         {
             FindObjectOfType<PlayerController>().PlayerDeath();
         }
