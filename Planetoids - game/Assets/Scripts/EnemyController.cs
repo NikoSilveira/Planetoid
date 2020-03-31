@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private float verticalInput;
 
     //Timer
-    float pivotTime = 0f;
+    private float pivotTime = 0f;
 
     void Start()
     {
@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.collider.tag == "Player")
         {
-            Debug.Log("Damage");
+            FindObjectOfType<PlayerController>().PlayerDeath();
         }
     }
 

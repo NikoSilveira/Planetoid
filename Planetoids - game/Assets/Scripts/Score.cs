@@ -16,11 +16,13 @@ public class Score : MonoBehaviour
     //Combo
     private int comboMultiplier;
     private float comboTimer;
+    private bool comboEnd;
 
     private void Start()
     {
         comboMultiplier = 1;
         comboTimer = 0f;
+        comboEnd = false;
         score = 0;
     }
 
@@ -30,9 +32,10 @@ public class Score : MonoBehaviour
         {
             comboTimer = comboTimer - 1 * Time.deltaTime;
         }
-        else
+        else if(comboEnd)
         {
             comboMultiplier = 1;
+            comboEnd = false;
         }
 
         scoreText.text = score.ToString();
@@ -44,6 +47,7 @@ public class Score : MonoBehaviour
         {
             scoreToAdd = scoreToAdd * comboMultiplier;
             comboMultiplier++;
+            comboEnd = true;
             comboTimer = 10f;   //Combo time limit
         }
 
