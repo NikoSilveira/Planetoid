@@ -142,7 +142,8 @@ public class PlayerController : MonoBehaviour
         if (horizontalInput < 0.15f && verticalInput < 0.15f && verticalInput > -0.15f && horizontalInput > -0.15f)
         {
             //Idle flame
-            flameParticles.transform.localEulerAngles = new Vector3(-90, 0, 0);
+            //flameParticles.transform.localEulerAngles = new Vector3(-90, 0, 0);
+            LeanTween.rotateLocal(flameParticles, new Vector3(-90, 0, 0), 0.4f);
         }
         else
         {
@@ -157,7 +158,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(verticalInput > 0 && horizontalInput < 0)  
             {
-                flameAngle = -(flameAngle - 90); //2nd quadrant
+                flameAngle = -(flameAngle + 270); //2nd quadrant
             }
             else if(verticalInput < 0 && horizontalInput < 0)  
             {
@@ -165,10 +166,11 @@ public class PlayerController : MonoBehaviour
             }
             else if(verticalInput < 0 && horizontalInput > 0)  
             {
-                flameAngle = -(flameAngle - 270); //4th quadrant
+                flameAngle = -(flameAngle + 90); //4th quadrant
             }
 
             flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
+            //LeanTween.rotateLocal(flameParticles, new Vector3(0,flameAngle,0), 0.25f);
         }
     }
 
