@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     //Movement
     public Joystick joystick;
     private Vector3 moveDir;
-    public float moveSpeed;
-    public float originalSpeed;
+    private float moveSpeed;
+    private float originalSpeed;
     private float horizontalInput;
     private float verticalInput;
 
@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     private bool isInvincible;
     private bool levelIsActive;
     public GameObject defeat;
+
+    //Flame
+    public GameObject flameParticles;
 
     private void Start()
     {
@@ -68,6 +71,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + GetComponent<Transform>().TransformDirection(moveDir) * moveSpeed * Time.fixedDeltaTime);
+        RotateFlame();
     }
 
     //--------------
@@ -127,6 +131,45 @@ public class PlayerController : MonoBehaviour
     public void SetLevelIsActive(bool isActive)
     {
         levelIsActive = isActive;
+    }
+
+    //------------------
+    //  FLAME ROTATION
+    //------------------
+
+    private void RotateFlame()
+    {
+        if (horizontalInput < 0.15f && verticalInput < 0.15f && verticalInput > -0.15f && horizontalInput > -0.15f)
+        {
+            //Idle flame
+            flameParticles.transform.localEulerAngles = new Vector3(-90, 0, 0);
+        }
+        else
+        {
+            float flameAngle;
+
+            flameAngle = Mathf.Atan(verticalInput / horizontalInput);
+            flameAngle = (flameAngle * 180) / Mathf.PI;
+
+            if(verticalInput > 0 && horizontalInput > 0)       
+            {
+                flameAngle = -(flameAngle + 90); //1st quadrant
+            }
+            else if(verticalInput > 0 && horizontalInput < 0)  
+            {
+                flameAngle = -(flameAngle - 90); //2nd quadrant
+            }
+            else if(verticalInput < 0 && horizontalInput < 0)  
+            {
+                flameAngle = -(flameAngle + 270); //3rd quadrant
+            }
+            else if(verticalInput < 0 && horizontalInput > 0)  
+            {
+                flameAngle = -(flameAngle - 270); //4th quadrant
+            }
+
+            flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
+        }
     }
 
 }
