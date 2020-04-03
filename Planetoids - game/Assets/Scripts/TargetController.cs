@@ -17,13 +17,17 @@ public class TargetController : MonoBehaviour
     //Timer
     private float pivotTime = 0f;
 
+    //Flame
+    private GameObject flameParticles;
 
     void Start()
     {
         moveSpeed = 0.6f;
-        
+
+        flameParticles = gameObject.transform.GetChild(0).gameObject;
+
         //Random horizontal direction
-        if(Random.Range(0,2) == 0)
+        if (Random.Range(0,2) == 0)
         {
             horizontalInput = Random.Range(0.75f,1f);
         }
@@ -70,6 +74,7 @@ public class TargetController : MonoBehaviour
     private void FixedUpdate()
     {
         GetComponent<Rigidbody>().MovePosition(GetComponent<Rigidbody>().position + GetComponent<Transform>().TransformDirection(moveDir) * moveSpeed * Time.fixedDeltaTime);
+        RotateFlame();
     }
 
     //Player - target collisison (eat target)
@@ -80,6 +85,48 @@ public class TargetController : MonoBehaviour
             FindObjectOfType<Score>().SetScore(10, true);
             FindObjectOfType<Counter>().setCounter();
             Destroy(gameObject);
+        }
+    }
+
+
+    //------------------
+    //  FLAME ROTATION
+    //------------------
+
+    private void RotateFlame()
+    {
+        if (horizontalInput < 0.15f && verticalInput < 0.15f && verticalInput > -0.15f && horizontalInput > -0.15f)
+        {
+            //Idle flame
+            //flameParticles.transform.localEulerAngles = new Vector3(-90, 0, 0);
+            LeanTween.rotateLocal(flameParticles, new Vector3(-90, 0, 0), 0.4f);
+        }
+        else
+        {
+            float flameAngle;
+
+            flameAngle = Mathf.Atan(verticalInput / horizontalInput);
+            flameAngle = (flameAngle * 180) / Mathf.PI;
+
+            if (verticalInput > 0 && horizontalInput > 0)
+            {
+                flameAngle = -(flameAngle + 90); //1st quadrant
+            }
+            else if (verticalInput > 0 && horizontalInput < 0)
+            {
+                flameAngle = -(flameAngle + 270); //2nd quadrant
+            }
+            else if (verticalInput < 0 && horizontalInput < 0)
+            {
+                flameAngle = -(flameAngle + 270); //3rd quadrant
+            }
+            else if (verticalInput < 0 && horizontalInput > 0)
+            {
+                flameAngle = -(flameAngle + 90); //4th quadrant
+            }
+
+            flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
+            //LeanTween.rotateLocal(flameParticles, new Vector3(0,flameAngle,0), 0.25f);
         }
     }
 

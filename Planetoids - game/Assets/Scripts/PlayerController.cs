@@ -30,10 +30,12 @@ public class PlayerController : MonoBehaviour
     public GameObject defeat;
 
     //Flame
-    public GameObject flameParticles;
+    private GameObject flameParticles;
 
     private void Start()
     {
+        flameParticles = gameObject.transform.GetChild(1).gameObject;
+
         isAlive = true;
         levelIsActive = true;
 
