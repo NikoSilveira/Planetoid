@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     //Movement variables
     private Vector3 moveDir;
-    public float moveSpeed;
+    private float moveSpeed;
     private float horizontalInput;
     private float verticalInput;
 
@@ -26,48 +26,21 @@ public class EnemyController : MonoBehaviour
 
         flameParticles = gameObject.transform.GetChild(0).gameObject;
 
-        //Random horizontal direction
-        if (Random.Range(0, 2) == 0)
-        {
-            horizontalInput = Random.Range(0.75f, 1f);
-        }
-        else
-        {
-            horizontalInput = Random.Range(-1f, -0.75f);
-        }
-
-        //Random vertical direction
-        if (Random.Range(0, 2) == 0)
-        {
-            verticalInput = Random.Range(0.75f, 1f);
-        }
-        else
-        {
-            verticalInput = Random.Range(-1f, -0.75f);
-        }
+        RandomHorizontalDir();
+        RandomVerticalDir();
     }
 
     void Update()
     {
-        //Random direction change
+        //Random direction change (timed)
         pivotTime = pivotTime + 1 * Time.deltaTime;
 
         if (pivotTime >= 3)
         {
             pivotTime = 0f;
-
-            //New random horizontal direction
-            if (Random.Range(0, 2) == 0)
-            {
-                horizontalInput = Random.Range(0.75f, 1f);
-            }
-            else
-            {
-                horizontalInput = Random.Range(-1f, -0.75f);
-            }
+            RandomHorizontalDir();
         }
 
-        //Constant input
         moveDir = new Vector3(horizontalInput, 0, verticalInput).normalized;
     }
 
@@ -77,13 +50,19 @@ public class EnemyController : MonoBehaviour
         RotateFlame();
     }
 
-    //Enemy - target collision
+    //-----------------
+    //    COLLISION
+    //-----------------
+
+    //Enemy damages player
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
         {
             FindObjectOfType<PlayerController>().PlayerDeath();
         }
+
+        RandomHorizontalDir();
     }
 
     //------------------
@@ -92,38 +71,56 @@ public class EnemyController : MonoBehaviour
 
     private void RotateFlame()
     {
-        if (horizontalInput < 0.15f && verticalInput < 0.15f && verticalInput > -0.15f && horizontalInput > -0.15f)
+        float flameAngle;
+
+        flameAngle = Mathf.Atan(verticalInput / horizontalInput);
+        flameAngle = (flameAngle * 180) / Mathf.PI;
+
+        if (verticalInput > 0 && horizontalInput > 0)
         {
-            //Idle flame
-            //flameParticles.transform.localEulerAngles = new Vector3(-90, 0, 0);
-            LeanTween.rotateLocal(flameParticles, new Vector3(-90, 0, 0), 0.4f);
+            flameAngle = -(flameAngle + 90);  //1st quadrant
+        }
+        else if (verticalInput > 0 && horizontalInput < 0)
+        {
+            flameAngle = -(flameAngle + 270); //2nd quadrant
+        }
+        else if (verticalInput < 0 && horizontalInput < 0)
+        {
+            flameAngle = -(flameAngle + 270); //3rd quadrant
+        }
+        else if (verticalInput < 0 && horizontalInput > 0)
+        {
+            flameAngle = -(flameAngle + 90);  //4th quadrant
+        }
+
+        flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
+    }
+
+    //-----------------
+    //   RANDOMIZERS
+    //-----------------
+
+    private void RandomHorizontalDir()
+    {
+        if (Random.Range(0, 2) == 0)
+        {
+            horizontalInput = Random.Range(0.75f, 1f);
         }
         else
         {
-            float flameAngle;
+            horizontalInput = Random.Range(-1f, -0.75f);
+        }
+    }
 
-            flameAngle = Mathf.Atan(verticalInput / horizontalInput);
-            flameAngle = (flameAngle * 180) / Mathf.PI;
-
-            if (verticalInput > 0 && horizontalInput > 0)
-            {
-                flameAngle = -(flameAngle + 90); //1st quadrant
-            }
-            else if (verticalInput > 0 && horizontalInput < 0)
-            {
-                flameAngle = -(flameAngle + 270); //2nd quadrant
-            }
-            else if (verticalInput < 0 && horizontalInput < 0)
-            {
-                flameAngle = -(flameAngle + 270); //3rd quadrant
-            }
-            else if (verticalInput < 0 && horizontalInput > 0)
-            {
-                flameAngle = -(flameAngle + 90); //4th quadrant
-            }
-
-            flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
-            //LeanTween.rotateLocal(flameParticles, new Vector3(0,flameAngle,0), 0.25f);
+    private void RandomVerticalDir()
+    {
+        if (Random.Range(0, 2) == 0)
+        {
+            verticalInput = Random.Range(0.75f, 1f);
+        }
+        else
+        {
+            verticalInput = Random.Range(-1f, -0.75f);
         }
     }
 
