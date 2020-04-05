@@ -17,8 +17,6 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-
-
         //Get initial volume values stores in playerprefs
         float initialMusic = PlayerPrefs.GetFloat("musicVol", 0.7f);
         float initialSFX = PlayerPrefs.GetFloat("sfxVol", 0.7f);
