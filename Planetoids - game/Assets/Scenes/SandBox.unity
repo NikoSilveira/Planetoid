@@ -5881,6 +5881,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 303423576}
+  audioMixer: {fileID: 24100000, guid: 7ef883b108e2bb442b5ba3fb66340df5, type: 2}
+  musicSlider: {fileID: 1231096633}
+  sfxSlider: {fileID: 787748006}
 --- !u!1 &230221214
 GameObject:
   m_ObjectHideFlags: 0
@@ -7302,7 +7305,18 @@ MonoBehaviour:
   m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 219623578}
+        m_MethodName: SetVolumeSfx
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &798696261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12184,7 +12198,18 @@ MonoBehaviour:
   m_Value: 0.7
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 219623578}
+        m_MethodName: SetVolumeMusic
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1308979962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15092,7 +15117,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 73747bb8d23c74740872607e6d1d5a97, type: 3}
     - target: {fileID: 5781100511155278412, guid: bbcd0001ec4b471438d416c2b9e8d53b,
         type: 3}
       propertyPath: sounds.Array.data[0].mixerGroup
