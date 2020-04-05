@@ -33,7 +33,6 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitLevel()
     {
-        //Modify later - give player inmunity for the 1s the world will be moving
         Time.timeScale = 1f;
         FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
     }
