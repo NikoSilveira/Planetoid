@@ -5,7 +5,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
 
-    private float rotateSpeed = 8f;
+    private float rotateSpeed = 8f; //Lower value - faster
 
     private void Start()
     {

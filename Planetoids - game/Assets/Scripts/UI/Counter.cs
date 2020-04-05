@@ -52,6 +52,6 @@ public class Counter : MonoBehaviour
     IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(1.5f);
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
     }
 }
