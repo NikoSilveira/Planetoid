@@ -29,7 +29,11 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 2c6efbd34516f17418d0684cc249941f
+    name: musicVol
+  - guid: e8039eaf38ffcb44c8ec3be558ba6a83
+    name: sfxVol
   m_AudioMixerGroupViews:
   - guids:
     - 92b496ef9d5e8f24b8114dc7dc121752
@@ -49,6 +53,7 @@ AudioMixerGroupController:
   m_GroupID: 92b496ef9d5e8f24b8114dc7dc121752
   m_Children:
   - {fileID: 6177767959374312026}
+  - {fileID: 860244377353517106}
   m_Volume: fd6e89ad3c1ebbc4eb31290cef3e893a
   m_Pitch: 695466e26e28b684fb0246a9fcdcd50c
   m_Send: 00000000000000000000000000000000
@@ -109,11 +114,10 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Soundtrack
+  m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 4afbc7f587257954da785aae39741536
-  m_Children:
-  - {fileID: 860244377353517106}
+  m_Children: []
   m_Volume: 2c6efbd34516f17418d0684cc249941f
   m_Pitch: 62a034c2e27cf2d4a946c7e68ad1e6d5
   m_Send: 00000000000000000000000000000000
