@@ -15,24 +15,39 @@ public class Counter : MonoBehaviour
     public int targetCount;     //Set in inspector
     private int counter;
 
+    private bool victoryControl;
+
     void Start()
     {
         counter = 0;
+        victoryControl = true;
     }
 
     void Update()
     {
         counterText.text = counter.ToString() + "/" + targetCount.ToString();
 
-        if (counter == targetCount)
+        if (counter == 1 && victoryControl)
         {
+            victoryControl = false;
+
             FindObjectOfType<PlayerController>().SetLevelIsActive(false);
             victory.SetActive(true);
+            victory.GetComponent<Text>().text = RandomMessage();
             StartCoroutine(LoadLevel());
         }
     }
 
-    //Setter to be called to increase counter by 1
+    IEnumerator LoadLevel()
+    {
+        yield return new WaitForSeconds(1.5f);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
+    }
+
+    //---------------------
+    //  GETTERS & SETTERS
+    //---------------------
+
     public void setCounter()
     {
         counter = counter + 1;
@@ -48,10 +63,21 @@ public class Counter : MonoBehaviour
         return targetCount;
     }
 
-    //Load level upon reaching win condition
-    IEnumerator LoadLevel()
+    //--------------------
+    //   RANDOM MESSAGE
+    //--------------------
+
+    private string RandomMessage()
     {
-        yield return new WaitForSeconds(1.5f);
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
+        string[] message = { 
+            "VICTORY!",
+            "A-BLAZE-ING!",
+            "HEATED WIN!",
+            "HOT TAKE!"
+        };
+
+        int random = Random.Range(0, message.Length);
+
+        return message[random];
     }
 }
