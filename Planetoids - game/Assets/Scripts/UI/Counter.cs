@@ -27,7 +27,7 @@ public class Counter : MonoBehaviour
     {
         counterText.text = counter.ToString() + "/" + targetCount.ToString();
 
-        if (counter == 1 && victoryControl)
+        if (counter == targetCount && victoryControl)
         {
             victoryControl = false;
 
