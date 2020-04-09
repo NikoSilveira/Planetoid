@@ -9,9 +9,9 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
+    private float currentTime = 0f;
 
-    float currentTime = 0f;
-    public float startingTime;
+    [SerializeField] private float startingTime;
 
     public Text timerText;
     public GameObject timeExpired;

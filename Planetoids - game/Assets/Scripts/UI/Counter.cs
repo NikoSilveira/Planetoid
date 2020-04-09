@@ -9,12 +9,12 @@ using UnityEngine.UI;
  */
 public class Counter : MonoBehaviour
 {
+    public Text counterText;
+    public GameObject victory;
 
-    public Text counterText;    //Assign in inspector
-    public GameObject victory;  //Assign in inspector
-    public int targetCount;     //Set in inspector
+    [SerializeField] private int targetCount; 
+
     private int counter;
-
     private bool victoryControl;
 
     void Start()
@@ -41,7 +41,7 @@ public class Counter : MonoBehaviour
     IEnumerator LoadLevel()
     {
         yield return new WaitForSeconds(1.5f);
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
     }
 
     //---------------------

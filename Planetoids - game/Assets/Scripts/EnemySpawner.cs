@@ -8,12 +8,17 @@ using UnityEngine;
  */
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private float timer;
+    [SerializeField] private int initialAmount;
 
-    public GameObject prefab;
+    private float timerAux;
     private GameObject[] spawnPoint;
 
     private void Start()
     {
+        timerAux = timer;
+
         spawnPoint = new GameObject[3];
 
         for(int i=0; i<spawnPoint.Length; i++)
@@ -21,16 +26,25 @@ public class EnemySpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        StartCoroutine(SpawnControl(4));
+        SpawnEnemy(initialAmount);  //Spawn 6 at start
     }
 
     private void Update()
     {
-        
+        timer = timer - 1 * Time.deltaTime;
+
+        if(timer <= 0f)
+        {
+            SpawnEnemy(1);
+            timer = timerAux;
+        }
     }
 
-    //Function to create an enemy
-    public void SpawnEnemy()
+    //------------------
+    //     SPAWNING
+    //------------------
+
+    public void SpawnEnemy(int numToSpawn)
     {
         if(prefab == null)
         {
@@ -38,17 +52,16 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
-        int randomSpawn = Random.Range(0, 3);
-        Instantiate(prefab, spawnPoint[randomSpawn].transform.position, Quaternion.identity);
+        StartCoroutine(SpawnDelay(numToSpawn));
     }
 
-    //Function to control spawn mechanics
-    IEnumerator SpawnControl(int numToSpawn)
+    IEnumerator SpawnDelay(int numToSpawn)
     {
         for (int i = 0; i < numToSpawn; i++)
         {
-            SpawnEnemy();
+            Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
         }
     }
+
 }

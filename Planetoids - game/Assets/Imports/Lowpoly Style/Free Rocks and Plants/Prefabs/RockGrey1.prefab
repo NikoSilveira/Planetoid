@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3340812}
   - component: {fileID: 2391670}
   - component: {fileID: 6448462}
+  - component: {fileID: 4095267402309233748}
   m_Layer: 0
   m_Name: RockGrey1
   m_TagString: Untagged
@@ -88,8 +89,21 @@ MeshCollider:
   m_GameObject: {fileID: 157192}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: aa506903d46611248a87e61d76a088b6, type: 3}
+--- !u!135 &4095267402309233748
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.3215342
+  m_Center: {x: -0.1456294, y: 0, z: -0.06522083}

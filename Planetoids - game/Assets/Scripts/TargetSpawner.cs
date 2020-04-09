@@ -8,10 +8,13 @@ using UnityEngine;
  */
 public class TargetSpawner : MonoBehaviour
 {
+    [SerializeField] public GameObject prefab;
 
-    public GameObject prefab;       //Assign in inspector
     private GameObject[] spawnPoint;
     private bool spawnControl1, spawnControl2;
+
+    private int[] horde;
+    private bool[] hordeControl;
 
     void Start()
     {
@@ -25,7 +28,7 @@ public class TargetSpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        StartCoroutine(SpawnControl(3));    //Spawn 3 at start
+        SpawnTarget(3);    //Spawn 3 at start
     }
 
     void Update()
@@ -33,7 +36,7 @@ public class TargetSpawner : MonoBehaviour
         if (FindObjectOfType<Counter>().getCounter() == 3 && spawnControl1 == true) 
         {
             //Spawn 4 after first 3
-            StartCoroutine(SpawnControl(4));
+            SpawnTarget(4);
             spawnControl1 = false;
         }
         else if (FindObjectOfType<Counter>().getCounter() == 7 && spawnControl2 == true)
@@ -41,13 +44,16 @@ public class TargetSpawner : MonoBehaviour
             //Spawn the rest
             int numToSpawn = FindObjectOfType<Counter>().getTargetCount() - FindObjectOfType<Counter>().getCounter();
 
-            StartCoroutine(SpawnControl(numToSpawn));
+            SpawnTarget(numToSpawn);
             spawnControl2 = false;
         }
     }
 
-    //Function to create a target
-    public void SpawnTarget()
+    //------------------
+    //     SPAWNING
+    //------------------
+
+    public void SpawnTarget(int numToSpawn)
     {
         if(prefab == null)
         {
@@ -55,17 +61,16 @@ public class TargetSpawner : MonoBehaviour
             return;
         }
 
-        int randomSpawn = Random.Range(0,3);
-        Instantiate(prefab, spawnPoint[randomSpawn].transform.position, Quaternion.identity);
+        StartCoroutine(SpawnDelay(numToSpawn));
     }
 
-    //Function to control spawn mechanics
-    IEnumerator SpawnControl(int numToSpawn)
+    IEnumerator SpawnDelay(int numToSpawn)
     {
         for (int i = 0; i < numToSpawn; i++)
         {
-            SpawnTarget();
+            Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
         }
     }
+
 }
