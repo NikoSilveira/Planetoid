@@ -12,8 +12,7 @@ public class Counter : MonoBehaviour
     public Text counterText;
     public GameObject victory;
 
-    [SerializeField] private int targetCount; 
-
+    private int targetCount; 
     private int counter;
     private bool victoryControl;
 
@@ -48,19 +47,19 @@ public class Counter : MonoBehaviour
     //  GETTERS & SETTERS
     //---------------------
 
-    public void setCounter()
+    public void SetCounter()
     {
         counter = counter + 1;
     }
 
-    public int getCounter()
+    public int GetCounter()
     {
         return counter;
     }
 
-    public int getTargetCount()
+    public void SetTargetCount(int newTargetCount)
     {
-        return targetCount;
+        targetCount = newTargetCount;
     }
 
     //--------------------

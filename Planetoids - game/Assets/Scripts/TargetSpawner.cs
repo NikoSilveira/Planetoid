@@ -2,25 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Control of target spawning conditions
- * -Assign to ObjectSpawner in hierarchy
- */
 public class TargetSpawner : MonoBehaviour
 {
-    [SerializeField] public GameObject prefab;
+    [SerializeField] private GameObject prefab;
+    [SerializeField] private int[] hordeSize;
 
     private GameObject[] spawnPoint;
-    private bool spawnControl1, spawnControl2;
 
-    private int[] horde;
-    private bool[] hordeControl;
-
+    private int counterAcum;
+    private int spawnIndex;
+    private bool canSpawn;
+    
     void Start()
     {
-        spawnControl1 = true;
-        spawnControl2 = true;
+        counterAcum = 0;
+        spawnIndex = 0;
+        canSpawn = true;
 
+        //Send target total to the counter
+        int totalHordeSize = 0;
+
+        foreach (int item in hordeSize)
+        {
+            totalHordeSize += item;
+        }
+        FindObjectOfType<Counter>().SetTargetCount(totalHordeSize);
+
+        //Spawn point initialization
         spawnPoint = new GameObject[3];
 
         for(int i=0; i<spawnPoint.Length; i++)
@@ -28,24 +36,23 @@ public class TargetSpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        SpawnTarget(3);    //Spawn 3 at start
+        //Initial spawn
+        SpawnTarget(hordeSize[0]);
     }
 
     void Update()
     {
-        if (FindObjectOfType<Counter>().getCounter() == 3 && spawnControl1 == true) 
+        //Spawn hordes as game progresses (if all spawned have been eaten and there is no risk of overflow)
+        if(FindObjectOfType<Counter>().GetCounter() == (hordeSize[spawnIndex] + counterAcum) && (spawnIndex + 1) < hordeSize.Length)
         {
-            //Spawn 4 after first 3
-            SpawnTarget(4);
-            spawnControl1 = false;
-        }
-        else if (FindObjectOfType<Counter>().getCounter() == 7 && spawnControl2 == true)
-        {
-            //Spawn the rest
-            int numToSpawn = FindObjectOfType<Counter>().getTargetCount() - FindObjectOfType<Counter>().getCounter();
+            if (canSpawn)
+            {
+                canSpawn = false;   //validation - start
 
-            SpawnTarget(numToSpawn);
-            spawnControl2 = false;
+                counterAcum += hordeSize[spawnIndex];
+                spawnIndex++;
+                SpawnTarget(hordeSize[spawnIndex]);
+            }
         }
     }
 
@@ -70,6 +77,11 @@ public class TargetSpawner : MonoBehaviour
         {
             Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
+
+            if(i == numToSpawn - 1)
+            {
+                canSpawn = true;    //validation - end
+            }
         }
     }
 

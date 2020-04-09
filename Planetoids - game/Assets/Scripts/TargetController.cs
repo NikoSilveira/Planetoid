@@ -60,7 +60,7 @@ public class TargetController : MonoBehaviour
         if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
         {
             FindObjectOfType<Score>().SetScore(10, true);
-            FindObjectOfType<Counter>().setCounter();
+            FindObjectOfType<Counter>().SetCounter();
 
             //Animation effects
             LeanTween.scale(gameObject, new Vector3(0.01f,0.01f,0.01f), 0.25f);
@@ -72,6 +72,7 @@ public class TargetController : MonoBehaviour
         else
         {
             RandomHorizontalDir();
+            RandomVerticalDir();
         }
     }
 

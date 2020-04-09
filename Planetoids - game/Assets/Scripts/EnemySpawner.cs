@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
     {
         timerAux = timer;
 
+        //Spawn point initialization
         spawnPoint = new GameObject[3];
 
         for(int i=0; i<spawnPoint.Length; i++)
@@ -26,11 +27,13 @@ public class EnemySpawner : MonoBehaviour
             spawnPoint[i] = GameObject.Find("Spawner" + (i+1).ToString());
         }
 
-        SpawnEnemy(initialAmount);  //Spawn 6 at start
+        //Initial spawn
+        SpawnEnemy(initialAmount);
     }
 
     private void Update()
     {
+        //Spawn enemies as game progresses
         timer = timer - 1 * Time.deltaTime;
 
         if(timer <= 0f)

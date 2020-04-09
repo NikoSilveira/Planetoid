@@ -63,6 +63,7 @@ public class EnemyController : MonoBehaviour
         }
 
         RandomHorizontalDir();
+        RandomVerticalDir();
     }
 
     //------------------
