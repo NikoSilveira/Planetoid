@@ -1068,6 +1068,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 911991493}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &948271406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1724023311225824044, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724023311166976198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &964095866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4976,6 +4982,12 @@ MonoBehaviour:
   m_SkinMeshRef: {fileID: 0}
   m_OriginalMeshObject: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mode: 0
+--- !u!1 &1270911287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1724023311504115500, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724023311166976198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1308979962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6161,6 +6173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be4bdf01238e3b245b7eb791a0c6600b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victory: {fileID: 948271406}
+  defeat: {fileID: 770260825}
+  timeExpired: {fileID: 1270911287}
 --- !u!4 &2042418473
 Transform:
   m_ObjectHideFlags: 0
@@ -6260,12 +6275,12 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[0]
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[1]
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c7f627aa1f146418c27ae709d79096, type: 3}
