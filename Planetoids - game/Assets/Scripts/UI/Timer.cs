@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     [SerializeField] private float startingTime;
 
     public Text timerText;
-    public GameObject timeExpired;
+    public GameObject timeExpired;//here
 
     private void Start()
     {
@@ -25,22 +25,22 @@ public class Timer : MonoBehaviour
     {
         if (currentTime > 0)
         {
-            if (FindObjectOfType<PlayerController>().GetLevelIsActive())
+            if (FindObjectOfType<PlayerController>().GetLevelIsActive())//here
             {
                 currentTime = currentTime - 1 * Time.deltaTime;
             }
         }
         else
         {
-            FindObjectOfType<PlayerController>().SetLevelIsActive(false);
-            timeExpired.SetActive(true);
-            StartCoroutine(LoadLevel());
+            FindObjectOfType<PlayerController>().SetLevelIsActive(false);//here
+            timeExpired.SetActive(true);//here
+            StartCoroutine(LoadLevel());//here
         }
         
         timerText.text = currentTime.ToString("0");
     }
 
-    IEnumerator LoadLevel()
+    IEnumerator LoadLevel()//here
     {
         yield return new WaitForSeconds(1.5f);
         FindObjectOfType<LevelLoader>().LoadTargetLevel(1);

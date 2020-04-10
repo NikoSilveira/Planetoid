@@ -10,12 +10,36 @@ using UnityEngine.UI;
  */
 public class MainMenu : MonoBehaviour
 {
+    //Level Selection
+    public Button[] worldButtons;
+    public Button[] levelButtons;
+
     //Volume control
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
 
     private void Start()
+    {
+        InitializeWorldButtons();
+        InitializeLevelButtons();
+        InitializeAudioSettings();
+    }
+
+    //-------------------
+    //    Start Menu
+    //-------------------
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    //--------------------
+    //   Settings Menu
+    //--------------------
+
+    private void InitializeAudioSettings()
     {
         //Get initial volume values stores in playerprefs
         float initialMusic = PlayerPrefs.GetFloat("musicVol", 0.7f);
@@ -29,26 +53,7 @@ public class MainMenu : MonoBehaviour
         audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
         audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
     }
-
-
-    //-------------------
-    //    Start Menu
-    //-------------------
-
-    public void Play()
-    {
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-
-    //--------------------
-    //   Settings Menu
-    //--------------------
-
+    
     public void SetVolumeMusic(float volume)
     {
         audioMixer.SetFloat("musicVol", Mathf.Log10(volume) * 20);
@@ -69,6 +74,34 @@ public class MainMenu : MonoBehaviour
     //--------------------
     //     Level Menu
     //--------------------
+
+    private void InitializeWorldButtons()
+    {
+        int worldReached = 5;   //read file
+
+        for (int i = 0; i < worldButtons.Length; i++)
+        {
+            if (i + 1 > worldReached)
+            {
+                worldButtons[i].interactable = false;
+                LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
+            }
+        }
+    }
+
+    private void InitializeLevelButtons()
+    {
+        int levelReached = 7;   //read file
+
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 1 > levelReached)
+            {
+                levelButtons[i].interactable = false;
+                LeanTween.alpha(levelButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
+            }
+        }
+    }
 
     //------------------------
     //   Customization Menu

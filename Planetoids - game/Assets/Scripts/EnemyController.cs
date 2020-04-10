@@ -57,9 +57,9 @@ public class EnemyController : MonoBehaviour
     //Enemy damages player
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
+        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())//here
         {
-            FindObjectOfType<PlayerController>().PlayerDeath();
+            FindObjectOfType<PlayerController>().PlayerDeath();//here
         }
 
         RandomHorizontalDir();
