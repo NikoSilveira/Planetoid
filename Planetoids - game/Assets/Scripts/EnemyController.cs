@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Main script for defining enemy behavior and conditions
- */
 public class EnemyController : MonoBehaviour
 {
-
     //Movement variables
     private Vector3 moveDir;
     private float moveSpeed;
@@ -57,9 +53,9 @@ public class EnemyController : MonoBehaviour
     //Enemy damages player
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())//here
+        if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
-            FindObjectOfType<PlayerController>().PlayerDeath();//here
+            FindObjectOfType<LevelManager>().Lose();
         }
 
         RandomHorizontalDir();

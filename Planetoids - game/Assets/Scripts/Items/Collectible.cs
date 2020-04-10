@@ -14,7 +14,7 @@ public class Collectible : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())
+        if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
             Destroy(gameObject);
             FindObjectOfType<Score>().SetScore(100, false);

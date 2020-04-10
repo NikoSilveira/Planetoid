@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Main script for defining target behavior and conditions
- */
 public class TargetController : MonoBehaviour
 {
-
     //Movement variables
     private Vector3 moveDir;
     private float moveSpeed;
@@ -57,7 +53,7 @@ public class TargetController : MonoBehaviour
     //Eat target
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player" && FindObjectOfType<PlayerController>().GetLevelIsActive())//here
+        if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
             FindObjectOfType<Score>().SetScore(10, true);
             FindObjectOfType<Counter>().SetCounter();

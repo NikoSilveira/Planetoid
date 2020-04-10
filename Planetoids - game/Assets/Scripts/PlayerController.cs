@@ -2,13 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Player Controller Script
- * -Movement
- * -Boosters
- * -Player death
- */
-
 public class PlayerController : MonoBehaviour
 {
     //Movement
@@ -20,8 +13,6 @@ public class PlayerController : MonoBehaviour
 
     //Control
     private bool isAlive;
-    private bool levelIsActive;//here
-    public GameObject defeat;//here
 
     //Flame
     private GameObject flameParticles;
@@ -31,18 +22,11 @@ public class PlayerController : MonoBehaviour
         flameParticles = gameObject.transform.GetChild(1).gameObject;
 
         isAlive = true;
-        levelIsActive = true;//here
-
         moveSpeed = 1.1f;
     }
 
     void Update()
     {
-        if (!isAlive)
-        {
-            levelIsActive = false;//here
-        }
-
         //Movement
         horizontalInput = joystick.Horizontal;
         verticalInput = joystick.Vertical;
@@ -63,42 +47,14 @@ public class PlayerController : MonoBehaviour
     //    EVENTS
     //--------------
 
-    public void PlayerDeath()//here
+    public void PlayerDeath()
     {
         isAlive = false;
-        defeat.SetActive(true);
 
         //Animation effects
         LeanTween.alpha(gameObject, 0f, 0.25f);
         LeanTween.scale(flameParticles, new Vector3(1.5f, 1.5f, 1.5f), 0.2f);
         flameParticles.GetComponent<ParticleSystem>().Stop();
-
-        StartCoroutine(LoadLevel());
-    }
-
-    IEnumerator LoadLevel()//here
-    {
-        yield return new WaitForSeconds(1.5f);
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(1);
-    }
-
-    //---------------------
-    //  GETTERS & SETTERS
-    //---------------------
-
-    public bool GetIsAlive()
-    {
-        return isAlive;
-    }
-
-    public bool GetLevelIsActive()
-    {
-        return levelIsActive;
-    }
-
-    public void SetLevelIsActive(bool isActive)//here
-    {
-        levelIsActive = isActive;
     }
 
     //------------------
