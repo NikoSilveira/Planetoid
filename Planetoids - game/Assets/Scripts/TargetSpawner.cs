@@ -11,13 +11,11 @@ public class TargetSpawner : MonoBehaviour
 
     private int counterAcum;
     private int spawnIndex;
-    private bool canSpawn;
     
     void Start()
     {
         counterAcum = 0;
         spawnIndex = 0;
-        canSpawn = true;
 
         //Send target total to the counter
         int totalHordeSize = 0;
@@ -42,23 +40,23 @@ public class TargetSpawner : MonoBehaviour
 
     void Update()
     {
-        //Spawn hordes as game progresses (if all spawned have been eaten and there is no risk of overflow)
-        if(FindObjectOfType<Counter>().GetCounter() == (hordeSize[spawnIndex] + counterAcum) && (spawnIndex + 1) < hordeSize.Length)
-        {
-            if (canSpawn)
-            {
-                canSpawn = false;   //validation - start
-
-                counterAcum += hordeSize[spawnIndex];
-                spawnIndex++;
-                SpawnTarget(hordeSize[spawnIndex]);
-            }
-        }
+        AutoSpawn();
     }
 
     //------------------
     //     SPAWNING
     //------------------
+
+    private void AutoSpawn()
+    {
+        //Spawn hordes as game progresses (if all spawned have been eaten and there is no risk of overflow)
+        if (FindObjectOfType<Counter>().GetCounter() == (hordeSize[spawnIndex] + counterAcum) && (spawnIndex + 1) < hordeSize.Length)
+        {
+            counterAcum += hordeSize[spawnIndex];
+            spawnIndex++;
+            SpawnTarget(hordeSize[spawnIndex]);
+        }
+    }
 
     public void SpawnTarget(int numToSpawn)
     {
@@ -77,11 +75,6 @@ public class TargetSpawner : MonoBehaviour
         {
             Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
-
-            if(i == numToSpawn - 1)
-            {
-                canSpawn = true;    //validation - end
-            }
         }
     }
 

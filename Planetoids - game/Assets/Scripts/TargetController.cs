@@ -16,9 +16,12 @@ public class TargetController : MonoBehaviour
     //Flame
     private GameObject flameParticles;
 
+    private bool canCollide;
+
     void Start()
     {
         moveSpeed = 0.6f;
+        canCollide = true;
 
         flameParticles = gameObject.transform.GetChild(0).gameObject;
 
@@ -53,8 +56,14 @@ public class TargetController : MonoBehaviour
     //Eat target
     private void OnCollisionEnter(Collision collision)
     {
+        if (!canCollide)
+        {
+            return;
+        }
+
         if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
+            canCollide = false;
             FindObjectOfType<Score>().SetScore(10, true);
             FindObjectOfType<Counter>().SetCounter();
 

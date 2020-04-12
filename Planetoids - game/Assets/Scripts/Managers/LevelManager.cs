@@ -2,15 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
+/*
+ * THE MANAGER MUST BE ASSIGNED TO MAIN SCENE AND ALL LEVELS
+ */
 public class LevelManager : MonoBehaviour
 {
     //UI GameObjects
     public GameObject victory;
     public GameObject defeat;
     public GameObject timeExpired;
+    public GameObject pauseButton;
+
+    //Unlocking levels
+    [SerializeField] private bool unlocksWorld;
+    [HideInInspector] public int levelsToUnlock;
+    [HideInInspector] public int worldsToUnlock;
 
     private bool levelIsActive;
+
+    private void Awake()
+    {
+        InitializeSaveData();
+    }
 
     void Start()
     {
@@ -29,6 +44,9 @@ public class LevelManager : MonoBehaviour
         levelIsActive = false;
         victory.SetActive(true);
         victory.GetComponent<Text>().text = RandomMessage();
+        pauseButton.SetActive(false);
+        Unlock();
+
         StartCoroutine(LoadMainMenu());
     }
 
@@ -42,6 +60,8 @@ public class LevelManager : MonoBehaviour
         FindObjectOfType<PlayerController>().PlayerDeath();
         levelIsActive = false;
         defeat.SetActive(true);
+        pauseButton.SetActive(false);
+
         StartCoroutine(LoadMainMenu());
     }
 
@@ -54,6 +74,8 @@ public class LevelManager : MonoBehaviour
 
         levelIsActive = false;
         timeExpired.SetActive(true);
+        pauseButton.SetActive(false);
+
         StartCoroutine(LoadMainMenu());
     }
 
@@ -77,6 +99,47 @@ public class LevelManager : MonoBehaviour
         int random = Random.Range(0, message.Length);
 
         return message[random];
+    }
+
+    //Unlocking levels/worlds
+    private void Unlock()
+    {
+        int numberOfScenes = SceneManager.sceneCountInBuildSettings;
+        int nextLevel = SceneManager.GetActiveScene().buildIndex - 1;
+        GameData data = SaveSystem.LoadGame();
+
+        if (nextLevel > numberOfScenes) //Avoid overflow
+        {
+            return;
+        }
+
+        levelsToUnlock = nextLevel;
+
+        if (unlocksWorld)
+        {
+            worldsToUnlock = data.worldsToUnlock + 1;
+        }
+        else
+        {
+            worldsToUnlock = data.worldsToUnlock;
+        }
+
+        SaveSystem.SaveGame(this);
+    }
+
+    //Create document on awake (1st time)
+    public void InitializeSaveData()
+    {
+        if(SaveSystem.LoadGame() == null)
+        {
+            levelsToUnlock = 1;
+            worldsToUnlock = 1;
+            SaveSystem.SaveGame(this);
+        }
+        else
+        {
+            return;
+        }
     }
 
     public bool GetLevelIsActive()

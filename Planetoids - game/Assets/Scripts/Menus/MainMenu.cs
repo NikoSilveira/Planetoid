@@ -77,7 +77,9 @@ public class MainMenu : MonoBehaviour
 
     private void InitializeWorldButtons()
     {
-        int worldReached = 5;   //read file
+        //Read from file
+        GameData data = SaveSystem.LoadGame();
+        int worldReached = data.worldsToUnlock;
 
         for (int i = 0; i < worldButtons.Length; i++)
         {
@@ -91,7 +93,9 @@ public class MainMenu : MonoBehaviour
 
     private void InitializeLevelButtons()
     {
-        int levelReached = 7;   //read file
+        //Read from file
+        GameData data = SaveSystem.LoadGame();
+        int levelReached = data.levelsToUnlock;
 
         for (int i = 0; i < levelButtons.Length; i++)
         {

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     {
         flameParticles = gameObject.transform.GetChild(1).gameObject;
 
+        InitializeColors();
+        
         isAlive = true;
         moveSpeed = 1.1f;
     }
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //--------------
-    //    EVENTS
+    //    METHODS
     //--------------
 
     public void PlayerDeath()
@@ -57,9 +59,13 @@ public class PlayerController : MonoBehaviour
         flameParticles.GetComponent<ParticleSystem>().Stop();
     }
 
-    //------------------
-    //  FLAME ROTATION
-    //------------------
+    private void InitializeColors()
+    {
+        gameObject.GetComponent<MeshRenderer>().material.color = new Color(255f, 0f, 0f, 0.275f);
+
+        ParticleSystem.MainModule settings = flameParticles.GetComponent<ParticleSystem>().main;
+        settings.startColor = new ParticleSystem.MinMaxGradient(new Color(255f, 0f, 0f, 1f));
+    }
 
     private void RotateFlame()
     {

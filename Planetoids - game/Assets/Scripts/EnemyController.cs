@@ -16,9 +16,12 @@ public class EnemyController : MonoBehaviour
     //Flame
     private GameObject flameParticles;
 
+    private bool canCollide;
+
     void Start()
     {
         moveSpeed = 0.8f;
+        canCollide = true;
 
         flameParticles = gameObject.transform.GetChild(0).gameObject;
 
@@ -53,8 +56,14 @@ public class EnemyController : MonoBehaviour
     //Enemy damages player
     private void OnCollisionEnter(Collision collision)
     {
+        if (!canCollide)
+        {
+            return;
+        }
+
         if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
+            canCollide = false;
             FindObjectOfType<LevelManager>().Lose();
         }
 
