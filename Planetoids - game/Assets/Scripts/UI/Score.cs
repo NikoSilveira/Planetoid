@@ -11,6 +11,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text scoreText;
+    public GameObject comboText;
     private int score;
 
     //Combo
@@ -45,6 +46,7 @@ public class Score : MonoBehaviour
     {
         if (isCombo)
         {
+            ComboAnim();
             scoreToAdd = scoreToAdd * comboMultiplier;
             comboMultiplier++;
             comboEnd = true;
@@ -52,6 +54,12 @@ public class Score : MonoBehaviour
         }
 
         score = score + scoreToAdd;
+    }
+
+    private void ComboAnim()
+    {
+        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + " °";
+        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1f);
     }
 
     public int GetScore()

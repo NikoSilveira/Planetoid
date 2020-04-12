@@ -32683,6 +32683,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Pause
       objectReference: {fileID: 0}
+    - target: {fileID: 1724023311468859746, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: startingTime
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1724023311661087329, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 1940814292}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2dc0d2c8677a3a43ba2eea4b131cc55, type: 3}
 --- !u!1 &1282727374 stripped
@@ -47913,6 +47923,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1927529930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1940814292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6968618788252917638, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282727373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1944271845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48583,17 +48599,17 @@ PrefabInstance:
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: timer
-      value: 25
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: initialAmount
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
@@ -48603,7 +48619,7 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[1]
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
