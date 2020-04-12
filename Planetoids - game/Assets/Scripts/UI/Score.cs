@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-/*
- * Script to handle score UI and logic
- * -Use setter and getter to interact with score
- */
-
 public class Score : MonoBehaviour
 {
     public Text scoreText;
@@ -29,6 +24,7 @@ public class Score : MonoBehaviour
 
     void Update()
     {
+        //Combo timer
         if(comboTimer > 0f)
         {
             comboTimer = comboTimer - 1 * Time.deltaTime;
@@ -46,7 +42,7 @@ public class Score : MonoBehaviour
     {
         if (isCombo)
         {
-            ComboAnim();
+            StartCoroutine(ComboAnim());
             scoreToAdd = scoreToAdd * comboMultiplier;
             comboMultiplier++;
             comboEnd = true;
@@ -56,10 +52,13 @@ public class Score : MonoBehaviour
         score = score + scoreToAdd;
     }
 
-    private void ComboAnim()
+    IEnumerator ComboAnim()
     {
-        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + " °";
-        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1f);
+        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "°";
+
+        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 1.5f);
     }
 
     public int GetScore()

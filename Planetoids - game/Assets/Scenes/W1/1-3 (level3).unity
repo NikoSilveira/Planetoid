@@ -15310,6 +15310,11 @@ PrefabInstance:
       propertyPath: startingTime
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1724023311661087329, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 1282727377}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2dc0d2c8677a3a43ba2eea4b131cc55, type: 3}
 --- !u!1 &1282727374 stripped
@@ -15327,6 +15332,12 @@ GameObject:
 --- !u!1 &1282727376 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1724023311225824044, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1282727373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1282727377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6968618788252917638, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
     type: 3}
   m_PrefabInstance: {fileID: 1282727373}
   m_PrefabAsset: {fileID: 0}
