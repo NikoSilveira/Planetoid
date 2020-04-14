@@ -4,9 +4,6 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-/*
- * Script for controlling pause menu and pause mechanics
- */
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
@@ -16,21 +13,16 @@ public class PauseMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Text muteText;
 
     private void Start()
     {
-        //Get initial volume values stores in playerprefs
-        float initialMusic = PlayerPrefs.GetFloat("musicVol", 0.7f);
-        float initialSFX = PlayerPrefs.GetFloat("sfxVol", 0.7f);
-
-        //Set sliders with playerprefs
-        musicSlider.SetValueWithoutNotify(initialMusic);
-        sfxSlider.SetValueWithoutNotify(initialSFX);
-
-        //Set volume
-        audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
-        audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
+        InitializeAudioSettings();
     }
+
+    //--------------
+    //  Pause Menu
+    //--------------
 
     public void Resume()
     {
@@ -56,6 +48,29 @@ public class PauseMenu : MonoBehaviour
     //  Settings Menu
     //-----------------
 
+    private void InitializeAudioSettings()
+    {
+        //Get initial volume values stores in playerprefs
+        float initialMusic = PlayerPrefs.GetFloat("musicVol", 0.7f);
+        float initialSFX = PlayerPrefs.GetFloat("sfxVol", 0.7f);
+
+        //Set sliders with playerprefs
+        musicSlider.SetValueWithoutNotify(initialMusic);
+        sfxSlider.SetValueWithoutNotify(initialSFX);
+
+        //Set volume
+        audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
+        audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
+
+        //Stored audio listner value (muting)
+        AudioListener.volume = PlayerPrefs.GetFloat("listenerVolume", 1f);
+
+        if (AudioListener.volume == 0f)
+        {
+            muteText.text = "Unmute";
+        }
+    }
+
     public void SetVolumeMusic(float volume)
     {
         audioMixer.SetFloat("musicVol", Mathf.Log10(volume) * 20);
@@ -70,7 +85,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Mute()
     {
-        //Feature for later
+        if (AudioListener.volume == 0f)
+        {
+            //Unmute
+            AudioListener.volume = 1f;
+            PlayerPrefs.SetFloat("listenerVolume", 1f);
+            muteText.text = "Mute";
+        }
+        else
+        {
+            //Mute
+            AudioListener.volume = 0f;
+            PlayerPrefs.SetFloat("listenerVolume", 0f);
+            muteText.text = "Unmute";
+        }
     }
 
 }

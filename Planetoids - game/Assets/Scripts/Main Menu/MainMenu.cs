@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
  * Script for handling of main menu functionalities
- * Playerprefs: musicVol and sfxVol used to control audio
+ * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting
  */
 public class MainMenu : MonoBehaviour
 {
@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Text muteText;
 
     private void Start()
     {
@@ -52,6 +53,14 @@ public class MainMenu : MonoBehaviour
         //Set volume
         audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
         audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
+
+        //Stored audio listner value (muting)
+        AudioListener.volume = PlayerPrefs.GetFloat("listenerVolume", 1f);
+
+        if(AudioListener.volume == 0f)
+        {
+            muteText.text = "Unmute";
+        }
     }
     
     public void SetVolumeMusic(float volume)
@@ -68,7 +77,20 @@ public class MainMenu : MonoBehaviour
 
     public void Mute()
     {
-        //Feature for later
+        if(AudioListener.volume == 0f)
+        {
+            //Unmute
+            AudioListener.volume = 1f;
+            PlayerPrefs.SetFloat("listenerVolume", 1f);
+            muteText.text = "Mute";
+        }
+        else
+        {
+            //Mute
+            AudioListener.volume = 0f;
+            PlayerPrefs.SetFloat("listenerVolume", 0f);
+            muteText.text = "Unmute";
+        }
     }
 
     //--------------------
