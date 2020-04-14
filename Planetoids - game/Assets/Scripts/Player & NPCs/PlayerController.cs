@@ -61,10 +61,13 @@ public class PlayerController : MonoBehaviour
 
     private void InitializeColors()
     {
-        gameObject.GetComponent<MeshRenderer>().material.color = new Color(255f, 0f, 0f, 0.275f);
+        //read from file
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        gameObject.GetComponent<MeshRenderer>().material.color = new Color(data.red, data.green, data.blue, 0.5f);
 
         ParticleSystem.MainModule settings = flameParticles.GetComponent<ParticleSystem>().main;
-        settings.startColor = new ParticleSystem.MinMaxGradient(new Color(255f, 0f, 0f, 1f));
+        settings.startColor = new ParticleSystem.MinMaxGradient(new Color(data.red, data.green, data.blue, 0.75f));
     }
 
     private void RotateFlame()

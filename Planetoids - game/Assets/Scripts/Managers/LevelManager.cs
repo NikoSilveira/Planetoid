@@ -128,7 +128,7 @@ public class LevelManager : MonoBehaviour
     }
 
     //Create document on awake (1st time)
-    public void InitializeSaveData()
+    private void InitializeSaveData()
     {
         if(SaveSystem.LoadGame() == null)
         {

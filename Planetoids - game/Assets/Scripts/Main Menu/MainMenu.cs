@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 /*
  * Script for handling of main menu functionalities
- * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting
+ * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting; custom for selected customization
  */
 public class MainMenu : MonoBehaviour
 {
-    //Level Selection
+    //Buttons
     public Button[] worldButtons;
     public Button[] levelButtons;
+    public Button[] customButtons;
 
     //Volume control
     public AudioMixer audioMixer;
@@ -20,10 +21,20 @@ public class MainMenu : MonoBehaviour
     public Slider sfxSlider;
     public Text muteText;
 
+    //Customization color
+    [HideInInspector]
+    public float red, green, blue;
+
+    private void Awake()
+    {
+        InitializePlayerData();
+    }
+
     private void Start()
     {
         InitializeWorldButtons();
         InitializeLevelButtons();
+        InitializeCustomButtons();
         InitializeAudioSettings();
     }
 
@@ -132,4 +143,64 @@ public class MainMenu : MonoBehaviour
     //------------------------
     //   Customization Menu
     //------------------------
+
+
+    private void InitializeCustomButtons()
+    {
+        //add file read - (get the number unlocked, add the parameter to gamedata, add default write, add unlockings)
+        int colorReached = 4;
+
+        for (int i = 0; i < customButtons.Length; i++)
+        {
+            if(i + 1 > colorReached)
+            {
+                customButtons[i].interactable = false;
+                LeanTween.alpha(customButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
+            }
+        }
+
+        //Set color of selected custom
+        int selectedCustom = PlayerPrefs.GetInt("custom", 1);
+        customButtons[selectedCustom - 1].GetComponent<Image>().color = new Color32(255,190,118,255);
+    }
+
+    private void InitializePlayerData()
+    {
+        if (SaveSystem.LoadPlayer() == null)
+        {
+            red = 0f;
+            green = 60f;
+            blue = 255f;
+
+            SaveSystem.SavePlayer(this);
+            PlayerPrefs.SetInt("custom", 1);
+        }
+    }
+
+    public void SetRed(float red)
+    {
+        this.red = red;
+    }
+
+    public void SetGreen(float green)
+    {
+        this.green = green;
+    }
+
+    public void SetBlue(float blue)
+    {
+        this.blue = blue;
+    }
+
+    //Set last in buttons (deselects, saves data, selects)
+    public void SaveColor(int buttonIndex)
+    {
+        customButtons[PlayerPrefs.GetInt("custom", 1) - 1].GetComponent<Image>().color = new Color32(199, 236, 238, 255);
+
+        SaveSystem.SavePlayer(this);    
+        PlayerPrefs.SetInt("custom",buttonIndex);
+
+        customButtons[buttonIndex - 1].GetComponent<Image>().color = new Color32(255, 190, 118, 255);
+    }
+    
 }
