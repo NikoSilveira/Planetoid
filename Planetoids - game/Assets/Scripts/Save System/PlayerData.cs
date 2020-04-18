@@ -1,17 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿[System.Serializable]
 
-[System.Serializable]
 public class PlayerData
 {
-    //Player color
-    public float red, green, blue;
+    public int customButtonIndex;
 
     public PlayerData(MainMenu mainMenu)
     {
-        red = mainMenu.red;
-        green = mainMenu.green;
-        blue = mainMenu.blue;
+        customButtonIndex = mainMenu.customButtonIndex;
     }
 }

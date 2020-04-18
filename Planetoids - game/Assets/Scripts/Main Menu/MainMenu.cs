@@ -22,8 +22,7 @@ public class MainMenu : MonoBehaviour
     public Text muteText;
 
     //Customization color
-    [HideInInspector]
-    public float red, green, blue;
+    [HideInInspector] public int customButtonIndex;
 
     private void Awake()
     {
@@ -148,7 +147,7 @@ public class MainMenu : MonoBehaviour
     private void InitializeCustomButtons()
     {
         //add file read - (get the number unlocked, add the parameter to gamedata, add default write, add unlockings)
-        int colorReached = 4;
+        int colorReached = 6;
 
         for (int i = 0; i < customButtons.Length; i++)
         {
@@ -159,48 +158,30 @@ public class MainMenu : MonoBehaviour
             }
         }
 
-        //Set color of selected custom
-        int selectedCustom = PlayerPrefs.GetInt("custom", 1);
-        customButtons[selectedCustom - 1].GetComponent<Image>().color = new Color32(255,190,118,255);
+        //Set color of selected custom on loadscene
+        PlayerData data = SaveSystem.LoadPlayer();
+        customButtons[data.customButtonIndex].GetComponent<Image>().color = new Color32(255,190,118,255);
     }
 
     private void InitializePlayerData()
     {
         if (SaveSystem.LoadPlayer() == null)
         {
-            red = 0f;
-            green = 60f;
-            blue = 255f;
-
+            customButtonIndex = 1;
             SaveSystem.SavePlayer(this);
-            PlayerPrefs.SetInt("custom", 1);
         }
     }
 
-    public void SetRed(float red)
+    public void SetColor(int buttonIndex)
     {
-        this.red = red;
-    }
+        //Deselect previous button
+        PlayerData data = SaveSystem.LoadPlayer();
+        customButtons[data.customButtonIndex].GetComponent<Image>().color = new Color32(199, 236, 238, 255);
 
-    public void SetGreen(float green)
-    {
-        this.green = green;
-    }
-
-    public void SetBlue(float blue)
-    {
-        this.blue = blue;
-    }
-
-    //Set last in buttons (deselects, saves data, selects)
-    public void SaveColor(int buttonIndex)
-    {
-        customButtons[PlayerPrefs.GetInt("custom", 1) - 1].GetComponent<Image>().color = new Color32(199, 236, 238, 255);
-
+        //Save new selection
+        customButtonIndex = buttonIndex;
         SaveSystem.SavePlayer(this);    
-        PlayerPrefs.SetInt("custom",buttonIndex);
-
-        customButtons[buttonIndex - 1].GetComponent<Image>().color = new Color32(255, 190, 118, 255);
+        customButtons[buttonIndex].GetComponent<Image>().color = new Color32(255, 190, 118, 255);
     }
     
 }
