@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
 
     private void Update()
     {
-        if (currentTime > 0)//revisar
+        if (currentTime > 0)
         {
             if (FindObjectOfType<LevelManager>().GetLevelIsActive())
             {
@@ -32,4 +32,8 @@ public class Timer : MonoBehaviour
         timerText.text = currentTime.ToString("0");
     }
 
+    public float GetCurrentTime()
+    {
+        return currentTime;
+    }
 }

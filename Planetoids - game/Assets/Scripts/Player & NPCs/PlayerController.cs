@@ -70,28 +70,22 @@ public class PlayerController : MonoBehaviour
         switch (customButtonIndex)
         {
             case 0:
-                red = 0f; green = 60f; blue = 255f;    //Blue
+                red = 0f; green = 62f; blue = 255f;    //Blue
                 break;
             case 1:
-                red = 150f; green = 0f; blue = 0f;     //Red
+                red = 210f; green = 12f; blue = 0f;    //Red
                 break;
             case 2:
-                red = 0f; green = 40f; blue = 0f;      //Green
+                red = 0f; green = 130f; blue = 18f;    //Green
                 break;
             case 3:
-                red = 128f; green = 0f; blue = 128f;   //Purple
+                red = 120f; green = 0f; blue = 205f;   //Purple
                 break;
             case 4:
-                red = 255f; green = 255f; blue = 0f;   //Yellow
+                red = 150f; green = 125f; blue = 0f;   //Yellow
                 break;
             case 5:
-                red = 255f; green = 255f; blue = 255f; //White
-                break;
-            case 6:
-                red = 255f; green = 165f; blue = 0f;   //Orange
-                break;
-            case 7:
-                red = 0f; green = 128f; blue = 128f;   //Teal
+                red = 180f; green = 75f; blue = 0f;    //Orange
                 break;
         }
 

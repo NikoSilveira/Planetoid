@@ -20,6 +20,10 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int levelsToUnlock;
     [HideInInspector] public int worldsToUnlock;
 
+    //Unlocking customizations
+    [HideInInspector] public int colorsToUnlock;
+
+
     private bool levelIsActive;
 
     private void Awake()
@@ -32,7 +36,9 @@ public class LevelManager : MonoBehaviour
         levelIsActive = true;
     }
 
-    //METHODS
+    //-----------
+    //  METHODS
+    //-----------
 
     public void Win()
     {
@@ -79,6 +85,10 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadMainMenu());
     }
 
+    //--------------------------
+    //  COMPLIEMENTARY METHODS
+    //--------------------------
+
     //Coroutine - load scene
     IEnumerator LoadMainMenu()
     {
@@ -101,31 +111,42 @@ public class LevelManager : MonoBehaviour
         return message[random];
     }
 
-    //Unlocking levels/worlds
+    //-------------
+    //  UNLOCKING
+    //-------------
+
     private void Unlock()
     {
         int numberOfScenes = SceneManager.sceneCountInBuildSettings;
         int nextLevel = SceneManager.GetActiveScene().buildIndex - 1;
         GameData data = SaveSystem.LoadGame();
 
+        worldsToUnlock = data.worldsToUnlock;
+        colorsToUnlock = data.colorsToUnlock;
+
+        //Unlock levels
         if (nextLevel > numberOfScenes) //Avoid overflow
         {
             return;
         }
-
-        levelsToUnlock = nextLevel;
-
-        if (unlocksWorld)
-        {
-            worldsToUnlock = data.worldsToUnlock + 1;
-        }
         else
         {
-            worldsToUnlock = data.worldsToUnlock;
+            levelsToUnlock = nextLevel;
+        }
+
+        //Unlock worlds/colors
+        if (unlocksWorld)
+        {
+            worldsToUnlock += 1;
+            colorsToUnlock += 1;
         }
 
         SaveSystem.SaveGame(this);
     }
+
+    //------------
+    //   OTHERS
+    //------------
 
     //Create document on awake (1st time)
     private void InitializeSaveData()
@@ -134,11 +155,9 @@ public class LevelManager : MonoBehaviour
         {
             levelsToUnlock = 1;
             worldsToUnlock = 1;
+            colorsToUnlock = 3;
+
             SaveSystem.SaveGame(this);
-        }
-        else
-        {
-            return;
         }
     }
 

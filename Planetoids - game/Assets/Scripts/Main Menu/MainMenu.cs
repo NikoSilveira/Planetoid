@@ -146,8 +146,8 @@ public class MainMenu : MonoBehaviour
 
     private void InitializeCustomButtons()
     {
-        //add file read - (get the number unlocked, add the parameter to gamedata, add default write, add unlockings)
-        int colorReached = 6;
+        GameData gameData = SaveSystem.LoadGame();
+        int colorReached = gameData.colorsToUnlock;
 
         for (int i = 0; i < customButtons.Length; i++)
         {
@@ -159,8 +159,8 @@ public class MainMenu : MonoBehaviour
         }
 
         //Set color of selected custom on loadscene
-        PlayerData data = SaveSystem.LoadPlayer();
-        customButtons[data.customButtonIndex].GetComponent<Image>().color = new Color32(255,190,118,255);
+        PlayerData playerData = SaveSystem.LoadPlayer();
+        customButtons[playerData.customButtonIndex].GetComponent<Image>().color = new Color32(255,190,118,255);
     }
 
     private void InitializePlayerData()
