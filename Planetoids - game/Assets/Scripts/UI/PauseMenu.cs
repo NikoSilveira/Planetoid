@@ -27,7 +27,6 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
-        AudioListener.volume = 1f;
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -35,7 +34,6 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        AudioListener.volume = 0.5f;
         Time.timeScale = 0f;
         GameIsPaused = true;
     }

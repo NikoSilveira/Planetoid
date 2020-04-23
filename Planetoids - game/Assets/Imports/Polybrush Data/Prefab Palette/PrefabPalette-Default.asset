@@ -194,7 +194,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1840016888200548, guid: 8954fed6c14284471bfce602998d3e5e,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 24.673914
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -227,7 +227,7 @@ MonoBehaviour:
     name: Fence Post
   - gameObject: {fileID: 145826, guid: 35d82b3ae8f9c4f42b6b11ccb42803cd, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -484,7 +484,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1000011652691772, guid: 23277ae3edb0d7d41b94cc383e349e95,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 72.02174
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -501,7 +501,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1000011998996884, guid: 2f2475e695505194996d6f3e2bce58b5,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 24.17391
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}

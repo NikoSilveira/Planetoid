@@ -121,6 +121,9 @@ public class MainMenu : MonoBehaviour
                 LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
         }
+
+        worldButtons[3].interactable = false;
+        LeanTween.alpha(worldButtons[3].GetComponent<RectTransform>(), 90f, 0.01f);
     }
 
     private void InitializeLevelButtons()
@@ -167,7 +170,7 @@ public class MainMenu : MonoBehaviour
     {
         if (SaveSystem.LoadPlayer() == null)
         {
-            customButtonIndex = 1;
+            customButtonIndex = 0;
             SaveSystem.SavePlayer(this);
         }
     }

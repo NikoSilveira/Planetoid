@@ -66,34 +66,35 @@ public class PlayerController : MonoBehaviour
         //Read from file
         PlayerData data = SaveSystem.LoadPlayer();
         int customButtonIndex = data.customButtonIndex;
+        Debug.Log(customButtonIndex);
 
         switch (customButtonIndex)
         {
             case 0:
-                red = 0f; green = 62f; blue = 255f;    //Blue
+                red = 0f; green = 0.24f; blue = 1f;     //Blue
                 break;
             case 1:
-                red = 210f; green = 12f; blue = 0f;    //Red
+                red = 0.82f; green = 0.05f; blue = 0f;  //Red
                 break;
             case 2:
-                red = 0f; green = 130f; blue = 18f;    //Green
+                red = 0f; green = 0.51f; blue = 0.07f;  //Green
                 break;
             case 3:
-                red = 120f; green = 0f; blue = 205f;   //Purple
+                red = 0.47f; green = 0f; blue = 0.8f;   //Purple
                 break;
             case 4:
-                red = 150f; green = 125f; blue = 0f;   //Yellow
+                red = 0.59f; green = 0.49f; blue = 0f;  //Yellow
                 break;
             case 5:
-                red = 180f; green = 75f; blue = 0f;    //Orange
+                red = 0.7f; green = 0.29f; blue = 0f;   //Orange
                 break;
         }
 
         //Assign colors
-        gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.5f);
+        gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.35f);
 
         ParticleSystem.MainModule settings = flameParticles.GetComponent<ParticleSystem>().main;
-        settings.startColor = new ParticleSystem.MinMaxGradient(new Color(red, green, blue, 0.75f));
+        settings.startColor = new ParticleSystem.MinMaxGradient(new Color(red, green, blue, 1f));
     }
 
     private void RotateFlame()
