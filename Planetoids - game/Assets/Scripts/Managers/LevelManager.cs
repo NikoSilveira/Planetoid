@@ -53,7 +53,7 @@ public class LevelManager : MonoBehaviour
         pauseButton.SetActive(false);
         Unlock();
 
-        StartCoroutine(LoadMainMenu());
+        StartCoroutine(LoadScene(0));
     }
 
     public void Lose()
@@ -68,7 +68,7 @@ public class LevelManager : MonoBehaviour
         defeat.SetActive(true);
         pauseButton.SetActive(false);
 
-        StartCoroutine(LoadMainMenu());
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 
     public void RunOutOfTime()
@@ -82,7 +82,7 @@ public class LevelManager : MonoBehaviour
         timeExpired.SetActive(true);
         pauseButton.SetActive(false);
 
-        StartCoroutine(LoadMainMenu());
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 
     //--------------------------
@@ -90,10 +90,10 @@ public class LevelManager : MonoBehaviour
     //--------------------------
 
     //Coroutine - load scene
-    IEnumerator LoadMainMenu()
+    IEnumerator LoadScene(int sceneIndex)
     {
         yield return new WaitForSeconds(1.5f);
-        FindObjectOfType<LevelLoader>().LoadTargetLevel(0);
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(sceneIndex);
     }
 
     //Random message for WIN
