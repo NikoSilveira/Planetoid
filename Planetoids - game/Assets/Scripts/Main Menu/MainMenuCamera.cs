@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenuCamera : MonoBehaviour
 {
 
-    private float rotateSpeed = 150f;    //Lower value - faster
+    private float rotateSpeed = 130f;    //Lower value - faster
 
     void Start()
     {

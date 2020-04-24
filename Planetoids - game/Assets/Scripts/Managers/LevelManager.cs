@@ -23,11 +23,11 @@ public class LevelManager : MonoBehaviour
     //Unlocking customizations
     [HideInInspector] public int colorsToUnlock;
 
-
     private bool levelIsActive;
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         InitializeSaveData();
     }
 
@@ -159,6 +159,15 @@ public class LevelManager : MonoBehaviour
 
             SaveSystem.SaveGame(this);
         }
+    }
+
+    public void ClearForDebug()
+    {
+        levelsToUnlock = 1;
+        worldsToUnlock = 1;
+        colorsToUnlock = 3;
+
+        SaveSystem.SaveGame(this);
     }
 
     public bool GetLevelIsActive()
