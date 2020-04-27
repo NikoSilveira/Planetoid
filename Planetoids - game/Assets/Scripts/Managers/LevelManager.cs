@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 30;
         InitializeSaveData();
     }
 
@@ -118,20 +118,21 @@ public class LevelManager : MonoBehaviour
     private void Unlock()
     {
         int numberOfScenes = SceneManager.sceneCountInBuildSettings;
-        int nextLevel = SceneManager.GetActiveScene().buildIndex - 1;
+        int nextLevel = SceneManager.GetActiveScene().buildIndex - 2;
         GameData data = SaveSystem.LoadGame();
 
         worldsToUnlock = data.worldsToUnlock;
         colorsToUnlock = data.colorsToUnlock;
+        levelsToUnlock = data.levelsToUnlock;
 
         //Unlock levels
-        if (nextLevel > numberOfScenes) //Avoid overflow
+        if (levelsToUnlock == (numberOfScenes - 2)) //Avoid overflow
         {
             return;
         }
-        else
+        else if(levelsToUnlock < nextLevel)
         {
-            levelsToUnlock = nextLevel;
+            levelsToUnlock += 1;
         }
 
         //Unlock worlds/colors
@@ -161,6 +162,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    //main menu debug button 1
     public void ClearForDebug()
     {
         levelsToUnlock = 1;
