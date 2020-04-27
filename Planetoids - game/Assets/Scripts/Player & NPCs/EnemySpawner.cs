@@ -14,13 +14,15 @@ public class EnemySpawner : MonoBehaviour
 
     private float timerAux;
     private GameObject[] spawnPoint;
+    private int numOfSpawnPoints;
 
     private void Start()
     {
         timerAux = timer;
+        numOfSpawnPoints = 5;   //Edit if num of spawn points changes
 
         //Spawn point initialization
-        spawnPoint = new GameObject[3];
+        spawnPoint = new GameObject[numOfSpawnPoints];
 
         for(int i=0; i<spawnPoint.Length; i++)
         {
@@ -62,7 +64,7 @@ public class EnemySpawner : MonoBehaviour
     {
         for (int i = 0; i < numToSpawn; i++)
         {
-            Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
+            Instantiate(prefab, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
         }
     }

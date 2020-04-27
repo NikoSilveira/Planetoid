@@ -11,11 +11,14 @@ public class TargetSpawner : MonoBehaviour
 
     private int counterAcum;
     private int spawnIndex;
-    
+    private int numOfSpawnPoints;
+
     void Start()
     {
         counterAcum = 0;
         spawnIndex = 0;
+
+        numOfSpawnPoints = 5;   //Edit if num of spawn points changes
 
         //Send target total to the counter
         int totalHordeSize = 0;
@@ -27,7 +30,7 @@ public class TargetSpawner : MonoBehaviour
         FindObjectOfType<Counter>().SetTargetCount(totalHordeSize);
 
         //Spawn point initialization
-        spawnPoint = new GameObject[3];
+        spawnPoint = new GameObject[numOfSpawnPoints];
 
         for(int i=0; i<spawnPoint.Length; i++)
         {
@@ -73,7 +76,7 @@ public class TargetSpawner : MonoBehaviour
     {
         for (int i = 0; i < numToSpawn; i++)
         {
-            Instantiate(prefab, spawnPoint[Random.Range(0, 3)].transform.position, Quaternion.identity);
+            Instantiate(prefab, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(0.5f);
         }
     }
