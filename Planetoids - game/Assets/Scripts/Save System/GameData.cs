@@ -9,6 +9,8 @@ public class GameData
     public int levelsToUnlock;
     public int colorsToUnlock;
 
+    //public int[] highScore;
+
     public GameData(LevelManager levelManager)
     {
         worldsToUnlock = levelManager.worldsToUnlock;

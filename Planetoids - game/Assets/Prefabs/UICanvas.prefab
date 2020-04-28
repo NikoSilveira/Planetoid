@@ -388,7 +388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingTime: 180
   timerText: {fileID: 1724023311468859747}
-  framerate: {fileID: 1602635469874223781}
 --- !u!1 &1724023311504115500
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -68}
+  m_AnchoredPosition: {x: 100, y: -50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1724023311661087328
@@ -955,6 +954,7 @@ GameObject:
   - component: {fileID: 777641669797169767}
   - component: {fileID: 6562095956568833224}
   - component: {fileID: 1602635469874223781}
+  - component: {fileID: 5738303235877728260}
   m_Layer: 5
   m_Name: Framerate
   m_TagString: Untagged
@@ -1021,6 +1021,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &5738303235877728260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5027029694192155823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d51657ffe8cbf946b6efa125ebd3424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framerate: {fileID: 0}
 --- !u!1 &6968618788252917638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -25}
+  m_AnchoredPosition: {x: 100, y: -15}
   m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9057238753896026026

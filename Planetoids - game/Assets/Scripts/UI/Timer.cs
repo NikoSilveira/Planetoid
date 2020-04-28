@@ -9,7 +9,6 @@ public class Timer : MonoBehaviour
 
     private float currentTime = 0f;
     public Text timerText;
-    public Text framerate;
 
     private void Start()
     {
@@ -31,7 +30,6 @@ public class Timer : MonoBehaviour
         }
         
         timerText.text = currentTime.ToString("0");
-        framerate.text = (1.0f / Time.deltaTime).ToString("0");
     }
 
     public float GetCurrentTime()

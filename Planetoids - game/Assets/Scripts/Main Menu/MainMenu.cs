@@ -175,7 +175,7 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void SetColor(int buttonIndex)
+    public void SetColor(int buttonIndex)   //start from 0
     {
         //Deselect previous button
         PlayerData data = SaveSystem.LoadPlayer();
