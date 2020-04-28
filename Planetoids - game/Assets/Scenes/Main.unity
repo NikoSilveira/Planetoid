@@ -10065,6 +10065,19 @@ MonoBehaviour:
   - {fileID: 595966668}
   - {fileID: 2010252271}
   - {fileID: 1203980730}
+  highScoreText:
+  - {fileID: 2107795211}
+  - {fileID: 1592242469}
+  - {fileID: 943980977}
+  - {fileID: 141183537}
+  - {fileID: 2137363488}
+  - {fileID: 185743729}
+  - {fileID: 47038881}
+  - {fileID: 1696120406}
+  - {fileID: 817900454}
+  - {fileID: 211924189}
+  - {fileID: 1293400245}
+  - {fileID: 1946515226}
   audioMixer: {fileID: 24100000, guid: 7ef883b108e2bb442b5ba3fb66340df5, type: 2}
   musicSlider: {fileID: 404412183}
   sfxSlider: {fileID: 947310548}

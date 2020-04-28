@@ -15,6 +15,6 @@ public class HighScore : MonoBehaviour
         int highScore = data.highScore[currentLevel - 1];
 
         highScoreText = gameObject.GetComponent<Text>();
-        highScoreText.text = highScore.ToString();
+        highScoreText.text = "High Score: " + highScore.ToString();
     }
 }

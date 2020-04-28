@@ -15,6 +15,9 @@ public class MainMenu : MonoBehaviour
     public Button[] levelButtons;
     public Button[] customButtons;
 
+    //High Score
+    public Text[] highScoreText;
+
     //Volume control
     public AudioMixer audioMixer;
     public Slider musicSlider;
@@ -122,6 +125,7 @@ public class MainMenu : MonoBehaviour
             }
         }
 
+        //Delete later
         worldButtons[3].interactable = false;
         LeanTween.alpha(worldButtons[3].GetComponent<RectTransform>(), 90f, 0.01f);
     }
@@ -139,6 +143,7 @@ public class MainMenu : MonoBehaviour
                 levelButtons[i].interactable = false;
                 LeanTween.alpha(levelButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
+            highScoreText[i].GetComponent<Text>().text = "HS: " + data.highScore[i].ToString();
         }
     }
 
