@@ -20566,6 +20566,16 @@ PrefabInstance:
       propertyPath: unlocksWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
+      propertyPath: currentLevel
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
+      propertyPath: currentWorld
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a3938ec5ff2c7544a3aa166209c6bca, type: 3}
 --- !u!1001 &2143863084

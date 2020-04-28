@@ -16,11 +16,13 @@ public class LevelManager : MonoBehaviour
     public GameObject pauseButton;
 
     //Unlocking levels
+    [SerializeField] private int currentLevel;
+    [SerializeField] private int currentWorld;
     [SerializeField] private bool unlocksWorld;
+
+    //Save system
     [HideInInspector] public int levelsToUnlock;
     [HideInInspector] public int worldsToUnlock;
-
-    //Unlocking customizations
     [HideInInspector] public int colorsToUnlock;
 
     private bool levelIsActive;
@@ -117,27 +119,26 @@ public class LevelManager : MonoBehaviour
 
     private void Unlock()
     {
-        int numberOfScenes = SceneManager.sceneCountInBuildSettings;
-        int nextLevel = SceneManager.GetActiveScene().buildIndex - 2;
         GameData data = SaveSystem.LoadGame();
 
         worldsToUnlock = data.worldsToUnlock;
         colorsToUnlock = data.colorsToUnlock;
         levelsToUnlock = data.levelsToUnlock;
 
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+
         //Unlock levels
-        if (levelsToUnlock == (numberOfScenes - 2)) //Avoid overflow
+        if (currentLevel == levelsToUnlock && levelsToUnlock < numberOfLevels)
         {
-            return;
-        }
-        else if(levelsToUnlock < nextLevel)
-        {
+            //if current level is equal to last unlocked level and
+            //the unlocked levels are below total available -> unlock
             levelsToUnlock += 1;
         }
 
         //Unlock worlds/colors
-        if (unlocksWorld)
+        if (unlocksWorld && currentWorld == worldsToUnlock)
         {
+            //if bool is true and currentWorld is equal to last unlocked world
             worldsToUnlock += 1;
             colorsToUnlock += 1;
         }
