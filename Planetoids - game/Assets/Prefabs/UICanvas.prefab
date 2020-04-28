@@ -1033,7 +1033,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d51657ffe8cbf946b6efa125ebd3424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  framerate: {fileID: 0}
 --- !u!1 &6968618788252917638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1122,6 +1121,7 @@ GameObject:
   - component: {fileID: 3232636466165513731}
   - component: {fileID: 9057238753896026026}
   - component: {fileID: 200214630214769816}
+  - component: {fileID: 4483778909763761260}
   m_Layer: 5
   m_Name: HighScore
   m_TagString: Untagged
@@ -1188,6 +1188,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'High Score: 320'
+--- !u!114 &4483778909763761260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106757990806429434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d80f83313e9b3d146a378ed0fddd6fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1724023310670533507
 PrefabInstance:
   m_ObjectHideFlags: 0

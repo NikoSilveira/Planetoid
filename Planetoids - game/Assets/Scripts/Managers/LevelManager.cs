@@ -24,6 +24,8 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int levelsToUnlock;
     [HideInInspector] public int worldsToUnlock;
     [HideInInspector] public int colorsToUnlock;
+    //[HideInInspector] public int[] highScore;
+    [HideInInspector] public List<int> highScore = new List<int>();
 
     private bool levelIsActive;
 
@@ -50,10 +52,14 @@ public class LevelManager : MonoBehaviour
         }
 
         levelIsActive = false;
+
         victory.SetActive(true);
         victory.GetComponent<Text>().text = RandomMessage();
         pauseButton.SetActive(false);
+
+        SetHighScore();
         Unlock();
+        SaveSystem.SaveGame(this);
 
         StartCoroutine(LoadScene(0));
     }
@@ -142,40 +148,81 @@ public class LevelManager : MonoBehaviour
             worldsToUnlock += 1;
             colorsToUnlock += 1;
         }
-
-        SaveSystem.SaveGame(this);
     }
 
-    //------------
-    //   OTHERS
-    //------------
+    //--------------
+    //  HIGH SCORE
+    //--------------
+
+    private void SetHighScore()
+    {
+        GameData data = SaveSystem.LoadGame();
+        highScore = data.highScore;
+
+        int localHighScore = highScore[currentLevel - 1];
+        int localScore = FindObjectOfType<Score>().GetScore();
+
+        if (localScore > localHighScore)
+        {
+            highScore[currentLevel - 1] = localScore;
+        }
+    }
+
+    //-----------------
+    //   SAVE SYSTEM
+    //-----------------
 
     //Create document on awake (1st time)
     private void InitializeSaveData()
     {
         if(SaveSystem.LoadGame() == null)
         {
+            //Unlockables
             levelsToUnlock = 1;
             worldsToUnlock = 1;
             colorsToUnlock = 3;
+
+            //High Score
+            int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+            for (int i = 0; i < numberOfLevels; i++)
+            {
+                highScore.Add(0);
+            }
 
             SaveSystem.SaveGame(this);
         }
     }
 
-    //main menu debug button 1
+    //Debugging - Reset document
     public void ClearForDebug()
     {
+        //Unlockables
         levelsToUnlock = 1;
         worldsToUnlock = 1;
         colorsToUnlock = 3;
+        
+        /*//High Score
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+        for (int i = 0; i < numberOfLevels; i++)
+        {
+            highScore.Add(0);
+        }*/
 
         SaveSystem.SaveGame(this);
     }
 
+    //-------------
+    //   GETTERS
+    //-------------
+
     public bool GetLevelIsActive()
     {
         return levelIsActive;
+    }
+
+    public int GetCurrentLevel()
+    {
+        return currentLevel;
     }
 }
 

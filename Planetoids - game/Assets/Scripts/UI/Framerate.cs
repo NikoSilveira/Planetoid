@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Framerate : MonoBehaviour
 {
-    public Text framerate;
+    private Text framerate;
 
     void Start()
     {
