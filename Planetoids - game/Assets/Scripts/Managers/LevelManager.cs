@@ -201,12 +201,12 @@ public class LevelManager : MonoBehaviour
         worldsToUnlock = 1;
         colorsToUnlock = 3;
         
-        /*//High Score
+        //High Score
         int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
         for (int i = 0; i < numberOfLevels; i++)
         {
             highScore.Add(0);
-        }*/
+        }
 
         SaveSystem.SaveGame(this);
     }
