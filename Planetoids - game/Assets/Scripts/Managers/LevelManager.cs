@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public GameObject defeat;
     public GameObject timeExpired;
     public GameObject pauseButton;
+    public GameObject unlockedCustom;
 
     //Unlocking levels
     [SerializeField] private int currentLevel;
@@ -24,7 +25,6 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int levelsToUnlock;
     [HideInInspector] public int worldsToUnlock;
     [HideInInspector] public int colorsToUnlock;
-    //[HideInInspector] public int[] highScore;
     [HideInInspector] public List<int> highScore = new List<int>();
 
     private bool levelIsActive;
@@ -100,7 +100,7 @@ public class LevelManager : MonoBehaviour
     //Coroutine - load scene
     IEnumerator LoadScene(int sceneIndex)
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(3f);
         FindObjectOfType<LevelLoader>().LoadTargetLevel(sceneIndex);
     }
 
@@ -136,17 +136,18 @@ public class LevelManager : MonoBehaviour
         //Unlock levels
         if (currentLevel == levelsToUnlock && levelsToUnlock < numberOfLevels)
         {
-            //if current level is equal to last unlocked level and
-            //the unlocked levels are below total available -> unlock
             levelsToUnlock += 1;
         }
 
         //Unlock worlds/colors
         if (unlocksWorld && currentWorld == worldsToUnlock)
         {
-            //if bool is true and currentWorld is equal to last unlocked world
             worldsToUnlock += 1;
             colorsToUnlock += 1;
+
+            //Text animation
+            unlockedCustom.SetActive(true);
+            LeanTween.alphaText(unlockedCustom.GetComponent<RectTransform>(), 1f, 1.5f);
         }
     }
 
@@ -165,6 +166,7 @@ public class LevelManager : MonoBehaviour
         if (localScore > localHighScore)
         {
             highScore[currentLevel - 1] = localScore;
+            FindObjectOfType<HighScore>().SetHighScore(localScore);
         }
     }
 

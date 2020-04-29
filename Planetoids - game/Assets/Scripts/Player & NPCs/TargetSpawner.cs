@@ -77,7 +77,7 @@ public class TargetSpawner : MonoBehaviour
         for (int i = 0; i < numToSpawn; i++)
         {
             Instantiate(prefab, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(2f);
         }
     }
 

@@ -46,7 +46,7 @@ public class Score : MonoBehaviour
             scoreToAdd = scoreToAdd * comboMultiplier;
             comboMultiplier++;
             comboEnd = true;
-            comboTimer = 10f;   //Combo time limit
+            comboTimer = 6f;   //Combo time limit
         }
 
         score = score + scoreToAdd;
@@ -54,11 +54,11 @@ public class Score : MonoBehaviour
 
     IEnumerator ComboAnim()
     {
-        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "°";
+        comboText.GetComponent<Text>().text = "x" + comboMultiplier.ToString();
 
-        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1.5f);
-        yield return new WaitForSeconds(1.5f);
-        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 1.5f);
+        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1f);
+        yield return new WaitForSeconds(5f);
+        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 1f);
     }
 
     public int GetScore()

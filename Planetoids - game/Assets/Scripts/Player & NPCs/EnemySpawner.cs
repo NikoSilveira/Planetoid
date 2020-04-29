@@ -65,7 +65,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < numToSpawn; i++)
         {
             Instantiate(prefab, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
