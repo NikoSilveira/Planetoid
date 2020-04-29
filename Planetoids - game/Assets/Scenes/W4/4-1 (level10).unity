@@ -4235,6 +4235,11 @@ PrefabInstance:
       propertyPath: currentWorld
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
+      propertyPath: unlockedCustom
+      value: 
+      objectReference: {fileID: 1724023311166976202}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a3938ec5ff2c7544a3aa166209c6bca, type: 3}
 --- !u!1001 &970848839686598930
@@ -4485,6 +4490,12 @@ GameObject:
 --- !u!1 &1724023311166976201 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1724023311225824044, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+    type: 3}
+  m_PrefabInstance: {fileID: 1724023311166976198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1724023311166976202 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1847973910994591342, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
     type: 3}
   m_PrefabInstance: {fileID: 1724023311166976198}
   m_PrefabAsset: {fileID: 0}

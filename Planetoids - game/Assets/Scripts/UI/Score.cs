@@ -44,6 +44,7 @@ public class Score : MonoBehaviour
         {
             StartCoroutine(ComboAnim());
             scoreToAdd = scoreToAdd * comboMultiplier;
+            FindObjectOfType<AudioManager>().Play("combo"+comboMultiplier);
             comboMultiplier++;
             comboEnd = true;
             comboTimer = 6f;   //Combo time limit
@@ -54,7 +55,7 @@ public class Score : MonoBehaviour
 
     IEnumerator ComboAnim()
     {
-        comboText.GetComponent<Text>().text = "x" + comboMultiplier.ToString();
+        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "X";
 
         LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1f);
         yield return new WaitForSeconds(5f);

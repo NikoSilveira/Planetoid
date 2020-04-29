@@ -46,8 +46,73 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 0}
-    mixerGroup: {fileID: 0}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
     volume: 0.5
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - name: combo1
+    clip: {fileID: 8300000, guid: 8f6a779dbba720744a44528699e6c3be, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo2
+    clip: {fileID: 8300000, guid: 904b2c1c4617a244b9b21923beb0b6a0, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo3
+    clip: {fileID: 8300000, guid: 5e89539580dbba44392c1b7f40b8b159, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo4
+    clip: {fileID: 8300000, guid: 6fafd277d34191b45b446ae76a36b01e, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo5
+    clip: {fileID: 8300000, guid: 006c99c00f8cb1d41a5bd0a3412d406b, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo6
+    clip: {fileID: 8300000, guid: 8eac771cfb6644647811684cb6c5cf62, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo7
+    clip: {fileID: 8300000, guid: ada69e60c504d5941922b4821c1e69d6, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: combo8
+    clip: {fileID: 8300000, guid: ba62e3b80183401469f4d17546bcbd14, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
