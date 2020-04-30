@@ -192,4 +192,12 @@ public class MainMenu : MonoBehaviour
         customButtons[buttonIndex].GetComponent<Image>().color = new Color32(255, 190, 118, 255);
     }
     
+    //--------------
+    //    AUDIO
+    //--------------
+
+    public void ButtonSFX()
+    {
+        FindObjectOfType<AudioManager>().Play("Button");
+    }
 }

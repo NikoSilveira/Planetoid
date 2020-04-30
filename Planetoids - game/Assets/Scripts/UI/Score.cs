@@ -12,13 +12,13 @@ public class Score : MonoBehaviour
     //Combo
     private int comboMultiplier;
     private float comboTimer;
-    private bool comboEnd;
+    private bool comboActive;
 
     private void Start()
     {
         comboMultiplier = 1;
         comboTimer = 0f;
-        comboEnd = false;
+        comboActive = false;
         score = 0;
     }
 
@@ -29,10 +29,11 @@ public class Score : MonoBehaviour
         {
             comboTimer = comboTimer - 1 * Time.deltaTime;
         }
-        else if(comboEnd)
+        else if(comboActive)
         {
             comboMultiplier = 1;
-            comboEnd = false;
+            comboActive = false;
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 0.5f); //fade out
         }
 
         scoreText.text = score.ToString();
@@ -42,24 +43,22 @@ public class Score : MonoBehaviour
     {
         if (isCombo)
         {
-            StartCoroutine(ComboAnim());
+            //Animation and SFX
+            comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "X";
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 3f).setLoopPingPong(1);   //fade in
+            FindObjectOfType<AudioManager>().Play("combo" + comboMultiplier);
+
             scoreToAdd = scoreToAdd * comboMultiplier;
-            FindObjectOfType<AudioManager>().Play("combo"+comboMultiplier);
-            comboMultiplier++;
-            comboEnd = true;
-            comboTimer = 6f;   //Combo time limit
+            comboActive = true;
+            comboTimer = 6f;        //Combo time limit
+
+            if (comboMultiplier < 8)
+            {
+                comboMultiplier++;
+            }
         }
 
         score = score + scoreToAdd;
-    }
-
-    IEnumerator ComboAnim()
-    {
-        comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "X";
-
-        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 1f);
-        yield return new WaitForSeconds(5f);
-        LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 1f);
     }
 
     public int GetScore()

@@ -20738,7 +20738,7 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
@@ -20753,6 +20753,16 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[2]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[3]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[4]
       value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -20882,7 +20892,7 @@ PrefabInstance:
     - target: {fileID: 1724023311468859746, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: startingTime
-      value: 220
+      value: 280
       objectReference: {fileID: 0}
     - target: {fileID: 1724023311661087329, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}

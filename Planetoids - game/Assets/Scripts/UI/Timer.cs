@@ -28,12 +28,27 @@ public class Timer : MonoBehaviour
         {
             FindObjectOfType<LevelManager>().RunOutOfTime();
         }
-        
+
+        TimerSFX();
         timerText.text = currentTime.ToString("0");
     }
 
     public float GetCurrentTime()
     {
         return currentTime;
+    }
+
+    //Running out - SFX
+    private void TimerSFX()
+    {
+        float[] soundInstant = {50f,10f,5f,4f,3f,2f,1f};
+
+        for (int i = 0; i < soundInstant.Length; i++)
+        {
+            if(currentTime < soundInstant[i] && currentTime > soundInstant[i] - 0.05f)
+            {
+                FindObjectOfType<AudioManager>().Play("Time");
+            }
+        }
     }
 }
