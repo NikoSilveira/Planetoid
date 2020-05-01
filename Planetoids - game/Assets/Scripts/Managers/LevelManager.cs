@@ -76,6 +76,7 @@ public class LevelManager : MonoBehaviour
         defeat.SetActive(true);
         pauseButton.SetActive(false);
 
+        FindObjectOfType<AudioManager>().Play("Lose");
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 
@@ -90,6 +91,7 @@ public class LevelManager : MonoBehaviour
         timeExpired.SetActive(true);
         pauseButton.SetActive(false);
 
+        FindObjectOfType<AudioManager>().Play("Lose");
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 

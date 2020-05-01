@@ -45,7 +45,7 @@ public class Timer : MonoBehaviour
 
         for (int i = 0; i < soundInstant.Length; i++)
         {
-            if(currentTime < soundInstant[i] && currentTime > soundInstant[i] - 0.05f)
+            if(currentTime > soundInstant[i] && currentTime < soundInstant[i] + 0.05f)
             {
                 FindObjectOfType<AudioManager>().Play("Time");
             }

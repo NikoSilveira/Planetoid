@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 /*
  * Script for handling of main menu functionalities
- * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting; custom for selected customization
+ * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting; custom for selected customization;
+ * joystickSide for UI joystick side
  */
 public class MainMenu : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class MainMenu : MonoBehaviour
     public Slider sfxSlider;
     public Text muteText;
 
+    //Joystick
+    public Text joystickText;
+
     //Customization color
     [HideInInspector] public int customButtonIndex;
 
@@ -38,6 +42,7 @@ public class MainMenu : MonoBehaviour
         InitializeLevelButtons();
         InitializeCustomButtons();
         InitializeAudioSettings();
+        InitializeJoystickSettings();
     }
 
     //-------------------
@@ -53,6 +58,7 @@ public class MainMenu : MonoBehaviour
     //   Settings Menu
     //--------------------
 
+    //Audio------
     private void InitializeAudioSettings()
     {
         //Get initial volume values stores in playerprefs
@@ -103,6 +109,33 @@ public class MainMenu : MonoBehaviour
             AudioListener.volume = 0f;
             PlayerPrefs.SetFloat("listenerVolume", 0f);
             muteText.text = "Unmute";
+        }
+    }
+
+    //Joystick------
+    private void InitializeJoystickSettings()
+    {
+        int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
+
+        if(sideValue == 1)
+        {
+            joystickText.GetComponent<Text>().text = "Joystick: L";
+        }
+    }
+
+    public void ChangeJoystickSide()
+    {
+        int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
+
+        if (sideValue == 0)         //Move left
+        {
+            PlayerPrefs.SetInt("JoystickSide", 1);
+            joystickText.GetComponent<Text>().text = "Joystick: L";
+        }
+        else if(sideValue == 1)     //Move right
+        {
+            PlayerPrefs.SetInt("JoystickSide", 0);
+            joystickText.GetComponent<Text>().text = "Joystick: R";
         }
     }
 

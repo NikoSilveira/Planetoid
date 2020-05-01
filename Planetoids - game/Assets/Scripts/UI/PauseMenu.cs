@@ -15,9 +15,13 @@ public class PauseMenu : MonoBehaviour
     public Slider sfxSlider;
     public Text muteText;
 
+    //Joystick side
+    public Text joystickText;
+
     private void Start()
     {
         InitializeAudioSettings();
+        InitializeJoystick();
     }
 
     //--------------
@@ -48,6 +52,7 @@ public class PauseMenu : MonoBehaviour
     //  Settings Menu
     //-----------------
 
+    //Audio------
     private void InitializeAudioSettings()
     {
         //Get initial volume values stores in playerprefs
@@ -98,6 +103,40 @@ public class PauseMenu : MonoBehaviour
             AudioListener.volume = 0f;
             PlayerPrefs.SetFloat("listenerVolume", 0f);
             muteText.text = "Unmute";
+        }
+    }
+
+    //Joystick------
+    public void ChangeJoystickSide()
+    {
+        //0-Right, 1-Left
+        int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
+
+        if (sideValue == 0)         //Move left
+        {
+            PlayerPrefs.SetInt("JoystickSide", 1);
+            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -110, 0);
+            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(335, 0, 0);
+            joystickText.GetComponent<Text>().text = "Joystick: L";
+        }
+        else if (sideValue == 1)    //Move right
+        {
+            PlayerPrefs.SetInt("JoystickSide", 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(285, -110, 0);
+            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(-335, 0, 0);
+            joystickText.GetComponent<Text>().text = "Joystick: R";
+        }
+    }
+
+    private void InitializeJoystick()
+    {
+        if (PlayerPrefs.GetInt("JoystickSide", 0) == 1)
+        {
+            //Initialize on left
+            PlayerPrefs.SetInt("JoystickSide", 1);
+            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -110, 0);
+            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(335, 0, 0);
+            joystickText.GetComponent<Text>().text = "Joystick: L";
         }
     }
 
