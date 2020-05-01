@@ -8779,7 +8779,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2
   m_IsActive: 1
 --- !u!135 &1082691558
 SphereCollider:
@@ -22932,32 +22932,32 @@ PrefabInstance:
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: timer
-      value: 26
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: initialAmount
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[0]
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[1]
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[2]
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
@@ -23091,7 +23091,7 @@ PrefabInstance:
     - target: {fileID: 1724023311468859746, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: startingTime
-      value: 260
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 1724023311661087329, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}

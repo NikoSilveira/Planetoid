@@ -20,7 +20,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        moveSpeed = 0.8f;
+        moveSpeed = 0.9f;
         canCollide = true;
 
         flameParticles = gameObject.transform.GetChild(0).gameObject;

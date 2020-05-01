@@ -20,11 +20,10 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         flameParticles = gameObject.transform.GetChild(1).gameObject;
-
         InitializeColors();
         
         isAlive = true;
-        moveSpeed = 1.1f;
+        moveSpeed = 1.15f;
     }
 
     void Update()
