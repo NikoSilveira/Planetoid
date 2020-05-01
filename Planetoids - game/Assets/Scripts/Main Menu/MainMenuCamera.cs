@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class MainMenuCamera : MonoBehaviour
 {
+    [SerializeField] private Material[] skybox;
 
-    private float rotateSpeed = 130f;    //Lower value - faster
+    private float rotateTime = 135f;    //Lower value - faster
 
     void Start()
     {
-        LeanTween.rotateAround(gameObject, Vector3.up, 360, rotateSpeed).setLoopClamp();
+        RenderSettings.skybox = skybox[Random.Range(0,3)];
+        LeanTween.rotateAround(gameObject, Vector3.up, 360, rotateTime).setLoopClamp();
     }
 }
