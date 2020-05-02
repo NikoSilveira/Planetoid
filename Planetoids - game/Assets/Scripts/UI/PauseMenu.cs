@@ -115,14 +115,14 @@ public class PauseMenu : MonoBehaviour
         if (sideValue == 0)         //Move left
         {
             PlayerPrefs.SetInt("JoystickSide", 1);
-            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -110, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -140, 0);
             FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(335, 0, 0);
             joystickText.GetComponent<Text>().text = "Joystick: L";
         }
         else if (sideValue == 1)    //Move right
         {
             PlayerPrefs.SetInt("JoystickSide", 0);
-            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(285, -110, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(285, -140, 0);
             FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(-335, 0, 0);
             joystickText.GetComponent<Text>().text = "Joystick: R";
         }

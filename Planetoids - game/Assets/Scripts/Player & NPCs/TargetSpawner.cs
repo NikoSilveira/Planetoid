@@ -52,8 +52,8 @@ public class TargetSpawner : MonoBehaviour
 
     private void AutoSpawn()
     {
-        //Spawn hordes as game progresses (if all spawned have been eaten and there is no risk of overflow)
-        if (FindObjectOfType<Counter>().GetCounter() == (hordeSize[spawnIndex] + counterAcum) && (spawnIndex + 1) < hordeSize.Length)
+        //Spawn hordes as game progresses (if all spawned have been eaten (except 1) and there is no risk of overflow)
+        if (FindObjectOfType<Counter>().GetCounter() == (hordeSize[spawnIndex] + counterAcum - 1) && (spawnIndex + 1) < hordeSize.Length)
         {
             counterAcum += hordeSize[spawnIndex];
             spawnIndex++;

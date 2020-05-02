@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
         InitializeColors();
         
         isAlive = true;
-        moveSpeed = 1.15f;
+        moveSpeed = 1.25f;
     }
 
     void Update()
