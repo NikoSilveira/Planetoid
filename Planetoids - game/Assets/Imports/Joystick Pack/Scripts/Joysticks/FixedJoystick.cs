@@ -8,8 +8,7 @@ public class FixedJoystick : Joystick
     private float joystickOffset = 104f;
     private float timerOffset = 445;
 
-    RectTransform joystick = FindObjectOfType<Joystick>().GetComponent<RectTransform>();
-    RectTransform timer = FindObjectOfType<Timer>().GetComponent<RectTransform>();
+    
 
     //-------------
     //   METHODS
@@ -18,6 +17,9 @@ public class FixedJoystick : Joystick
     public void ChangeJoystickSide(Text joystickText)
     {
         int sideValue = PlayerPrefs.GetInt("JoystickSide", 0); //0-Right, 1-Left
+
+        RectTransform joystick = FindObjectOfType<Joystick>().GetComponent<RectTransform>();
+        RectTransform timer = FindObjectOfType<Timer>().GetComponent<RectTransform>();
 
         if (sideValue == 0)         //Move to the left
         {
@@ -43,6 +45,9 @@ public class FixedJoystick : Joystick
 
     public void InitializeJoystick(Text joystickText)
     {
+        RectTransform joystick = FindObjectOfType<Joystick>().GetComponent<RectTransform>();
+        RectTransform timer = FindObjectOfType<Timer>().GetComponent<RectTransform>();
+
         //Initialize on left
         if (PlayerPrefs.GetInt("JoystickSide", 0) == 1)
         {

@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     //-----------------
 
     //Audio------
+
     private void InitializeAudioSettings()
     {
         //Get initial volume values stores in playerprefs
@@ -107,15 +108,10 @@ public class PauseMenu : MonoBehaviour
     }
 
     //Joystick------
+
     public void ChangeJoystickSide()
     {
         FindObjectOfType<FixedJoystick>().ChangeJoystickSide(joystickText);
-        
-        /*if(joystickText.text == "Joystick: L")
-            joystickText.text = "Joystick: R";
-        else
-            joystickText.text = "Joystick: L";*/
-        
     }
 
     private void InitializeJoystick()
