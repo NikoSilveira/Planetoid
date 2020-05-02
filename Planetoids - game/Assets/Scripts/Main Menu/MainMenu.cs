@@ -153,8 +153,8 @@ public class MainMenu : MonoBehaviour
         {
             if (i + 1 > worldReached)
             {
-                //worldButtons[i].interactable = false;
-                //LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
+                worldButtons[i].interactable = false;
+                LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
         }
 
@@ -173,8 +173,8 @@ public class MainMenu : MonoBehaviour
         {
             if (i + 1 > levelReached)
             {
-                //levelButtons[i].interactable = false;
-                //LeanTween.alpha(levelButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
+                levelButtons[i].interactable = false;
+                LeanTween.alpha(levelButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
             highScoreText[i].GetComponent<Text>().text = "HS: " + data.highScore[i].ToString();
         }
@@ -233,4 +233,5 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Button");
     }
+
 }

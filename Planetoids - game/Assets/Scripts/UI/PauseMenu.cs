@@ -112,18 +112,37 @@ public class PauseMenu : MonoBehaviour
         //0-Right, 1-Left
         int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
 
+        Joystick joystick = FindObjectOfType<Joystick>();
+        Timer timer = FindObjectOfType<Timer>();
+
         if (sideValue == 0)         //Move left
         {
             PlayerPrefs.SetInt("JoystickSide", 1);
-            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -140, 0);
-            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(335, 0, 0);
+
+            
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().transform.position = new Vector2(100, 100);
+
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().transform.localPosition = new Vector2(335, 0);
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().anchorMin = new Vector2(0, 0.5f);
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().anchorMax = new Vector2(0, 0.5f);
+
             joystickText.GetComponent<Text>().text = "Joystick: L";
         }
         else if (sideValue == 1)    //Move right
         {
             PlayerPrefs.SetInt("JoystickSide", 0);
-            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(285, -140, 0);
-            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(-335, 0, 0);
+
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().transform.position = new Vector2(-100, 100);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMin = new Vector2(1, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMax = new Vector2(1, 0);
+            
+
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().transform.localPosition = new Vector2(-335, 0);
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().anchorMin = new Vector2(1, 0.5f);
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().anchorMax = new Vector2(1, 0.5f);
+
             joystickText.GetComponent<Text>().text = "Joystick: R";
         }
     }
@@ -134,8 +153,12 @@ public class PauseMenu : MonoBehaviour
         {
             //Initialize on left
             PlayerPrefs.SetInt("JoystickSide", 1);
-            FindObjectOfType<FixedJoystick>().GetComponent<Transform>().transform.localPosition = new Vector3(-285, -110, 0);
-            FindObjectOfType<Timer>().GetComponent<Transform>().transform.localPosition = new Vector3(335, 0, 0);
+            
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMin = new Vector2(0, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().anchorMax = new Vector2(0, 0);
+            FindObjectOfType<FixedJoystick>().GetComponent<RectTransform>().transform.position = new Vector2(100, 100);
+
+            FindObjectOfType<Timer>().GetComponent<RectTransform>().transform.localPosition = new Vector2(335, 0);
             joystickText.GetComponent<Text>().text = "Joystick: L";
         }
     }
