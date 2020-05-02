@@ -109,53 +109,18 @@ public class PauseMenu : MonoBehaviour
     //Joystick------
     public void ChangeJoystickSide()
     {
-        //0-Right, 1-Left
-        int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
-        float joystickOffset = 104f;
-
-        RectTransform joystick = FindObjectOfType<Joystick>().GetComponent<RectTransform>();
-        RectTransform timer = FindObjectOfType<Timer>().GetComponent<RectTransform>();
-
-        if (sideValue == 0)         //Move left
-        {
-            PlayerPrefs.SetInt("JoystickSide", 1);
-            joystickText.GetComponent<Text>().text = "Joystick: L";
-
-            timer.transform.localPosition = new Vector2(445, 0);
-            joystick.anchorMin = new Vector2(0, 0);
-            joystick.anchorMax = new Vector2(0, 0);
-            joystick.transform.position = new Vector2(joystickOffset, joystickOffset);
-        }
-        else if (sideValue == 1)    //Move right
-        {
-            PlayerPrefs.SetInt("JoystickSide", 0);
-            joystickText.GetComponent<Text>().text = "Joystick: R";
-
-            timer.transform.localPosition = new Vector2(-445, 0);
-            joystick.transform.position = new Vector2(-joystickOffset, joystickOffset);
-            joystick.anchorMin = new Vector2(1, 0);
-            joystick.anchorMax = new Vector2(1, 0);
-        }
+        FindObjectOfType<FixedJoystick>().ChangeJoystickSide(joystickText);
+        
+        /*if(joystickText.text == "Joystick: L")
+            joystickText.text = "Joystick: R";
+        else
+            joystickText.text = "Joystick: L";*/
+        
     }
 
     private void InitializeJoystick()
     {
-        float joystickOffset = 104f;
-
-        RectTransform joystick = FindObjectOfType<Joystick>().GetComponent<RectTransform>();
-        RectTransform timer = FindObjectOfType<Timer>().GetComponent<RectTransform>();
-
-        if (PlayerPrefs.GetInt("JoystickSide", 0) == 1)
-        {
-            //Initialize on left
-            PlayerPrefs.SetInt("JoystickSide", 1);
-            joystickText.GetComponent<Text>().text = "Joystick: L";
-
-            joystick.anchorMin = new Vector2(0, 0);
-            joystick.anchorMax = new Vector2(0, 0);
-            joystick.transform.position = new Vector2(joystickOffset, joystickOffset);
-            timer.transform.localPosition = new Vector2(445, 0);
-        }
+        FindObjectOfType<FixedJoystick>().InitializeJoystick(joystickText);
     }
 
 }
