@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /*
- * Script for handling of main menu functionalities
- * Playerprefs: musicVol and sfxVol used to control audio; listener volume for muting; custom for selected customization;
- * joystickSide for UI joystick side
+ * Playerprefs: -musicVol
+ *              -sfxVol
+ *              -listener volume
+ *              -custom
+ *              -joystickSide
+ *              -ActivePanel
  */
 public class MainMenu : MonoBehaviour
 {
+    //Panels
+    public GameObject[] panels;
+
     //Buttons
     public Button[] worldButtons;
     public Button[] levelButtons;
@@ -19,13 +26,13 @@ public class MainMenu : MonoBehaviour
     //High Score
     public Text[] highScoreText;
 
-    //Volume control
+    //Audio Settings
     public AudioMixer audioMixer;
     public Slider musicSlider;
     public Slider sfxSlider;
     public Text muteText;
 
-    //Joystick
+    //Other settings
     public Text joystickText;
 
     //Customization color
@@ -34,6 +41,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         InitializePlayerData();
+        InitializePanels();
     }
 
     private void Start()
@@ -45,13 +53,22 @@ public class MainMenu : MonoBehaviour
         InitializeJoystickSettings();
     }
 
+    //--------------------
+    //  PANEL MANAGEMENT
+    //--------------------
+
+    private void InitializePanels()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+    }
+
     //-------------------
     //    Start Menu
     //-------------------
 
     public void Quit()
     {
-        Application.Quit();
+        FindObjectOfType<PopUpWindow>().OpenWindow();
     }
 
     //--------------------
@@ -118,9 +135,7 @@ public class MainMenu : MonoBehaviour
         int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
 
         if(sideValue == 1)
-        {
             joystickText.GetComponent<Text>().text = "Joystick: L";
-        }
     }
 
     public void ChangeJoystickSide()

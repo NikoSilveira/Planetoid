@@ -32898,6 +32898,31 @@ PrefabInstance:
       propertyPath: m_AnchorMax.x
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1276802599838881725, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276802599838881725, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276802599838881725, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 1276802599838881725, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544025839024044179, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_UseGraphicAlpha
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2dc0d2c8677a3a43ba2eea4b131cc55, type: 3}
 --- !u!1 &1282727374 stripped
