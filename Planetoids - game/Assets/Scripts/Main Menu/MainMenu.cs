@@ -5,14 +5,6 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-/*
- * Playerprefs: -musicVol
- *              -sfxVol
- *              -listener volume
- *              -custom
- *              -joystickSide
- *              -ActivePanel
- */
 public class MainMenu : MonoBehaviour
 {
     //Panels
@@ -23,7 +15,6 @@ public class MainMenu : MonoBehaviour
     public Button[] levelButtons;
     public Button[] customButtons;
 
-    //High Score
     public Text[] highScoreText;
 
     //Audio Settings
@@ -31,8 +22,7 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
     public Text muteText;
-
-    //Other settings
+    
     public Text joystickText;
 
     //Customization color
@@ -41,11 +31,11 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         InitializePlayerData();
-        InitializePanels();
     }
 
     private void Start()
     {
+        InitializePanels();
         InitializeWorldButtons();
         InitializeLevelButtons();
         InitializeCustomButtons();
@@ -53,13 +43,31 @@ public class MainMenu : MonoBehaviour
         InitializeJoystickSettings();
     }
 
-    //--------------------
-    //  PANEL MANAGEMENT
-    //--------------------
+    //-----------------
+    //  Panel Control
+    //-----------------
 
     private void InitializePanels()
     {
-        //DontDestroyOnLoad(this.gameObject);
+        int panelControlValue = PlayerPrefs.GetInt("PanelControl", 0);
+
+        if (panelControlValue != 0)
+        {
+            panels[0].SetActive(false);
+            panels[panelControlValue].SetActive(true);
+            PlayerPrefs.SetInt("PanelControl",0);
+        }
+    }
+
+    public void SetCurrentWorldPanel(int world) //Assign to world buttons
+    {
+        PlayerPrefs.SetInt("PanelControl", world);
+    }
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void OnBeforeSceneLoadRuntimeMethod()
+    {
+        PlayerPrefs.SetInt("PanelControl", 0);
     }
 
     //-------------------
@@ -75,28 +83,24 @@ public class MainMenu : MonoBehaviour
     //   Settings Menu
     //--------------------
 
-    //Audio------
+    //---------- Audio ----------
+
     private void InitializeAudioSettings()
     {
-        //Get initial volume values stores in playerprefs
         float initialMusic = PlayerPrefs.GetFloat("musicVol", 0.7f);
         float initialSFX = PlayerPrefs.GetFloat("sfxVol", 0.7f);
 
-        //Set sliders with playerprefs
         musicSlider.SetValueWithoutNotify(initialMusic);
         sfxSlider.SetValueWithoutNotify(initialSFX);
 
-        //Set volume
         audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
         audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
 
-        //Stored audio listner value (muting)
+        //Stored audio listener value (muting)
         AudioListener.volume = PlayerPrefs.GetFloat("listenerVolume", 1f);
 
         if(AudioListener.volume == 0f)
-        {
             muteText.text = "Unmute";
-        }
     }
     
     public void SetVolumeMusic(float volume)
@@ -129,7 +133,8 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    //Joystick------
+    //--------- Joystick ---------
+
     private void InitializeJoystickSettings()
     {
         int sideValue = PlayerPrefs.GetInt("JoystickSide", 0);
@@ -172,10 +177,6 @@ public class MainMenu : MonoBehaviour
                 LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
         }
-
-        //Delete later
-        worldButtons[3].interactable = false;
-        LeanTween.alpha(worldButtons[3].GetComponent<RectTransform>(), 90f, 0.01f);
     }
 
     private void InitializeLevelButtons()
@@ -198,7 +199,6 @@ public class MainMenu : MonoBehaviour
     //------------------------
     //   Customization Menu
     //------------------------
-
 
     private void InitializeCustomButtons()
     {
@@ -248,5 +248,4 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Button");
     }
-
 }
