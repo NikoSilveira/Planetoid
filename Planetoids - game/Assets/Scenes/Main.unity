@@ -3804,10 +3804,10 @@ RectTransform:
   m_Father: {fileID: 1987487690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -50}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528743081
 MonoBehaviour:
@@ -3876,7 +3876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1882353, g: 0.2, b: 0.41960785, a: 1}
+  m_Color: {r: 0.3254902, g: 0.36078432, b: 0.40784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -7189,6 +7189,7 @@ GameObject:
   - component: {fileID: 1037978647}
   - component: {fileID: 1037978649}
   - component: {fileID: 1037978648}
+  - component: {fileID: 1037978650}
   m_Layer: 5
   m_Name: WindowText
   m_TagString: Untagged
@@ -7210,10 +7211,10 @@ RectTransform:
   m_Father: {fileID: 1483466665}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 140}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 292.5, y: -93.75}
+  m_SizeDelta: {x: 500, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1037978648
 MonoBehaviour:
@@ -7228,17 +7229,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-  m_Color: {r: 0.8745098, g: 0.9764706, b: 0.9843137, a: 1}
+  m_Color: {r: 0.3254902, g: 0.36078432, b: 0.40784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f29fd14580a62d147b68b3fbb0acc9d4, type: 3}
-    m_FontSize: 34
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -7255,6 +7256,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037978646}
   m_CullTransparentMesh: 0
+--- !u!114 &1037978650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037978646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 0.5, y: -0.5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1041847742
 GameObject:
   m_ObjectHideFlags: 0
@@ -9647,7 +9663,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f29fd14580a62d147b68b3fbb0acc9d4, type: 3}
-    m_FontSize: 34
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -10626,7 +10642,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 480, y: 260}
+  m_SizeDelta: {x: 585, y: 335}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483466666
 MonoBehaviour:
@@ -10641,7 +10657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3254902, g: 0.36078432, b: 0.40784314, a: 1}
+  m_Color: {r: 0.58431375, g: 0.6862745, b: 0.7529412, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -10723,10 +10739,10 @@ RectTransform:
   m_Father: {fileID: 1987487690}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 70}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 375, y: -50}
+  m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488712453
 MonoBehaviour:
@@ -10795,7 +10811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1882353, g: 0.2, b: 0.41960785, a: 1}
+  m_Color: {r: 0.3254902, g: 0.36078432, b: 0.40784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11280,7 +11296,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f29fd14580a62d147b68b3fbb0acc9d4, type: 3}
-    m_FontSize: 34
+    m_FontSize: 36
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -12791,7 +12807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1730415292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12825,7 +12841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6666667}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -14229,10 +14245,10 @@ RectTransform:
   m_Father: {fileID: 1483466665}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 292.5, y: -261.25}
+  m_SizeDelta: {x: 500, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987487691
 MonoBehaviour:
@@ -14816,7 +14832,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 480, y: 280}
+  m_SizeDelta: {x: 600, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2039698491
 MonoBehaviour:
@@ -14831,7 +14847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1882353, g: 0.2, b: 0.41960785, a: 1}
+  m_Color: {r: 0.3254902, g: 0.36078432, b: 0.40784314, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
