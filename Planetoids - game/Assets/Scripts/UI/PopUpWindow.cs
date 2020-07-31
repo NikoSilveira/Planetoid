@@ -9,17 +9,9 @@ public class PopUpWindow : MonoBehaviour
     [SerializeField] private GameObject windowPanel;
     [SerializeField] private GameObject window;
 
-    [SerializeField] private bool displayOnStart;
-    
     void Start()
     {
-        //Start minimized
-        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f);
-
-        if (displayOnStart)
-        {
-            OpenWindow(350f, 250f);
-        }
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f); //Start minimized
     }
 
     public void OpenWindow(float width, float height)
@@ -36,6 +28,6 @@ public class PopUpWindow : MonoBehaviour
 
     public void QuitConfirmation()
     {
-        Application.Quit();     //Quit game
+        Application.Quit();
     }
 }

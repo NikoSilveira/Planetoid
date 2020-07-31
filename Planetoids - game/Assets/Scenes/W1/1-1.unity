@@ -40094,7 +40094,7 @@ GameObject:
   - component: {fileID: 1574513464}
   - component: {fileID: 1574513463}
   m_Layer: 5
-  m_Name: DoneButton
+  m_Name: NextButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
