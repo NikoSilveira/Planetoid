@@ -9657,9 +9657,9 @@ RectTransform:
   m_Father: {fileID: 359457609}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -35}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &293489728
@@ -11072,9 +11072,9 @@ RectTransform:
   m_Father: {fileID: 1441313390}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -60}
   m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &359457610
@@ -17229,9 +17229,9 @@ RectTransform:
   m_Father: {fileID: 359457609}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -35}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682792504
@@ -17265,8 +17265,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Golden Wisp: \nEat them all within the time limit to clear the level. Consuming
-    one will give you a temporary speed boost!"
+  m_Text: "Golden Wisp: \nExtinguish them all within the time limit to clear the level.
+    Each will give you a temporary speed boost."
 --- !u!222 &682792505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -38317,7 +38317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508613500
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40094,7 +40094,7 @@ GameObject:
   - component: {fileID: 1574513464}
   - component: {fileID: 1574513463}
   m_Layer: 5
-  m_Name: NextButton
+  m_Name: WindowButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40115,9 +40115,9 @@ RectTransform:
   m_Father: {fileID: 1441313390}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -205}
   m_SizeDelta: {x: 120, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574513463
@@ -40164,7 +40164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1724665092}
-        m_MethodName: CloseWindow
+        m_MethodName: NextWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44132,12 +44132,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1724665087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e0888305e45dc498d27979872b36c5, type: 3}
+  m_Script: {fileID: 11500000, guid: ad6536c7cc6ee47419aa797808c6dcbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   windowPanel: {fileID: 1508613499}
   window: {fileID: 1441313389}
-  displayOnStart: 1
+  rawImg1: {fileID: 293489726}
+  rawImg2: {fileID: 1781338606}
+  imageFile1: {fileID: 2800000, guid: 0231cf2b9dc3b884e8bc5efa2fb12527, type: 3}
+  imageFile2: {fileID: 2800000, guid: 71aa1a6ae4040ae4cbdb5aefbd103c9f, type: 3}
+  wispText1: {fileID: 682792504}
+  wispText2: {fileID: 2077235309}
+  windowButtonText: {fileID: 642774413}
 --- !u!1001 &1725868207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45756,9 +45762,9 @@ RectTransform:
   m_Father: {fileID: 2136760112}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 40, y: -35}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781338608
@@ -51287,9 +51293,9 @@ RectTransform:
   m_Father: {fileID: 2136760112}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 190, y: -35}
   m_SizeDelta: {x: 200, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077235309
@@ -52717,9 +52723,9 @@ RectTransform:
   m_Father: {fileID: 1441313390}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 175, y: -140}
   m_SizeDelta: {x: 300, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2136760113
