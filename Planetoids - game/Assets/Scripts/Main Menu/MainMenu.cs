@@ -76,7 +76,7 @@ public class MainMenu : MonoBehaviour
 
     public void Quit()
     {
-        FindObjectOfType<PopUpWindow>().OpenWindow();
+        FindObjectOfType<PopUpWindow>().OpenWindow(600f, 350f);
     }
 
     //--------------------

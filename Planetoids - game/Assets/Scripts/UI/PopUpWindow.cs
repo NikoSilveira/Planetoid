@@ -8,22 +8,29 @@ public class PopUpWindow : MonoBehaviour
     //UI elements
     [SerializeField] private GameObject windowPanel;
     [SerializeField] private GameObject window;
+
+    [SerializeField] private bool displayOnStart;
     
     void Start()
     {
         //Start minimized
-        LeanTween.scale(window, new Vector2(0.1f, 0.1f), 0.01f);
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f);
+
+        if (displayOnStart)
+        {
+            OpenWindow(350f, 250f);
+        }
     }
 
-    public void OpenWindow()
+    public void OpenWindow(float width, float height)
     {
         windowPanel.SetActive(true);
-        LeanTween.scale(window, new Vector2(1f, 1f), 0.7f).setEase(LeanTweenType.easeOutBounce);
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(width, height), 0.8f).setEase(LeanTweenType.easeOutBounce);
     }
 
     public void CloseWindow()
     {
-        LeanTween.scale(window, new Vector2(0.1f, 0.1f), 0.01f);
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f);
         windowPanel.SetActive(false);
     }
 
