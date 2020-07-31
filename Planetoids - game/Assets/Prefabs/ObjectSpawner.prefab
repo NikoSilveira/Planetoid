@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 659020009075580083, guid: c8360ec07de326a4abe3943dadf0f264, type: 3}
+  timer: 0
+  initialAmount: 0
 --- !u!114 &970848840721129010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +60,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2382193078063752021, guid: 7a880c6d310bb394f824d9444e780ef9, type: 3}
+  hordeSize: 

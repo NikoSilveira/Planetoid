@@ -40,8 +40,8 @@ public class TutorialWindow : MonoBehaviour
             return;
         }
 
-        wispText1.text = "Green Wisp:\nWill spawn ocassionally. Extinguish it to obtain an additional 45s.";
-        wispText2.text = "Dark Blue Wisp:\nWill spawn ocassionally. Extinguish it to obtain protection from one hit of an ominous wisp.";
+        wispText1.text = "Timey Wisp:\nWill spawn ocassionally. Extinguish it to obtain an additional 45s.";
+        wispText2.text = "Protective Wisp:\nWill spawn ocassionally. Extinguish it to obtain protection from one hit of an ominous wisp.";
         windowButtonText.text = "Done";
         rawImg1.GetComponent<RawImage>().texture = imageFile1;
         rawImg2.GetComponent<RawImage>().texture = imageFile2;

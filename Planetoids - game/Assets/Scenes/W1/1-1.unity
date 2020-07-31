@@ -44139,8 +44139,8 @@ MonoBehaviour:
   window: {fileID: 1441313389}
   rawImg1: {fileID: 293489726}
   rawImg2: {fileID: 1781338606}
-  imageFile1: {fileID: 2800000, guid: 0231cf2b9dc3b884e8bc5efa2fb12527, type: 3}
-  imageFile2: {fileID: 2800000, guid: 71aa1a6ae4040ae4cbdb5aefbd103c9f, type: 3}
+  imageFile1: {fileID: 2800000, guid: c55af3d4a799fc34a9e79650a621c3e5, type: 3}
+  imageFile2: {fileID: 2800000, guid: 6e4c390563133b346a9a42e0d180530b, type: 3}
   wispText1: {fileID: 682792504}
   wispText2: {fileID: 2077235309}
   windowButtonText: {fileID: 642774413}
