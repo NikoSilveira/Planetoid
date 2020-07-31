@@ -58,6 +58,16 @@ public class PlayerController : MonoBehaviour
         flameParticles.GetComponent<ParticleSystem>().Stop();
     }
 
+    /*public void SpeedBoost()
+    {
+
+    }*/
+
+    public void ShieldBoost()
+    {
+
+    }
+
     private void InitializeColors()
     {
         float red = 0f, green = 0f, blue = 0f;

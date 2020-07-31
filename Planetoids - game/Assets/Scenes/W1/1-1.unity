@@ -49672,6 +49672,18 @@ PrefabInstance:
       propertyPath: hordeSize.Array.data[2]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5386471983952448746, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: prefabTimey
+      value: 
+      objectReference: {fileID: 659020009075580083, guid: 0a7f78789e8b7bf4894cd04e1444a14a,
+        type: 3}
+    - target: {fileID: 5386471983952448746, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: prefabProtective
+      value: 
+      objectReference: {fileID: 659020009075580083, guid: 90e821105569ad440b92965ad008b2de,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c7f627aa1f146418c27ae709d79096, type: 3}
 --- !u!4 &1976547079 stripped

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 970848840721128973}
   - component: {fileID: 970848840721128972}
   - component: {fileID: 970848840721129010}
+  - component: {fileID: 5386471983952448746}
   m_Layer: 0
   m_Name: ObjectSpawner
   m_TagString: Untagged
@@ -61,3 +62,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 2382193078063752021, guid: 7a880c6d310bb394f824d9444e780ef9, type: 3}
   hordeSize: 
+--- !u!114 &5386471983952448746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970848840721128975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bb107ecdfbe3b47a956c071b4d1dfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

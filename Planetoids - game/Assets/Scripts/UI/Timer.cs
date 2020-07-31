@@ -38,6 +38,11 @@ public class Timer : MonoBehaviour
         return currentTime;
     }
 
+    public void SetCurrentTime(float extraTime)
+    {
+        currentTime += extraTime;
+    }
+
     //Running out - SFX
     private void TimerSFX()
     {
