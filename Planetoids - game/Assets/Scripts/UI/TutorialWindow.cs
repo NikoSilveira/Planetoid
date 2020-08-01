@@ -18,7 +18,7 @@ public class TutorialWindow : MonoBehaviour
     {
         isLastWindow = false;
         LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f); //Start minimized
-        StartCoroutine(OpenWindow(350f, 250f));
+        StartCoroutine(OpenWindow(500f, 360f));
     }
 
     IEnumerator OpenWindow(float width, float height)

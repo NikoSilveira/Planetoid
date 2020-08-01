@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,9 +14,13 @@ public class PlayerController : MonoBehaviour
 
     //Control
     private bool isAlive;
+    private bool isInvincible;
 
     //Flame
     private GameObject flameParticles;
+
+    //Booster text
+    [SerializeField] private Text boosterText;
 
     private void Start()
     {
@@ -23,6 +28,7 @@ public class PlayerController : MonoBehaviour
         InitializeColors();
         
         isAlive = true;
+        isInvincible = true;
         moveSpeed = 1.25f;
     }
 
@@ -50,6 +56,13 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerDeath()
     {
+        if (isInvincible)
+        {
+            isInvincible = false;
+            LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 0f, 0.25f);
+            return;
+        }
+
         isAlive = false;
 
         //Animation effects
@@ -65,7 +78,8 @@ public class PlayerController : MonoBehaviour
 
     public void ShieldBoost()
     {
-
+        isInvincible = true;
+        LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 1f, 0.25f);
     }
 
     private void InitializeColors()

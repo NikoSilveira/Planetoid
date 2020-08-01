@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
 
     private float currentTime = 0f;
     public Text timerText;
+    public Text bonusTimerText;
 
     private void Start()
     {
@@ -41,6 +42,8 @@ public class Timer : MonoBehaviour
     public void SetCurrentTime(float extraTime)
     {
         currentTime += extraTime;
+        bonusTimerText.text = "+" + extraTime + "s";
+        LeanTween.alphaText(bonusTimerText.GetComponent<RectTransform>(), 1f, 1.25f).setLoopPingPong(1);
     }
 
     //Running out - SFX
