@@ -57,9 +57,9 @@ public class LevelManager : MonoBehaviour
         victory.GetComponent<Text>().text = RandomMessage();
         pauseButton.SetActive(false);
 
-        SetHighScore();
-        Unlock();
-        SaveSystem.SaveGame(this);
+        //SetHighScore();
+        //Unlock();
+        //SaveSystem.SaveGame(this);
 
         StartCoroutine(LoadScene(0));
     }
@@ -127,7 +127,7 @@ public class LevelManager : MonoBehaviour
 
     private void Unlock()
     {
-        GameData data = SaveSystem.LoadGame();
+        /*GameData data = SaveSystem.LoadGame();
 
         worldsToUnlock = data.worldsToUnlock;
         colorsToUnlock = data.colorsToUnlock;
@@ -150,7 +150,7 @@ public class LevelManager : MonoBehaviour
             //Text animation
             unlockedCustom.SetActive(true);
             LeanTween.alphaText(unlockedCustom.GetComponent<RectTransform>(), 1f, 1.5f);
-        }
+        }*/
     }
 
     //--------------
@@ -159,7 +159,7 @@ public class LevelManager : MonoBehaviour
 
     private void SetHighScore()
     {
-        GameData data = SaveSystem.LoadGame();
+        /*GameData data = SaveSystem.LoadGame();
         highScore = data.highScore;
 
         int localHighScore = highScore[currentLevel - 1];
@@ -169,7 +169,7 @@ public class LevelManager : MonoBehaviour
         {
             highScore[currentLevel - 1] = localScore;
             FindObjectOfType<HighScore>().SetHighScore(localScore);
-        }
+        }*/
     }
 
     //-----------------
@@ -179,7 +179,7 @@ public class LevelManager : MonoBehaviour
     //Create document on awake (1st time)
     private void InitializeSaveData()
     {
-        if(SaveSystem.LoadGame() == null)
+        /*if(SaveSystem.LoadGame() == null)
         {
             //Unlockables
             levelsToUnlock = 1;
@@ -194,11 +194,11 @@ public class LevelManager : MonoBehaviour
             }
 
             SaveSystem.SaveGame(this);
-        }
+        }*/
     }
 
     //Debugging - Reset document
-    public void ClearForDebug()
+    /*public void ClearForDebug()
     {
         //Unlockables
         levelsToUnlock = 1;
@@ -213,7 +213,7 @@ public class LevelManager : MonoBehaviour
         }
 
         SaveSystem.SaveGame(this);
-    }
+    }*/
 
     //-------------
     //   GETTERS

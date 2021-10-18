@@ -165,8 +165,9 @@ public class MainMenu : MonoBehaviour
 
     private void InitializeWorldButtons()
     {
+        //By default buttons are True. Save system disables them.
         //Read from file
-        GameData data = SaveSystem.LoadGame();
+        /*GameData data = SaveSystem.LoadGame();
         int worldReached = data.worldsToUnlock;
 
         for (int i = 0; i < worldButtons.Length; i++)
@@ -176,13 +177,14 @@ public class MainMenu : MonoBehaviour
                 worldButtons[i].interactable = false;
                 LeanTween.alpha(worldButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
-        }
+        }*/
     }
 
     private void InitializeLevelButtons()
     {
+        //By default buttons are True. Save system disables them.
         //Read from file
-        GameData data = SaveSystem.LoadGame();
+        /*GameData data = SaveSystem.LoadGame();
         int levelReached = data.levelsToUnlock;
 
         for (int i = 0; i < levelButtons.Length; i++)
@@ -193,7 +195,7 @@ public class MainMenu : MonoBehaviour
                 LeanTween.alpha(levelButtons[i].GetComponent<RectTransform>(), 90f, 0.01f);
             }
             highScoreText[i].GetComponent<Text>().text = "HS: " + data.highScore[i].ToString();
-        }
+        }*/
     }
 
     //------------------------
@@ -202,7 +204,7 @@ public class MainMenu : MonoBehaviour
 
     private void InitializeCustomButtons()
     {
-        GameData gameData = SaveSystem.LoadGame();
+        /*GameData gameData = SaveSystem.LoadGame();
         int colorReached = gameData.colorsToUnlock;
 
         for (int i = 0; i < customButtons.Length; i++)
@@ -216,20 +218,21 @@ public class MainMenu : MonoBehaviour
 
         //Set color of selected custom on loadscene
         PlayerData playerData = SaveSystem.LoadPlayer();
-        customButtons[playerData.customButtonIndex].GetComponent<Image>().color = new Color32(255,190,118,255);
+        customButtons[playerData.customButtonIndex].GetComponent<Image>().color = new Color32(255,190,118,255);*/
     }
 
     private void InitializePlayerData()
     {
-        if (SaveSystem.LoadPlayer() == null)
+        /*if (SaveSystem.LoadPlayer() == null)
         {
             customButtonIndex = 0;
             SaveSystem.SavePlayer(this);
-        }
+        }*/
     }
 
     public void SetColor(int buttonIndex)   //start from 0
     {
+        /*
         //Deselect previous button
         PlayerData data = SaveSystem.LoadPlayer();
         customButtons[data.customButtonIndex].GetComponent<Image>().color = new Color32(199, 236, 238, 255);
@@ -237,7 +240,7 @@ public class MainMenu : MonoBehaviour
         //Save new selection
         customButtonIndex = buttonIndex;
         SaveSystem.SavePlayer(this);    
-        customButtons[buttonIndex].GetComponent<Image>().color = new Color32(255, 190, 118, 255);
+        customButtons[buttonIndex].GetComponent<Image>().color = new Color32(255, 190, 118, 255);*/
     }
     
     //--------------

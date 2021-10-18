@@ -64,6 +64,7 @@ public class ProtectiveController : MonoBehaviour
         {
             canCollide = false;
             FindObjectOfType<PlayerController>().ShieldBoost();
+            FindObjectOfType<Score>().SetScore(20, false);
 
             //Animation effects
             LeanTween.scale(gameObject, new Vector3(0.01f, 0.01f, 0.01f), 0.25f);

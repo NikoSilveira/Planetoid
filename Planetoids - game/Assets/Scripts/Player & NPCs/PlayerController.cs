@@ -85,12 +85,13 @@ public class PlayerController : MonoBehaviour
     private void InitializeColors()
     {
         float red = 0f, green = 0f, blue = 0f;
+        red = 0f; green = 0.24f; blue = 1f;     //Blue
 
         //Read from file
-        PlayerData data = SaveSystem.LoadPlayer();
-        int customButtonIndex = data.customButtonIndex;
+        //PlayerData data = SaveSystem.LoadPlayer();
+        //int customButtonIndex = data.customButtonIndex;
 
-        switch (customButtonIndex)
+        /*switch (customButtonIndex)
         {
             case 0:
                 red = 0f; green = 0.24f; blue = 1f;     //Blue
@@ -110,7 +111,7 @@ public class PlayerController : MonoBehaviour
             case 5:
                 red = 0.7f; green = 0.29f; blue = 0f;   //Orange
                 break;
-        }
+        }*/
 
         //Assign colors
         gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.0f); //0.35f for visibility

@@ -64,6 +64,7 @@ public class TimeyController : MonoBehaviour
         {
             canCollide = false;
             FindObjectOfType<Timer>().SetCurrentTime(45);
+            FindObjectOfType<Score>().SetScore(20, false);
 
             //Animation effects
             LeanTween.scale(gameObject, new Vector3(0.01f, 0.01f, 0.01f), 0.25f);
