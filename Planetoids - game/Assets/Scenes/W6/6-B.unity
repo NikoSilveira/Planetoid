@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2
+  m_AmbientIntensity: 0.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 4e6c9c07e6692024a918010b1d0f977e, type: 2}
@@ -11512,13 +11512,13 @@ Transform:
   - {fileID: 626356982}
   - {fileID: 1479012875}
   - {fileID: 257240215}
-  - {fileID: 1936968619}
   - {fileID: 455824222}
   - {fileID: 1712142435}
   - {fileID: 953714724}
   - {fileID: 673425439}
   - {fileID: 1333446766}
   - {fileID: 1700738737}
+  - {fileID: 1936968619}
   - {fileID: 299003828}
   - {fileID: 1092047808}
   - {fileID: 767552583}
@@ -22768,7 +22768,7 @@ PrefabInstance:
     - target: {fileID: 5116780752235053471, guid: 9f4b45dfce8e7104aa48c534c6512e8d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6223344596581837725, guid: 9f4b45dfce8e7104aa48c534c6512e8d,
         type: 3}

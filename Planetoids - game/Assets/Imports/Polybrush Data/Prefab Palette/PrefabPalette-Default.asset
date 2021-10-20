@@ -48,7 +48,7 @@ MonoBehaviour:
     name: TerrainPatchGreen
   - gameObject: {fileID: 157192, guid: 84a240cf1c5ef5f4d8ff048828a60d97, type: 3}
     settings:
-      m_Strength: 5.3043447
+      m_Strength: 30.054344
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -177,7 +177,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1698917995293774, guid: 67cc81d5424ea4fccbc7267473502366,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 37
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 233.5135, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -259,7 +259,7 @@ MonoBehaviour:
     name: Flat_Tree_02
   - gameObject: {fileID: 163980, guid: 2fb6f5d47657319408dbd4f3e8412b4c, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 95
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -291,7 +291,7 @@ MonoBehaviour:
     name: Mixed_Tree_02
   - gameObject: {fileID: 116276, guid: 689a36ce1e8152f488b3a0d5fc644805, type: 3}
     settings:
-      m_Strength: 24.173912
+      m_Strength: 28
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -484,7 +484,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1000011652691772, guid: 23277ae3edb0d7d41b94cc383e349e95,
       type: 3}
     settings:
-      m_Strength: 72.02174
+      m_Strength: 48.25
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -501,7 +501,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1000011998996884, guid: 2f2475e695505194996d6f3e2bce58b5,
       type: 3}
     settings:
-      m_Strength: 24.17391
+      m_Strength: 59.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -770,7 +770,7 @@ MonoBehaviour:
   - gameObject: {fileID: 522459008932986039, guid: 23bd600a3424d9e44ac451d447977c93,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 19
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -923,7 +923,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1026458569961160598, guid: 292c1954f8e2fd748857db06683062fb,
       type: 3}
     settings:
-      m_Strength: 43.75
+      m_Strength: 25.75
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -974,7 +974,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1311534305500079584, guid: 1850815f38acaab4085c2fb6a7ca2928,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 18.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -1219,3 +1219,20 @@ MonoBehaviour:
       m_YScaleBool: 0
       m_ZScaleBool: 0
     name: CampFire
+  - gameObject: {fileID: 1000012794367824, guid: cad78aa0a5754cf49bef6ff14485053d,
+      type: 3}
+    settings:
+      m_Strength: 14
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: plants_10
