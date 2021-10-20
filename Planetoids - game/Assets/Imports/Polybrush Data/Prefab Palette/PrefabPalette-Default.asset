@@ -517,7 +517,7 @@ MonoBehaviour:
     name: Tree_2_new_4
   - gameObject: {fileID: 100006, guid: e6ec39770b6dbe04f9cbd7ea19e0c7ef, type: 3}
     settings:
-      m_Strength: 7.25
+      m_Strength: 68.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -533,7 +533,7 @@ MonoBehaviour:
     name: Pine_Snowy1
   - gameObject: {fileID: 100008, guid: e6ec39770b6dbe04f9cbd7ea19e0c7ef, type: 3}
     settings:
-      m_Strength: 14
+      m_Strength: 82
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -549,7 +549,7 @@ MonoBehaviour:
     name: Pine_Snowy2
   - gameObject: {fileID: 100010, guid: e6ec39770b6dbe04f9cbd7ea19e0c7ef, type: 3}
     settings:
-      m_Strength: 11.75
+      m_Strength: 77.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -583,7 +583,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1809244605923138, guid: e896a7f6f83380b40972e13f5039022a,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 10.000001
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -838,7 +838,7 @@ MonoBehaviour:
   - gameObject: {fileID: 6352184942146035110, guid: 47ded181e73460047bae5118c0254d3e,
       type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 100
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -923,7 +923,7 @@ MonoBehaviour:
   - gameObject: {fileID: 1026458569961160598, guid: 292c1954f8e2fd748857db06683062fb,
       type: 3}
     settings:
-      m_Strength: 16.75
+      m_Strength: 43.75
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -940,7 +940,7 @@ MonoBehaviour:
   - gameObject: {fileID: 455957966157313408, guid: decec03a9de484948b79da6219847d52,
       type: 3}
     settings:
-      m_Strength: 9.5
+      m_Strength: 59
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
@@ -1040,7 +1040,7 @@ MonoBehaviour:
     name: Candy Cane Item
   - gameObject: {fileID: 181148, guid: f33afd272c032484ca58b8f5564d9c67, type: 3}
     settings:
-      m_Strength: 50
+      m_Strength: 14.5
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
