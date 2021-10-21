@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
         InitializeColors();
         
         isAlive = true;
-        isInvincible = true;
+        isInvincible = false;
         moveSpeed = 1.25f;
     }
 
@@ -62,9 +62,9 @@ public class PlayerController : MonoBehaviour
             LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 0f, 0.25f);
             return;
         }
-
+        
         isAlive = false;
-
+        
         //Animation effects
         LeanTween.alpha(gameObject, 0f, 0.25f);
         LeanTween.scale(flameParticles, new Vector3(1.5f, 1.5f, 1.5f), 0.2f);
