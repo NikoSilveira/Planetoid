@@ -22007,15 +22007,50 @@ PrefabInstance:
       propertyPath: comboText
       value: 
       objectReference: {fileID: 1724023311166976203}
+    - target: {fileID: 1724023311668252465, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1724023311779657130, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 219623578}
+    - target: {fileID: 2603800165318852987, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603800165318852987, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5151419914039495948, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 260
+      objectReference: {fileID: 0}
     - target: {fileID: 6968618788252917638, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7195937651927974102, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514906179103225266, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Text
+      value: Fire Pit of the Blue Flame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514906179103225266, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2dc0d2c8677a3a43ba2eea4b131cc55, type: 3}

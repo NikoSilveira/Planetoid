@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
- * Script to control the UI counter
- * -Control of vistory condition and scene transition
+ * Script to control the UI counter and boss health bar
+ * -Control of victory condition and scene transition
  */
 public class Counter : MonoBehaviour
 {
     public Text counterText;
+    public Slider bossBar;
 
     private int targetCount;
     private int counter;
@@ -22,10 +23,12 @@ public class Counter : MonoBehaviour
     void Update()
     {
         counterText.text = counter.ToString() + "/" + targetCount.ToString();
+        bossBar.maxValue = targetCount;
+        bossBar.value = targetCount - counter;
 
         if (counter == targetCount)
         {
-            FindObjectOfType<LevelManager>().Win();
+            FindObjectOfType<LevelManager>().Win(); //Detect win condition
         }
     }
 
