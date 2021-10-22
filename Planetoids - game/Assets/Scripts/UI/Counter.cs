@@ -28,7 +28,18 @@ public class Counter : MonoBehaviour
 
         if (counter == targetCount)
         {
-            FindObjectOfType<LevelManager>().Win(); //Detect win condition
+            if (bossBar.IsActive()){
+                FindObjectOfType<LevelManager>().WinBoss(); //Detect boss battle has been won
+            }
+            else{
+                FindObjectOfType<LevelManager>().Win(); //Detect normal win condition
+            }
+            
+        }
+
+        if (Input.GetKeyDown("space"))
+        {
+            FindObjectOfType<LevelManager>().WinBoss();
         }
     }
 

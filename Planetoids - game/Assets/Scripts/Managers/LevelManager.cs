@@ -27,6 +27,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int colorsToUnlock;
     [HideInInspector] public List<int> highScore = new List<int>();
 
+    //Camera
+    [SerializeField] private GameObject camera;
+
     private bool levelIsActive;
 
     private void Awake()
@@ -62,6 +65,30 @@ public class LevelManager : MonoBehaviour
         //SaveSystem.SaveGame(this);
 
         StartCoroutine(LoadScene(0));
+    }
+
+    public void WinBoss()
+    {
+        if (!levelIsActive)
+        {
+            return;
+        }
+
+        levelIsActive = false;
+
+        //victory.SetActive(true);
+        //victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
+        pauseButton.SetActive(false);
+
+        //Camera and flame animations
+        LeanTween.move(camera, new Vector3(11f, 9f, 0f), 1.5f);
+        LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.5f);
+
+        //SetHighScore();
+        //Unlock();
+        //SaveSystem.SaveGame(this);
+
+        StartCoroutine(LoadScene(0, 8f));
     }
 
     public void Lose()
@@ -100,9 +127,9 @@ public class LevelManager : MonoBehaviour
     //--------------------------
 
     //Coroutine - load scene
-    IEnumerator LoadScene(int sceneIndex)
+    IEnumerator LoadScene(int sceneIndex, float delay=3f)
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(delay);
         FindObjectOfType<LevelLoader>().LoadTargetLevel(sceneIndex);
     }
 
