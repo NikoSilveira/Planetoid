@@ -34,12 +34,6 @@ public class Counter : MonoBehaviour
             else{
                 FindObjectOfType<LevelManager>().Win(); //Detect normal win condition
             }
-            
-        }
-
-        if (Input.GetKeyDown("space"))
-        {
-            FindObjectOfType<LevelManager>().WinBoss();
         }
     }
 

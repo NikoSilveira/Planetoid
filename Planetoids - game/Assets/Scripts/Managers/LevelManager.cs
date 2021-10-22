@@ -27,8 +27,9 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public int colorsToUnlock;
     [HideInInspector] public List<int> highScore = new List<int>();
 
-    //Camera
-    [SerializeField] private GameObject camera;
+    //Boss elements
+    [SerializeField] private new GameObject camera;
+    [SerializeField] private new GameObject bossFlameParticles;
 
     private bool levelIsActive;
 
@@ -83,12 +84,13 @@ public class LevelManager : MonoBehaviour
         //Camera and flame animations
         LeanTween.move(camera, new Vector3(11f, 9f, 0f), 1.5f);
         LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.5f);
+        Invoke("KillBoss", 3.0f);
 
         //SetHighScore();
         //Unlock();
         //SaveSystem.SaveGame(this);
 
-        StartCoroutine(LoadScene(0, 8f));
+        StartCoroutine(LoadScene(0, 7f));
     }
 
     public void Lose()
@@ -146,6 +148,11 @@ public class LevelManager : MonoBehaviour
         int random = Random.Range(0, message.Length);
 
         return message[random];
+    }
+
+    private void KillBoss()
+    {
+        bossFlameParticles.GetComponent<ParticleSystem>().Stop();
     }
 
     //-------------

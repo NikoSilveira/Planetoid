@@ -269,6 +269,11 @@ PrefabInstance:
       propertyPath: unlockedCustom
       value: 
       objectReference: {fileID: 1724023311166976204}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
+      propertyPath: bossFlameParticles
+      value: 
+      objectReference: {fileID: 447830950}
     - target: {fileID: 1398085760718843251, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
       propertyPath: m_RootOrder
@@ -8591,6 +8596,12 @@ PrefabInstance:
 --- !u!4 &447830949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 501295248943452728, guid: d6a5e2c4aefa6804b8f7d2af9a9676b5,
+    type: 3}
+  m_PrefabInstance: {fileID: 447830948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &447830950 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532263118688118752, guid: d6a5e2c4aefa6804b8f7d2af9a9676b5,
     type: 3}
   m_PrefabInstance: {fileID: 447830948}
   m_PrefabAsset: {fileID: 0}
