@@ -78,8 +78,6 @@ public class LevelManager : MonoBehaviour
 
         levelIsActive = false;
 
-        //victory.SetActive(true);
-        //victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
         pauseButton.SetActive(false);
 
         //Camera and flame animations
@@ -180,6 +178,8 @@ public class LevelManager : MonoBehaviour
     private void KillBoss()
     {
         bossFlameParticles.GetComponent<ParticleSystem>().Stop();
+        victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
+        victory.SetActive(true);
     }
 
     //-------------
