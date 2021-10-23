@@ -9017,22 +9017,22 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
-  - {fileID: 170736110}
   - {fileID: 1892579865}
-  - {fileID: 1294411834}
   - {fileID: 348053074}
-  - {fileID: 808537510}
+  - {fileID: 1294411834}
+  - {fileID: 170736110}
   - {fileID: 1036129133}
   - {fileID: 1639196396}
   - {fileID: 329378449}
-  - {fileID: 845341898}
   - {fileID: 1236095424}
   - {fileID: 1410291758}
   - {fileID: 1810232823}
   - {fileID: 657897750}
   - {fileID: 1121545997}
+  - {fileID: 808537510}
   - {fileID: 162058980}
   - {fileID: 387874664}
+  - {fileID: 845341898}
   - {fileID: 78456619}
   - {fileID: 1609539094}
   - {fileID: 1883082991}
@@ -16203,22 +16203,107 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.size
-      value: 3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[0]
-      value: 4
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[1]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[2]
-      value: 5
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[3]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[4]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[5]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[6]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[7]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[8]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[9]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[10]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[11]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[12]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[13]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[14]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[15]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[16]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[17]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[18]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
+        type: 3}
+      propertyPath: hordeSize.Array.data[19]
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6c7f627aa1f146418c27ae709d79096, type: 3}
@@ -16362,21 +16447,41 @@ PrefabInstance:
     - target: {fileID: 1724023311468859746, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: startingTime
-      value: 180
+      value: 999
       objectReference: {fileID: 0}
     - target: {fileID: 1724023311661087329, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: comboText
       value: 
       objectReference: {fileID: 1724023311166976203}
+    - target: {fileID: 1724023311668252465, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1724023311779657130, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 219623578}
+    - target: {fileID: 5151419914039495948, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 240
+      objectReference: {fileID: 0}
     - target: {fileID: 6968618788252917638, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514906179103225266, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Text
+      value: Get as many as you can!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514906179103225266, guid: e2dc0d2c8677a3a43ba2eea4b131cc55,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
