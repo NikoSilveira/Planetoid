@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour
 
     //Boss elements
     [SerializeField] private new GameObject camera;
-    [SerializeField] private new GameObject bossFlameParticles;
+    [SerializeField] private GameObject bossFlameParticles;
 
     private bool levelIsActive;
 
