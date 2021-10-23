@@ -32,6 +32,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private GameObject bossFlameParticles;
 
     private bool levelIsActive;
+    [SerializeField] private bool isInfinite;
 
     private void Awake()
     {
@@ -93,10 +94,31 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(LoadScene(0, 7f));
     }
 
+    public void WinInfinite()
+    {
+        FindObjectOfType<PlayerController>().PlayerDeath();
+        levelIsActive = false;
+        defeat.SetActive(true);
+        pauseButton.SetActive(false);
+
+        FindObjectOfType<AudioManager>().Play("Lose"); //TODO: modify
+
+        //SetHighScore();
+        //Unlock();
+        //SaveSystem.SaveGame(this);
+
+        StartCoroutine(LoadScene(0));
+    }
+
     public void Lose()
     {
         if (!levelIsActive)
         {
+            return;
+        }
+        if (isInfinite)
+        {
+            WinInfinite(); //Alternative for infinite levels
             return;
         }
 
@@ -113,6 +135,11 @@ public class LevelManager : MonoBehaviour
     {
         if (!levelIsActive)
         {
+            return;
+        }
+        if (isInfinite)
+        {
+            WinInfinite(); //Alternative for infinite levels
             return;
         }
 
