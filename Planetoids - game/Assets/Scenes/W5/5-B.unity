@@ -259,6 +259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
+      propertyPath: unlocksWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
       propertyPath: unlockedCustom
       value: 
       objectReference: {fileID: 1724023311166976204}

@@ -16,10 +16,11 @@ public class LevelManager : MonoBehaviour
     public GameObject pauseButton;
     public GameObject unlockedCustom;
 
-    //Unlocking levels
+    //Unlocking levels and elements
     [SerializeField] private int currentLevel;
     [SerializeField] private int currentWorld;
     [SerializeField] private bool unlocksWorld;
+    [SerializeField] private int minimumScore;
 
     //Save system
     [HideInInspector] public int levelsToUnlock;
@@ -85,11 +86,18 @@ public class LevelManager : MonoBehaviour
         LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.75f).setEase(LeanTweenType.easeInOutCubic);
         Invoke("KillBoss", 2.5f);
 
+        if (unlocksWorld) //Message prompt for unlocking new world
+        {
+            unlockedCustom.GetComponent<Text>().text = "New World Unlocked!";
+            LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
+            LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(6.5f);
+        }
+
         //SetHighScore();
         //Unlock();
         //SaveSystem.SaveGame(this);
 
-        StartCoroutine(LoadScene(0, 7f));
+        StartCoroutine(LoadScene(0, 8f));
     }
 
     public void WinInfinite()
@@ -100,6 +108,12 @@ public class LevelManager : MonoBehaviour
         pauseButton.SetActive(false);
 
         FindObjectOfType<AudioManager>().Play("Lose"); //TODO: modify
+
+        if(isInfinite && FindObjectOfType<Score>().GetScore() >= minimumScore) //Message prompt for unlcoking new wisp color
+        {
+            LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo);
+            LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(1.5f);
+        }
 
         //SetHighScore();
         //Unlock();

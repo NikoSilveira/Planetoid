@@ -36,12 +36,6 @@ public class Counter : MonoBehaviour
                 FindObjectOfType<LevelManager>().Win(); //Detect normal win condition
             }
         }
-
-        if (Input.GetKeyDown("space"))
-        {
-            FindObjectOfType<LevelManager>().WinBoss(); //Detect boss battle has been won
-            bossBar.enabled = false;
-        }
     }
 
     //---------------------
