@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -42,6 +43,12 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        FindObjectOfType<LevelLoader>().LoadTargetLevel(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void QuitLevel()
     {
         Time.timeScale = 1f;
@@ -68,7 +75,7 @@ public class PauseMenu : MonoBehaviour
         audioMixer.SetFloat("musicVol", Mathf.Log10(initialMusic) * 20);
         audioMixer.SetFloat("sfxVol", Mathf.Log10(initialSFX) * 20);
 
-        //Stored audio listner value (muting)
+        //Stored audio listener value (muting)
         AudioListener.volume = PlayerPrefs.GetFloat("listenerVolume", 1f);
 
         if (AudioListener.volume == 0f)
