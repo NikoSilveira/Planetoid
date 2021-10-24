@@ -30,7 +30,6 @@ public class Counter : MonoBehaviour
         {
             if (bossBar.IsActive()){
                 FindObjectOfType<LevelManager>().WinBoss(); //Detect boss battle has been won
-                bossBar.enabled = false;
             }
             else{
                 FindObjectOfType<LevelManager>().Win(); //Detect normal win condition

@@ -17,7 +17,7 @@ public class PopUpWindow : MonoBehaviour
     public void OpenWindow(float width, float height)
     {
         windowPanel.SetActive(true);
-        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(width, height), 0.8f).setEase(LeanTweenType.easeOutBounce);
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(width, height), 0.8f).setEase(LeanTweenType.easeInOutCubic);
     }
 
     public void CloseWindow()
