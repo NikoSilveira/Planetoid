@@ -51,7 +51,7 @@ public class TutorialWindow : MonoBehaviour
             return;
         }
 
-        wispText1.text = "Booster Wisps:\nTimey (green), shieldy (color2) and speedy (color3).\nWill spawn ocassionally.";
+        wispText1.text = "Booster Wisps:\nTimey (green), shieldy (gray) and speedy (red).\nWill spawn ocassionally.";
         windowButtonText.text = "Done";
         rawImg1.GetComponent<RawImage>().texture = imageFile1;
         wisp2.SetActive(false);
