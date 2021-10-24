@@ -24,15 +24,12 @@ public class TutorialWindow : MonoBehaviour
     {
         toggle = dontShowAgain.transform.GetChild(0).gameObject.GetComponent<Toggle>();
         isLastWindow = false;
-        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(1f, 1f), 0.01f); //Start minimized
-        windowPanel.SetActive(false);
+        LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(0.01f, 0.01f), 0.01f); //Start minimized
 
         if (PlayerPrefs.GetInt("DontShowAgain1", 0) == 0) //if window is set to appear
         {
-            windowPanel.SetActive(true);
             StartCoroutine(OpenWindow(500f, 360f));
         }
-        
     }
 
     IEnumerator OpenWindow(float width, float height)
@@ -54,7 +51,7 @@ public class TutorialWindow : MonoBehaviour
             return;
         }
 
-        wispText1.text = "Timey Wisp:\nWill spawn ocassionally. Extinguish it to obtain an additional 45s."; //Timey (green), shieldy(...), speedy(...). will spawn ocasionally. Extinguish for special boosts.
+        wispText1.text = "Booster Wisps:\nTimey (green), shieldy (color2) and speedy (color3).\nWill spawn ocassionally.";
         windowButtonText.text = "Done";
         rawImg1.GetComponent<RawImage>().texture = imageFile1;
         wisp2.SetActive(false);
