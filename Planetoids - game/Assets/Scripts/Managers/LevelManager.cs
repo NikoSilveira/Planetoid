@@ -81,9 +81,9 @@ public class LevelManager : MonoBehaviour
         pauseButton.SetActive(false);
 
         //Camera and flame animations
-        LeanTween.move(camera, new Vector3(11f, 9f, 0f), 1.5f);
-        LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.5f);
-        Invoke("KillBoss", 3.0f);
+        LeanTween.move(camera, new Vector3(11f, 9f, 0f), 1.75f).setEase(LeanTweenType.easeInOutCubic);
+        LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.75f).setEase(LeanTweenType.easeInOutCubic);
+        Invoke("KillBoss", 2.5f);
 
         //SetHighScore();
         //Unlock();
@@ -178,8 +178,8 @@ public class LevelManager : MonoBehaviour
     private void KillBoss()
     {
         bossFlameParticles.GetComponent<ParticleSystem>().Stop();
-        victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
-        victory.SetActive(true);
+        //victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
+        //victory.SetActive(true);
     }
 
     //-------------
