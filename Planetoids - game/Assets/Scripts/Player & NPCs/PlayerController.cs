@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 1.80f;
         var main = flameParticles.GetComponent<ParticleSystem>().main;
         main.simulationSpeed = 1.2f;
+        FindObjectOfType<ExtraTime>().ShowAnimation();
 
         Invoke("DeactivateSpeedBoost", 9.0f); //Deactivation
     }

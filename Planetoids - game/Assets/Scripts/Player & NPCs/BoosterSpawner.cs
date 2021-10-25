@@ -16,7 +16,7 @@ public class BoosterSpawner : MonoBehaviour
 
     void Start()
     {
-        timer = 20f; //Initially, attempt spawn after x seconds (20)
+        timer = 5f; //Initially, attempt spawn after x seconds (20)
 
         numOfSpawnPoints = 5; //Edit if num of spawn points changes
 
@@ -36,7 +36,7 @@ public class BoosterSpawner : MonoBehaviour
         if(timer <= 0f)
         {
             SpawnBooster();
-            timer = 30f; //Next spawn attempts come each y seconds (30)
+            timer = 10f; //Next spawn attempts come each y seconds (30)
         }
     }
 
@@ -46,6 +46,7 @@ public class BoosterSpawner : MonoBehaviour
 
     private void SpawnBooster()
     {
+        Instantiate(prefabTimey, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
         //66% chance of spawning a booster
         if (Random.Range(0,3) != 0)
         {
