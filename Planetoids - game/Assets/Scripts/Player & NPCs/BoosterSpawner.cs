@@ -46,7 +46,7 @@ public class BoosterSpawner : MonoBehaviour
 
     private void SpawnBooster()
     {
-        Instantiate(prefabTimey, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
+        Instantiate(prefabProtective, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
         //66% chance of spawning a booster
         if (Random.Range(0,3) != 0)
         {

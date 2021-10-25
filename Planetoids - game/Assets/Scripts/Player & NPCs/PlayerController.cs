@@ -16,12 +16,14 @@ public class PlayerController : MonoBehaviour
     private bool isAlive;
     private bool isInvincible;
 
-    //Flame
+    //Flame and shield
     private GameObject flameParticles;
+    private GameObject shield;
 
     private void Start()
     {
         flameParticles = gameObject.transform.GetChild(1).gameObject;
+        shield = gameObject.transform.GetChild(2).gameObject;
         InitializeColors();
         
         isAlive = true;
@@ -52,14 +54,7 @@ public class PlayerController : MonoBehaviour
     //--------------
 
     public void PlayerDeath()
-    {
-        /*if (isInvincible)
-        {
-            isInvincible = false;
-            LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 0f, 0.25f);
-            return;
-        }*/
-        
+    {   
         isAlive = false;
         
         //Animation effects
@@ -90,6 +85,15 @@ public class PlayerController : MonoBehaviour
     public void SetIsInvincible(bool value)
     {
         isInvincible = value;
+
+        if (isInvincible)
+        {
+            shield.SetActive(true);
+        }
+        else
+        {
+            shield.SetActive(false);
+        }
     }
 
     public bool GetIsInvincible()
