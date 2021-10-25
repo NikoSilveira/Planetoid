@@ -8,7 +8,7 @@ using UnityEngine;
  */
 public class BoosterSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject prefabTimey, prefabProtective;
+    [SerializeField] private GameObject prefabTimey, prefabProtective, prefabSpeedy;
     
     private float timer;
     private GameObject[] spawnPoint;
@@ -16,7 +16,7 @@ public class BoosterSpawner : MonoBehaviour
 
     void Start()
     {
-        timer = 20f;
+        timer = 20f; //Initially, attempt spawn after x seconds
 
         numOfSpawnPoints = 5; //Edit if num of spawn points changes
 
@@ -36,7 +36,7 @@ public class BoosterSpawner : MonoBehaviour
         if(timer <= 0f)
         {
             SpawnBooster();
-            timer = 40f;
+            timer = 30f; //Next spawn attempts come each y seconds
         }
     }
 
@@ -46,17 +46,23 @@ public class BoosterSpawner : MonoBehaviour
 
     private void SpawnBooster()
     {
-        //66% chance of spawn
+        //66% chance of spawning a booster
         if(Random.Range(0,3) != 0)
         {
-            //66% chance timey - 33% chance protective
-            if(Random.Range(0,2) != 0)
+            //33% chance timey - 33% chance protective - 33% chance speedy
+            int randombooster = Random.Range(0, 2);
+
+            if (randombooster == 0)
             {
                 Instantiate(prefabTimey, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
             }
-            else
+            else if (randombooster == 1)
             {
                 Instantiate(prefabProtective, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
+            }
+            else if (randombooster == 2)
+            {
+                Instantiate(prefabSpeedy, spawnPoint[Random.Range(0, numOfSpawnPoints)].transform.position, Quaternion.identity);
             }
         }
     }

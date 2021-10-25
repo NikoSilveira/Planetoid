@@ -74,3 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bb107ecdfbe3b47a956c071b4d1dfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prefabTimey: {fileID: 659020009075580083, guid: 0a7f78789e8b7bf4894cd04e1444a14a,
+    type: 3}
+  prefabProtective: {fileID: 659020009075580083, guid: 90e821105569ad440b92965ad008b2de,
+    type: 3}
+  prefabSpeedy: {fileID: 659020009075580083, guid: 0217bd68d422ede4daf7e72902d54da8,
+    type: 3}
