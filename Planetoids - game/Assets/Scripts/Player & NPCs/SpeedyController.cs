@@ -63,7 +63,7 @@ public class SpeedyController : MonoBehaviour
         if (collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
             canCollide = false;
-            //FindObjectOfType<Timer>().SetCurrentTime(45);
+            FindObjectOfType<PlayerController>().ActivateSpeedBoost(); //Trigger speed boost for player
             FindObjectOfType<Score>().SetScore(20, false);
 
             //Animation effects

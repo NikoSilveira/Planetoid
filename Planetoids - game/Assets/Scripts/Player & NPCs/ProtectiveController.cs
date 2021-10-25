@@ -63,7 +63,7 @@ public class ProtectiveController : MonoBehaviour
         if (collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
             canCollide = false;
-            FindObjectOfType<PlayerController>().ShieldBoost();
+            FindObjectOfType<PlayerController>().SetIsInvincible(true);
             FindObjectOfType<Score>().SetScore(20, false);
 
             //Animation effects

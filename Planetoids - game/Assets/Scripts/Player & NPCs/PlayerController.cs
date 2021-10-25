@@ -19,9 +19,6 @@ public class PlayerController : MonoBehaviour
     //Flame
     private GameObject flameParticles;
 
-    //Booster text
-    [SerializeField] private Text boosterText;
-
     private void Start()
     {
         flameParticles = gameObject.transform.GetChild(1).gameObject;
@@ -56,12 +53,12 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerDeath()
     {
-        if (isInvincible)
+        /*if (isInvincible)
         {
             isInvincible = false;
             LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 0f, 0.25f);
             return;
-        }
+        }*/
         
         isAlive = false;
         
@@ -71,17 +68,35 @@ public class PlayerController : MonoBehaviour
         flameParticles.GetComponent<ParticleSystem>().Stop();
     }
 
-    /*public void SpeedBoost()
+    //Speedy booster methods
+    public void ActivateSpeedBoost()
     {
+        moveSpeed = 1.80f;
+        var main = flameParticles.GetComponent<ParticleSystem>().main;
+        main.simulationSpeed = 1.2f;
 
-    }*/
-
-    public void ShieldBoost()
-    {
-        isInvincible = true;
-        LeanTween.alphaText(boosterText.GetComponent<RectTransform>(), 1f, 0.25f);
+        Invoke("DeactivateSpeedBoost", 9.0f); //Deactivation
     }
 
+    public void DeactivateSpeedBoost()
+    {
+        moveSpeed = 1.25f;
+        var main = flameParticles.GetComponent<ParticleSystem>().main;
+        main.simulationSpeed = 0.6f;
+    }
+
+    // Shieldy booster methods
+    public void SetIsInvincible(bool value)
+    {
+        isInvincible = value;
+    }
+
+    public bool GetIsInvincible()
+    {
+        return isInvincible;
+    }
+
+    //Save system - unlocked colors
     private void InitializeColors()
     {
         float red = 0f, green = 0f, blue = 0f;
@@ -154,5 +169,4 @@ public class PlayerController : MonoBehaviour
             flameParticles.transform.localEulerAngles = new Vector3(0, flameAngle, 0);
         }
     }
-
 }

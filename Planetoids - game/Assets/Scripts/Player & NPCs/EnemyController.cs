@@ -63,8 +63,15 @@ public class EnemyController : MonoBehaviour
 
         if(collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
-            canCollide = false;
-            FindObjectOfType<LevelManager>().Lose();
+            if (FindObjectOfType<PlayerController>().GetIsInvincible()) //If player is protected, remove protection
+            {
+                FindObjectOfType<PlayerController>().SetIsInvincible(false);
+            }
+            else        //else, kill player
+            {
+                canCollide = false;
+                FindObjectOfType<LevelManager>().Lose();
+            }
         }
 
         RandomHorizontalDir();
