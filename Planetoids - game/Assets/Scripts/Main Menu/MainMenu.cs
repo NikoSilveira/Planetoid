@@ -47,6 +47,7 @@ public class MainMenu : MonoBehaviour
     //  Panel Control
     //-----------------
 
+    //Code below used to land on world level panels or main panel depending on previous scene loaded
     private void InitializePanels()
     {
         int panelControlValue = PlayerPrefs.GetInt("PanelControl", 0);

@@ -140,3 +140,11 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Credits
+    clip: {fileID: 0}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
