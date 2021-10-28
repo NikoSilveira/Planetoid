@@ -90,19 +90,25 @@ public class LevelManager : MonoBehaviour
         //Unlock();
         //SaveSystem.SaveGame(this);
 
-        if (unlocksWorld || PlayerPrefs.GetInt("CreditsHaveRolled", 0) == 1) //Message prompt for unlocking new world
+        if (unlocksWorld) //Message prompt for unlocking new world
         {
             unlockedCustom.GetComponent<Text>().text = "New World Unlocked!";
-            LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
-            LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(6.5f);
-
+            StartCoroutine(LoadScene(0, 8f));
+        }
+        else if (PlayerPrefs.GetInt("CreditsHaveRolled", 0) == 1) //Final world - no credits
+        {
+            unlockedCustom.GetComponent<Text>().text = "Final Boss Extinguished!";
             StartCoroutine(LoadScene(0, 8f));
         }
         else //Final world- credits
         {
+            unlockedCustom.GetComponent<Text>().text = "Final Boss Extinguished!";
             StartCoroutine(LoadScene(2, 8f));
             PlayerPrefs.SetInt("CreditsHaveRolled", 1); //Set so credits won't appear each time 6-B is cleared
         }
+
+        LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
+        LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(6.5f);
     }
 
     public void WinInfinite()

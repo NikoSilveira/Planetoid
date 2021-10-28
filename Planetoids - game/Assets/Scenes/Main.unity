@@ -1925,7 +1925,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &131336341
 MonoBehaviour:
@@ -4344,7 +4344,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355611819
 MonoBehaviour:
@@ -10819,7 +10819,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002310284
 MonoBehaviour:
@@ -14219,6 +14219,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 5116780752235053471, guid: 9f4b45dfce8e7104aa48c534c6512e8d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6223344596581837725, guid: 9f4b45dfce8e7104aa48c534c6512e8d,
         type: 3}
       propertyPath: transition
@@ -17227,31 +17232,49 @@ MonoBehaviour:
   panels:
   - {fileID: 1607655715}
   - {fileID: 179089420}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 215291163}
+  - {fileID: 1991764200}
+  - {fileID: 54074794}
+  - {fileID: 471740534}
+  - {fileID: 68649768}
   worldButtons:
   - {fileID: 307873694}
   - {fileID: 1880732345}
   - {fileID: 1386760970}
   - {fileID: 432476440}
+  - {fileID: 1531888058}
+  - {fileID: 2108416122}
   levelButtons:
   - {fileID: 658345427}
   - {fileID: 778921936}
   - {fileID: 1726994524}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 86849982}
+  - {fileID: 337277160}
+  - {fileID: 457960368}
+  - {fileID: 550329334}
+  - {fileID: 1022040564}
+  - {fileID: 316740051}
+  - {fileID: 776145764}
+  - {fileID: 922696003}
+  - {fileID: 1197304571}
+  - {fileID: 1931061177}
+  - {fileID: 667019200}
+  - {fileID: 1905846828}
+  - {fileID: 141687765}
+  - {fileID: 799392531}
+  - {fileID: 1325840909}
+  - {fileID: 1847550460}
+  - {fileID: 854456134}
+  - {fileID: 2026561561}
+  - {fileID: 421826610}
+  - {fileID: 1020233140}
+  - {fileID: 867502108}
+  - {fileID: 2019368502}
+  - {fileID: 2097830488}
+  - {fileID: 1343833418}
+  - {fileID: 1358672649}
+  - {fileID: 394608208}
+  - {fileID: 457233742}
   customButtons:
   - {fileID: 1267563021}
   - {fileID: 1478406908}
@@ -19291,7 +19314,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924753463
 MonoBehaviour:
@@ -22019,7 +22042,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2107198485
 MonoBehaviour:
@@ -22413,7 +22436,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -60}
-  m_SizeDelta: {x: 500, y: 90}
+  m_SizeDelta: {x: 700, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2125472862
 MonoBehaviour:

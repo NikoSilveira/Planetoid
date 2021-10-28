@@ -226,7 +226,7 @@ PrefabInstance:
         type: 3}
       propertyPath: camera
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2035712910}
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
       propertyPath: defeat
@@ -16146,6 +16146,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85dbb8e290c6b8d469168f47ba8bb7a0, type: 3}
+--- !u!1 &2035712910 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7695904729847667997, guid: 85dbb8e290c6b8d469168f47ba8bb7a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2035712909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2042719214
 PrefabInstance:
   m_ObjectHideFlags: 0
