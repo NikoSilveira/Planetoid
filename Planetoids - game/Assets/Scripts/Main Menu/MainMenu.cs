@@ -160,6 +160,13 @@ public class MainMenu : MonoBehaviour
         }
     }
 
+    //-------- Delete Save Data --------
+
+    public void DeleteSaveData()
+    {
+        //Must include scene reload.
+    }
+
     //--------------------
     //     Level Menu
     //--------------------
