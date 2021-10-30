@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
         flameParticles.GetComponent<ParticleSystem>().Stop();
     }
 
-    //Speedy booster methods
+    //Speedy booster methods -------------------
     public void ActivateSpeedBoost()
     {
         moveSpeed = 1.80f;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
         main.simulationSpeed = 0.6f;
     }
 
-    // Shieldy booster methods
+    // Shieldy booster methods -----------------
     public void SetIsInvincible(bool value)
     {
         isInvincible = value;
@@ -104,14 +104,13 @@ public class PlayerController : MonoBehaviour
     //Save system - unlocked colors
     private void InitializeColors()
     {
-        float red = 0f, green = 0f, blue = 0f;
-        red = 0f; green = 0.24f; blue = 1f;     //Blue
+        float red = 0f, green = 0.24f, blue = 1f; //BLue - default
 
         //Read from file
-        //PlayerData data = SaveSystem.LoadPlayer();
-        //int customButtonIndex = data.customButtonIndex;
+        PlayerData data = SaveSystem.LoadPlayer();
+        int customButtonIndex = data.customButtonIndex;
 
-        /*switch (customButtonIndex)
+        switch (customButtonIndex)
         {
             case 0:
                 red = 0f; green = 0.24f; blue = 1f;     //Blue
@@ -131,7 +130,7 @@ public class PlayerController : MonoBehaviour
             case 5:
                 red = 0.7f; green = 0.29f; blue = 0f;   //Orange
                 break;
-        }*/
+        }
 
         //Assign colors
         gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.0f); //0.35f for visibility

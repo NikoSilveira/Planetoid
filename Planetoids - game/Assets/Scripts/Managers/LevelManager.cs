@@ -20,7 +20,8 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int currentLevel;
     [SerializeField] private int currentWorld;
     [SerializeField] private bool unlocksWorld;
-    [SerializeField] private int minimumScore;
+    [SerializeField] private bool isBossLevel;
+    //[SerializeField] private int minimumScore;
 
     //Save system
     [HideInInspector] public int levelsToUnlock;
@@ -63,9 +64,9 @@ public class LevelManager : MonoBehaviour
         victory.GetComponent<Text>().text = RandomMessage();
         pauseButton.SetActive(false);
 
-        //SetHighScore();
-        //Unlock();
-        //SaveSystem.SaveGame(this);
+        SetHighScore();
+        Unlock();
+        SaveSystem.SaveGame(this);
 
         StartCoroutine(LoadScene(0));
     }
@@ -86,13 +87,13 @@ public class LevelManager : MonoBehaviour
         LeanTween.rotate(camera, new Vector3(20, 270, 0), 1.75f).setEase(LeanTweenType.easeInOutCubic);
         Invoke("KillBoss", 2.5f);
 
-        //SetHighScore();
-        //Unlock();
-        //SaveSystem.SaveGame(this);
+        SetHighScore();
+        Unlock();
+        SaveSystem.SaveGame(this);
 
         if (unlocksWorld) //Message prompt for unlocking new world
         {
-            unlockedCustom.GetComponent<Text>().text = "New World Unlocked!";
+            unlockedCustom.GetComponent<Text>().text = "New World and Wisp Color Unlocked!";
             StartCoroutine(LoadScene(0, 8f));
         }
         else if (PlayerPrefs.GetInt("CreditsHaveRolled", 0) == 1) //Final world - no credits
@@ -120,15 +121,15 @@ public class LevelManager : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("Lose"); //TODO: modify
 
-        if(isInfinite && FindObjectOfType<Score>().GetScore() >= minimumScore) //Message prompt for unlcoking new wisp color
+        /*if(isInfinite && FindObjectOfType<Score>().GetScore() >= minimumScore) //Message prompt for unlcoking new wisp color
         {
             LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo);
             LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(1.5f);
-        }
+        }*/
 
-        //SetHighScore();
-        //Unlock();
-        //SaveSystem.SaveGame(this);
+        SetHighScore();
+        Unlock();
+        SaveSystem.SaveGame(this);
 
         StartCoroutine(LoadScene(0));
     }
@@ -178,7 +179,7 @@ public class LevelManager : MonoBehaviour
     //  COMPLIEMENTARY METHODS
     //--------------------------
 
-    //Coroutine - load scene
+    //Load scene
     IEnumerator LoadScene(int sceneIndex, float delay=3f)
     {
         yield return new WaitForSeconds(delay);
@@ -203,8 +204,6 @@ public class LevelManager : MonoBehaviour
     private void KillBoss()
     {
         bossFlameParticles.GetComponent<ParticleSystem>().Stop();
-        //victory.GetComponent<Text>().text = "BOSS STAGE CLEARED";
-        //victory.SetActive(true);
     }
 
     //-------------
@@ -213,16 +212,24 @@ public class LevelManager : MonoBehaviour
 
     private void Unlock()
     {
-        /*GameData data = SaveSystem.LoadGame();
+        GameData data = SaveSystem.LoadGame();
 
         worldsToUnlock = data.worldsToUnlock;
         colorsToUnlock = data.colorsToUnlock;
         levelsToUnlock = data.levelsToUnlock;
 
-        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 3; //Era 2 pero creo que debe ser 3
 
         //Unlock levels
-        if (currentLevel == levelsToUnlock && levelsToUnlock < numberOfLevels)
+        if(currentLevel == levelsToUnlock && isBossLevel && (numberOfLevels-levelsToUnlock) >= 2) //If current lvl is highest available, is boss lvl, still have 2 or more locked
+        {
+            levelsToUnlock += 2;
+        }
+        else if (currentLevel == levelsToUnlock && isBossLevel && (numberOfLevels-levelsToUnlock) == 1) //If current lvl is highest available, is boss lvl, only final E level locked
+        {
+            levelsToUnlock += 1;
+        }
+        else if (currentLevel == levelsToUnlock && levelsToUnlock < numberOfLevels) //If current level is highest available level and not out of bounds
         {
             levelsToUnlock += 1;
         }
@@ -232,11 +239,7 @@ public class LevelManager : MonoBehaviour
         {
             worldsToUnlock += 1;
             colorsToUnlock += 1;
-
-            //Text animation
-            unlockedCustom.SetActive(true);
-            LeanTween.alphaText(unlockedCustom.GetComponent<RectTransform>(), 1f, 1.5f);
-        }*/
+        }
     }
 
     //--------------
@@ -245,7 +248,7 @@ public class LevelManager : MonoBehaviour
 
     private void SetHighScore()
     {
-        /*GameData data = SaveSystem.LoadGame();
+        GameData data = SaveSystem.LoadGame();
         highScore = data.highScore;
 
         int localHighScore = highScore[currentLevel - 1];
@@ -255,7 +258,7 @@ public class LevelManager : MonoBehaviour
         {
             highScore[currentLevel - 1] = localScore;
             FindObjectOfType<HighScore>().SetHighScore(localScore);
-        }*/
+        }
     }
 
     //-----------------
@@ -265,41 +268,40 @@ public class LevelManager : MonoBehaviour
     //Create document on awake (1st time)
     private void InitializeSaveData()
     {
-        /*if(SaveSystem.LoadGame() == null)
+        if(SaveSystem.LoadGame() == null)
         {
             //Unlockables
             levelsToUnlock = 1;
             worldsToUnlock = 1;
-            colorsToUnlock = 3;
+            colorsToUnlock = 1;
 
             //High Score
-            int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+            int numberOfLevels = SceneManager.sceneCountInBuildSettings - 3; //estaba en 2, pero creo que debería ser 3
             for (int i = 0; i < numberOfLevels; i++)
             {
                 highScore.Add(0);
             }
 
             SaveSystem.SaveGame(this);
-        }*/
+        }
     }
 
-    //Debugging - Reset document
-    /*public void ClearForDebug()
+    public void DeleteSaveData()
     {
         //Unlockables
         levelsToUnlock = 1;
         worldsToUnlock = 1;
-        colorsToUnlock = 3;
-        
+        colorsToUnlock = 1;
+
         //High Score
-        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
+        int numberOfLevels = SceneManager.sceneCountInBuildSettings - 3; //estaba en 2, pero creo que debería ser 3
         for (int i = 0; i < numberOfLevels; i++)
         {
             highScore.Add(0);
         }
 
         SaveSystem.SaveGame(this);
-    }*/
+    }
 
     //-------------
     //   GETTERS

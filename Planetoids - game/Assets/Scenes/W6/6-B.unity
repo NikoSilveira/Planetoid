@@ -239,6 +239,11 @@ PrefabInstance:
       objectReference: {fileID: 1724023311166976202}
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
+      propertyPath: isBossLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
+        type: 3}
       propertyPath: pauseButton
       value: 
       objectReference: {fileID: 1724023311166976199}
@@ -250,12 +255,12 @@ PrefabInstance:
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
       propertyPath: currentLevel
-      value: 2
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
       propertyPath: currentWorld
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1398085760718843250, guid: 6a3938ec5ff2c7544a3aa166209c6bca,
         type: 3}
