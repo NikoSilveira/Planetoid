@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Assign colors
-        gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.0f); //0.35f for visibility
+        gameObject.GetComponent<MeshRenderer>().material.color = new Color(red, green, blue, 0.70f); //0.35f for visibility
 
         ParticleSystem.MainModule settings = flameParticles.GetComponent<ParticleSystem>().main;
         settings.startColor = new ParticleSystem.MinMaxGradient(new Color(red, green, blue, 1f));

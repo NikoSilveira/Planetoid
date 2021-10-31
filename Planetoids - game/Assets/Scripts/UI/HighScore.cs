@@ -9,13 +9,13 @@ public class HighScore : MonoBehaviour
 
     void Start()
     {
-        /*GameData data = SaveSystem.LoadGame();
+        GameData data = SaveSystem.LoadGame();
 
         int currentLevel = FindObjectOfType<LevelManager>().GetCurrentLevel();
         int highScore = data.highScore[currentLevel - 1];
 
         highScoreText = gameObject.GetComponent<Text>();
-        highScoreText.text = "High Score: " + highScore.ToString();*/
+        highScoreText.text = "High Score: " + highScore.ToString();
     }
 
     public void SetHighScore(int newHighScore)

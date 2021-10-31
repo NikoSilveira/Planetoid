@@ -94,22 +94,23 @@ public class LevelManager : MonoBehaviour
         if (unlocksWorld) //Message prompt for unlocking new world
         {
             unlockedCustom.GetComponent<Text>().text = "New World and Wisp Color Unlocked!";
-            StartCoroutine(LoadScene(0, 8f));
+            StartCoroutine(LoadScene(0, 10f));
         }
         else if (PlayerPrefs.GetInt("CreditsHaveRolled", 0) == 1) //Final world - no credits
         {
             unlockedCustom.GetComponent<Text>().text = "Final Boss Extinguished!";
-            StartCoroutine(LoadScene(0, 8f));
+            StartCoroutine(LoadScene(0, 10f));
         }
         else //Final world- credits
         {
             unlockedCustom.GetComponent<Text>().text = "Final Boss Extinguished!";
-            StartCoroutine(LoadScene(2, 8f));
+            StartCoroutine(LoadScene(2, 10f));
             PlayerPrefs.SetInt("CreditsHaveRolled", 1); //Set so credits won't appear each time 6-B is cleared
         }
 
-        LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
-        LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(6.5f);
+        //Unlock text anim
+        LeanTween.moveLocalX(unlockedCustom, 0f, 1.25f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
+        LeanTween.moveLocalX(unlockedCustom, 1000f, 1.25f).setEase(LeanTweenType.easeInOutExpo).setDelay(8f);
     }
 
     public void WinInfinite()
