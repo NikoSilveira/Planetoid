@@ -133,7 +133,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Time
-    clip: {fileID: 8300000, guid: ef5c21937e8552244a6aac4dbbe75d38, type: 3}
+    clip: {fileID: 8300000, guid: 807dabe762bc24bad859946d5cb8e216, type: 3}
     mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
