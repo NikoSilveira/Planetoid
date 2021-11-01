@@ -265,4 +265,9 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Button");
     }
+
+    public void DeleteSFX()
+    {
+        FindObjectOfType<AudioManager>().Play("Delete");
+    }
 }

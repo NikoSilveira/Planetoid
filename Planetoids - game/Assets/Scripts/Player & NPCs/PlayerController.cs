@@ -69,7 +69,8 @@ public class PlayerController : MonoBehaviour
         moveSpeed = 1.80f;
         var main = flameParticles.GetComponent<ParticleSystem>().main;
         main.simulationSpeed = 1.2f;
-        FindObjectOfType<ExtraTime>().ShowAnimation();
+        //FindObjectOfType<ExtraTime>().ShowAnimation();
+        FindObjectOfType<AudioManager>().Play("Speedy");
 
         Invoke("DeactivateSpeedBoost", 9.0f); //Deactivation
     }
@@ -89,10 +90,12 @@ public class PlayerController : MonoBehaviour
         if (isInvincible)
         {
             shield.SetActive(true);
+            FindObjectOfType<AudioManager>().Play("Shieldup");
         }
         else
         {
             shield.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("Shielddown");
         }
     }
 

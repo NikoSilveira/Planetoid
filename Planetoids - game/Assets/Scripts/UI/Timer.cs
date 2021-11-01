@@ -44,12 +44,14 @@ public class Timer : MonoBehaviour
         currentTime += extraTime;
         bonusTimerText.text = "+" + extraTime + "s";
         LeanTween.alphaText(bonusTimerText.GetComponent<RectTransform>(), 1f, 1.25f).setLoopPingPong(1);
+
+        FindObjectOfType<AudioManager>().Play("Timey");
     }
 
     //Running out - SFX
     private void TimerSFX()
     {
-        float[] soundInstant = {100f,50f,10f,5f,4f,3f,2f,1f};
+        float[] soundInstant = {50f,10f,9f,8f,7f,6f,5f,4f,3f,2f,1f};
 
         for (int i = 0; i < soundInstant.Length; i++)
         {

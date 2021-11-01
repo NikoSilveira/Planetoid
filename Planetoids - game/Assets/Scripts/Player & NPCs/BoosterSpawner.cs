@@ -46,8 +46,8 @@ public class BoosterSpawner : MonoBehaviour
 
     private void SpawnBooster()
     {
-        //66% chance of spawning a booster
-        if (Random.Range(0,3) != 0)
+        //50% chance of spawning a booster
+        if (Random.Range(0,1) != 0)
         {
             //33% chance timey - 33% chance protective - 33% chance speedy
             int randombooster = Random.Range(0, 2);

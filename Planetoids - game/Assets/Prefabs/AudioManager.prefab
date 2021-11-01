@@ -117,11 +117,19 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Button
-    clip: {fileID: 8300000, guid: dad8f84be50266041909f1715d1fa6f6, type: 3}
+    clip: {fileID: 8300000, guid: 1219e8aa13fb04f538c35b8d080bbc0a, type: 3}
     mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 1
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Delete
+    clip: {fileID: 8300000, guid: 560b59f7bba57425da9d11fb4794b676, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 0.75
     loop: 0
     source: {fileID: 0}
   - name: Time
@@ -146,5 +154,37 @@ MonoBehaviour:
       type: 2}
     volume: 0.5
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shieldup
+    clip: {fileID: 8300000, guid: fd7aa363a188d47858202c3344e3fd2c, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Shielddown
+    clip: {fileID: 8300000, guid: 2db033a45ffa44b1e8e05ec8169e1838, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Speedy
+    clip: {fileID: 8300000, guid: fe79a296241334099b9622427a36a916, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 0.75
+    loop: 0
+    source: {fileID: 0}
+  - name: Timey
+    clip: {fileID: 8300000, guid: 5dd35847d8fb047d3ae0bc9a78fe6a46, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 0.5
+    pitch: 0.75
     loop: 0
     source: {fileID: 0}
