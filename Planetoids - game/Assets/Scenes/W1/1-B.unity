@@ -16637,7 +16637,7 @@ PrefabInstance:
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: timer
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721128972, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
@@ -16707,17 +16707,17 @@ PrefabInstance:
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[0]
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
       propertyPath: hordeSize.Array.data[1]
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 970848840721129010, guid: b6c7f627aa1f146418c27ae709d79096,
         type: 3}
