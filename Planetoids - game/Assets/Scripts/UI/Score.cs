@@ -33,7 +33,7 @@ public class Score : MonoBehaviour
         {
             comboMultiplier = 1;
             comboActive = false;
-            //LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 0.5f); //fade out
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 0.5f); //fade out
         }
 
         scoreText.text = score.ToString();
@@ -44,8 +44,8 @@ public class Score : MonoBehaviour
         if (isCombo)
         {
             //Animation and SFX
-            /*comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "x";
-            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 3f).setLoopPingPong(1);   //fade in*/
+            comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "x";
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 3f).setLoopPingPong(1);   //fade in
             FindObjectOfType<AudioManager>().Play("combo" + comboMultiplier);
 
             scoreToAdd = scoreToAdd * comboMultiplier;
