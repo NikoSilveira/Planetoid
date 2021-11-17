@@ -7,6 +7,7 @@ public class Score : MonoBehaviour
 {
     public Text scoreText;
     public GameObject comboText;
+    public GameObject roundImg;
     private int score;
 
     //Combo
@@ -33,7 +34,8 @@ public class Score : MonoBehaviour
         {
             comboMultiplier = 1;
             comboActive = false;
-            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 0.5f); //fade out
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 0f, 0.75f).setEase(LeanTweenType.easeInExpo); //fade out text
+            LeanTween.alpha(roundImg.GetComponent<RectTransform>(), 0f, 0.75f).setEase(LeanTweenType.easeInExpo);      //fade out round img
         }
 
         scoreText.text = score.ToString();
@@ -44,8 +46,10 @@ public class Score : MonoBehaviour
         if (isCombo)
         {
             //Animation and SFX
-            comboText.GetComponent<Text>().text = comboMultiplier.ToString() + "x";
-            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 3f).setLoopPingPong(1);   //fade in
+            comboText.GetComponent<Text>().text = comboMultiplier.ToString();
+            LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 2f).setEase(LeanTweenType.easeOutExpo).setLoopPingPong(1);         //fade in text
+            LeanTween.alpha(roundImg.GetComponent<RectTransform>(), 1f, 2f).setEase(LeanTweenType.easeOutExpo).setLoopPingPong(1);              //fade in round img
+            LeanTween.rotateAround(roundImg.GetComponent<RectTransform>(), Vector3.forward, 360, 1.0f).setEase(LeanTweenType.easeInOutCubic);   //rotate around round img
             FindObjectOfType<AudioManager>().Play("combo" + comboMultiplier);
 
             scoreToAdd = scoreToAdd * comboMultiplier;

@@ -18,12 +18,14 @@ Game Sound Solutions - Score and Time
 
 
 
-ASSETS
+ASSETS & DESIGN
 
 
 OutFasted
 
 Acorn Bringer - Simplistic Low Poly Nature
+
+Ahmet Sulek - Flat UI Colors 2 (Aussie Palette)
 
 Alstra Infinite - Boats-PolyPack
 
