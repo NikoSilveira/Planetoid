@@ -16,7 +16,7 @@ public class BoosterSpawner : MonoBehaviour
 
     void Start()
     {
-        timer = 12f; //Initially, attempt spawn after x seconds (12)
+        timer = 10f; //Initially, attempt spawn after x seconds (12)
 
         numOfSpawnPoints = 5; //Edit if num of spawn points changes
 
@@ -47,10 +47,10 @@ public class BoosterSpawner : MonoBehaviour
     private void SpawnBooster()
     {
         //50% chance of spawning a booster
-        if (Random.Range(0,1) != 0)
+        if (Random.Range(0,2) != 0)     //[inclusive, exclusive]
         {
             //33% chance timey - 33% chance protective - 33% chance speedy
-            int randombooster = Random.Range(0, 2);
+            int randombooster = Random.Range(0, 3);     //[inclusive, exclusive]
 
             if (randombooster == 0)
             {
