@@ -126,4 +126,9 @@ public class PauseMenu : MonoBehaviour
         FindObjectOfType<FixedJoystick>().InitializeJoystick(joystickText);
     }
 
+    //Button Press SFX
+    public void ButtonSFX()
+    {
+        FindObjectOfType<AudioManager>().Play("Button");
+    }
 }

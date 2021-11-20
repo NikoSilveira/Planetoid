@@ -43,7 +43,7 @@ public class Timer : MonoBehaviour
     {
         currentTime += extraTime;
         bonusTimerText.text = "+" + extraTime + "s";
-        LeanTween.alphaText(bonusTimerText.GetComponent<RectTransform>(), 1f, 1.25f).setLoopPingPong(1);
+        LeanTween.alphaText(bonusTimerText.GetComponent<RectTransform>(), 1f, 2.0f).setLoopPingPong(1);
 
         FindObjectOfType<AudioManager>().Play("Timey");
     }

@@ -662,6 +662,7 @@ GameObject:
   - component: {fileID: 1724023311668252478}
   - component: {fileID: 1724023311668252465}
   - component: {fileID: 1724023311668252479}
+  - component: {fileID: 6776074234908408248}
   m_Layer: 5
   m_Name: Counter
   m_TagString: Untagged
@@ -718,7 +719,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: f29fd14580a62d147b68b3fbb0acc9d4, type: 3}
+    m_Font: {fileID: 12800000, guid: 98957011bc586764398e10cbd7841843, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -745,6 +746,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counterText: {fileID: 1724023311668252465}
   bossBar: {fileID: 1769969636076753397}
+--- !u!114 &6776074234908408248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724023311668252467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1.5, y: -1.5}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1724023311717411569
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +849,7 @@ GameObject:
   - component: {fileID: 1724023311779657128}
   - component: {fileID: 1724023311779657131}
   - component: {fileID: 1724023311779657130}
+  - component: {fileID: 6437102000076409458}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -943,9 +960,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Pause
+      - m_Target: {fileID: 5559838024277022254, guid: 803ba71f1af05244dae4e83b6eb4faf7,
+          type: 3}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: ButtonSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -955,6 +973,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6437102000076409458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724023311779657132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1730196649242530798
 GameObject:
   m_ObjectHideFlags: 0
