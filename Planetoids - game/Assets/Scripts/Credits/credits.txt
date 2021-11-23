@@ -63,16 +63,12 @@ TESTING
 
 name1 (shapes)
 
-name2
-
-name3
-
-name4
+name2 (juanka)
 
 
 
 
-*company, copyright, trademarks*
+*company, copyright, trademarks* (todo)
 
 
 

@@ -122,12 +122,6 @@ public class LevelManager : MonoBehaviour
 
         FindObjectOfType<AudioManager>().Play("Lose"); //TODO: modify
 
-        /*if(isInfinite && FindObjectOfType<Score>().GetScore() >= minimumScore) //Message prompt for unlcoking new wisp color
-        {
-            LeanTween.moveLocalX(unlockedCustom, 0f, 0.75f).setEase(LeanTweenType.easeInOutExpo);
-            LeanTween.moveLocalX(unlockedCustom, 800f, 0.75f).setEase(LeanTweenType.easeInOutExpo).setDelay(1.5f);
-        }*/
-
         SetHighScore();
         Unlock();
         SaveSystem.SaveGame(this);
