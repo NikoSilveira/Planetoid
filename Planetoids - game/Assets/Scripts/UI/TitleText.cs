@@ -11,7 +11,7 @@ public class TitleText : MonoBehaviour
     private void Start()
     {
         time_coef = 0.5f;
-        strength_coef = 7.5f;
+        strength_coef = 8f;
     }
 
     void Update()
