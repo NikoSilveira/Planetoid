@@ -10,7 +10,7 @@ public class TitleText : MonoBehaviour
 
     private void Start()
     {
-        time_coef = 0.5f;
+        time_coef = 0.6f;
         strength_coef = 8f;
     }
 

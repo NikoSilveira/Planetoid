@@ -6,6 +6,7 @@ OutFasted with Unity
 
 
 
+
 SOUNDTRACK & SFX
 
 
@@ -18,6 +19,7 @@ Game Sound Solutions - Score and Time
 
 
 
+
 ASSETS & DESIGN
 
 
@@ -25,7 +27,7 @@ OutFasted
 
 Acorn Bringer - Simplistic Low Poly Nature
 
-Ahmet Sulek - Flat UI Colors 2 (Aussie Palette)
+Ahmet Sulek - Flat UI Colors 2
 
 Alstra Infinite - Boats-PolyPack
 
@@ -35,7 +37,7 @@ DinV Studio - Dynamic Space Background Lite
 
 N-hance Studio - Flat Textures Pack
 
-23 Space Robots and Counting... - Free Low Poly Desert Pack
+23SpaceRobotsandCounting - Low Poly Desert Pack
 
 Easy 3D - Free Stylized Garden Asset
 
@@ -58,6 +60,7 @@ The Developer - Ultimate 10+ Shaders
 
 
 
+
 TESTING
 
 
@@ -68,11 +71,10 @@ name2 (juanka)
 
 
 
-*company, copyright, trademarks* (todo)
 
 
-
-
+OutFasted is the author of this software
+for purpose of copyright. All rights reserved.
 
 
 
@@ -91,5 +93,5 @@ name2 (juanka)
 
 SPECIAL THANKS
 
-
-To you, the player.
+To the player
+Humbly, thank you
