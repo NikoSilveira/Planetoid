@@ -34,7 +34,7 @@ public class TutorialWindow : MonoBehaviour
 
     IEnumerator OpenWindow(float width, float height)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.35f);
         windowPanel.SetActive(true);
         LeanTween.size(window.GetComponent<RectTransform>(), new Vector2(width, height), 0.5f).setEase(LeanTweenType.easeInOutCubic);
 

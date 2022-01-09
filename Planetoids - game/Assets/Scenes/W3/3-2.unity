@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.38887903, g: 0.091029294, b: 0.03206842, a: 1}
+  m_IndirectSpecularColor: {r: 0.3899468, g: 0.09109371, b: 0.030655257, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23300,7 +23300,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 7a7df5cddb48f4244adf2a91e6f7ac65, type: 3}
     - target: {fileID: 5781100511155278412, guid: bbcd0001ec4b471438d416c2b9e8d53b,
         type: 3}
       propertyPath: sounds.Array.data[0].mixerGroup
