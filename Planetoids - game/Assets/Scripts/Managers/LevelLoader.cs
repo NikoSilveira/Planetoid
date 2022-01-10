@@ -14,6 +14,10 @@ public class LevelLoader : MonoBehaviour
     public void LoadTargetLevel(int targetLevelIndex)
     {
         StartCoroutine(LoadLevel(targetLevelIndex));
+
+        //Loading anim
+        //LeanTween.alpha(loadingSymbol.GetComponent<RectTransform>(), 1f, 1.25f);
+        //LeanTween.rotateAround(loadingSymbol, Vector3.back, 180, 1.0f).setLoopClamp().setEaseInOutCubic();
     }
 
     IEnumerator LoadLevel(int levelIndex)
@@ -30,6 +34,6 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadSceneAsync(levelIndex);
     }
 }
