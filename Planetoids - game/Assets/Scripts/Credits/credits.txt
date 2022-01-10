@@ -1,7 +1,7 @@
 DEVELOPED BY
 
 
-OutFasted with Unity
+Nicolas Silveira (OutFasted) with Unity
 
 
 
@@ -10,7 +10,7 @@ OutFasted with Unity
 SOUNDTRACK & SFX
 
 
-name (bollo)
+Ismael Salazar - Lead Producer
 
 Epic Sounds and FX - Epic Game Hits SFX
 
@@ -23,7 +23,7 @@ Game Sound Solutions - Score and Time
 ASSETS & DESIGN
 
 
-OutFasted
+Nicolas Silveira
 
 Acorn Bringer - Simplistic Low Poly Nature
 
@@ -64,16 +64,16 @@ The Developer - Ultimate 10+ Shaders
 TESTING
 
 
-name1 (shapes)
+John Kiklikian
 
-name2 (juanka)
-
-
+Juan Pieschacon
 
 
 
 
-OutFasted is the author of this software
+
+
+Nicolas Silveira is the author of this software
 for purpose of copyright. All rights reserved.
 
 
@@ -93,5 +93,5 @@ for purpose of copyright. All rights reserved.
 
 SPECIAL THANKS
 
-To the player
-Humbly, thank you
+Humbly, to you
+Thanks for playing!
