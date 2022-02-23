@@ -69,6 +69,8 @@ public class LevelManager : MonoBehaviour
         Unlock();
         SaveSystem.SaveGame(this);
 
+        FindObjectOfType<AudioManager>().Play("Win");
+
         StartCoroutine(LoadScene(0));
     }
 
@@ -112,6 +114,8 @@ public class LevelManager : MonoBehaviour
         //Unlock text anim
         LeanTween.moveLocalX(unlockedCustom, 0f, 1.25f).setEase(LeanTweenType.easeInOutExpo).setDelay(5.0f);
         LeanTween.moveLocalX(unlockedCustom, 1000f, 1.25f).setEase(LeanTweenType.easeInOutExpo).setDelay(8f);
+
+        FindObjectOfType<AudioManager>().Play("Boss");
     }
 
     public void WinInfinite()

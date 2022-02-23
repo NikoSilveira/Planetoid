@@ -10,11 +10,13 @@ Nicolas Silveira (OutFasted) with Unity
 SOUNDTRACK & SFX
 
 
-Ismael Salazar - Lead Producer
+slot
 
 Epic Sounds and FX - Epic Game Hits SFX
 
-Game Sound Solutions - Score and Time
+Saurabh Chaudhary - Lo-Fi Chillout Music For Games
+
+Tim Beek - Free Casual SoundFX Pack
 
 
 
@@ -23,7 +25,7 @@ Game Sound Solutions - Score and Time
 ASSETS & DESIGN
 
 
-Nicolas Silveira
+Nicolas Silveira - Lead Producer
 
 Acorn Bringer - Simplistic Low Poly Nature
 
@@ -75,6 +77,7 @@ Juan Pieschacon
 
 Nicolas Silveira is the author of this software
 for purpose of copyright. All rights reserved.
+
 
 
 

@@ -10,11 +10,12 @@ public class Credits : MonoBehaviour
     void Start()
     {
         this.gameObject.GetComponent<Text>().text = file.text;  //Read from file
-        LeanTween.moveLocalY(this.gameObject, 4300f, 76f).setOnComplete(ExitCredits);
+        LeanTween.moveLocalY(this.gameObject, 4400f, 78.3f).setOnComplete(ExitCredits);
     }
 
     private void ExitCredits()
     {
+        FindObjectOfType<AudioManager>().Stop("Theme");
         FindObjectOfType<LevelLoader>().LoadTargetLevel(0);     //Back to main menu
     }
 }

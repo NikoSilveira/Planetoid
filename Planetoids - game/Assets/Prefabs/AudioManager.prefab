@@ -118,23 +118,23 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Button
-    clip: {fileID: 8300000, guid: 1219e8aa13fb04f538c35b8d080bbc0a, type: 3}
+    clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
     mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
-    volume: 0.25
-    pitch: 0.7
+    volume: 0.75
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Delete
-    clip: {fileID: 8300000, guid: 560b59f7bba57425da9d11fb4794b676, type: 3}
-    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+    clip: {fileID: 8300000, guid: 7da886a070ddeee4ba6bc0fd415e462c, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 0.75
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Time
-    clip: {fileID: 8300000, guid: 807dabe762bc24bad859946d5cb8e216, type: 3}
+    clip: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
     mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
@@ -142,7 +142,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Lose
-    clip: {fileID: 8300000, guid: c349ad8b98298e94d97a6cded03d2454, type: 3}
+    clip: {fileID: 8300000, guid: c6b596fd07a14a64b89285b6f079b167, type: 3}
     mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
@@ -158,34 +158,50 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Shieldup
-    clip: {fileID: 8300000, guid: fd7aa363a188d47858202c3344e3fd2c, type: 3}
-    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+    clip: {fileID: 8300000, guid: cb8d1f9f8bcfd7744bc5c09e074bdeb6, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 0.75
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Shielddown
-    clip: {fileID: 8300000, guid: 2db033a45ffa44b1e8e05ec8169e1838, type: 3}
-    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+    clip: {fileID: 8300000, guid: 13b481262ca11bc4cbfa819b6dfe28cc, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 0.75
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Speedy
-    clip: {fileID: 8300000, guid: fe79a296241334099b9622427a36a916, type: 3}
-    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+    clip: {fileID: 8300000, guid: 7da886a070ddeee4ba6bc0fd415e462c, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 0.75
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Timey
-    clip: {fileID: 8300000, guid: 5dd35847d8fb047d3ae0bc9a78fe6a46, type: 3}
-    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+    clip: {fileID: 8300000, guid: c952c74dd0dfb5c44b632b0c5564c936, type: 3}
+    mixerGroup: {fileID: 860244377353517106, guid: 7ef883b108e2bb442b5ba3fb66340df5,
       type: 2}
     volume: 0.5
-    pitch: 0.75
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: 804a86dc05a8829408078dbb2ce2fc57, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 3830029b89ea7a04992156c6adbc327c, type: 3}
+    mixerGroup: {fileID: 6177767959374312026, guid: 7ef883b108e2bb442b5ba3fb66340df5,
+      type: 2}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}

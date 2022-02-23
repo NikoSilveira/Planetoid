@@ -17812,7 +17812,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 7d7f5edfb13648c4e963ece3ee92ed2f, type: 3}
     - target: {fileID: 5781100511155278412, guid: bbcd0001ec4b471438d416c2b9e8d53b,
         type: 3}
       propertyPath: sounds.Array.data[0].mixerGroup
