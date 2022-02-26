@@ -49,6 +49,7 @@ public class Score : MonoBehaviour
             comboText.GetComponent<Text>().text = comboMultiplier.ToString();
             LeanTween.alphaText(comboText.GetComponent<RectTransform>(), 1f, 2f).setEase(LeanTweenType.easeOutExpo).setLoopPingPong(1);         //fade in text
             LeanTween.alpha(roundImg.GetComponent<RectTransform>(), 1f, 2f).setEase(LeanTweenType.easeOutExpo).setLoopPingPong(1);              //fade in round img
+            LeanTween.rotateLocal(roundImg, new Vector3(0f, 0f, 0f), 0.001f);                                                                   //Reset round img position
             LeanTween.rotateAround(roundImg.GetComponent<RectTransform>(), Vector3.forward, 360, 1.0f).setEase(LeanTweenType.easeInOutCubic);   //rotate around round img
             FindObjectOfType<AudioManager>().Play("combo" + comboMultiplier);
 
