@@ -16,7 +16,7 @@ public class BoosterSpawner : MonoBehaviour
 
     void Start()
     {
-        timer = 10f; //Initially, attempt spawn after x seconds (12)
+        timer = 10f; //Initially, attempt spawn after x seconds
 
         numOfSpawnPoints = 5; //Edit if num of spawn points changes
 
@@ -36,7 +36,7 @@ public class BoosterSpawner : MonoBehaviour
         if(timer <= 0f)
         {
             SpawnBooster();
-            timer = 16f; //Next spawn attempts come each x seconds
+            timer = 18f; //Next spawn attempts come each x seconds
         }
     }
 
