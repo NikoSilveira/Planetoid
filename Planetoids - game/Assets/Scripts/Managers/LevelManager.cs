@@ -70,6 +70,7 @@ public class LevelManager : MonoBehaviour
         SaveSystem.SaveGame(this);
 
         FindObjectOfType<AudioManager>().Play("Win");
+        FindObjectOfType<AudioManager>().Stop("Theme");
 
         StartCoroutine(LoadScene(0));
     }
@@ -116,6 +117,7 @@ public class LevelManager : MonoBehaviour
         LeanTween.moveLocalX(unlockedCustom, 1000f, 1.25f).setEase(LeanTweenType.easeInOutExpo).setDelay(8f);
 
         FindObjectOfType<AudioManager>().Play("Boss");
+        FindObjectOfType<AudioManager>().Stop("Theme");
     }
 
     public void WinInfinite()
@@ -125,7 +127,8 @@ public class LevelManager : MonoBehaviour
         defeat.SetActive(true);
         pauseButton.SetActive(false);
 
-        FindObjectOfType<AudioManager>().Play("Lose"); //TODO: modify
+        FindObjectOfType<AudioManager>().Play("Lose");
+        FindObjectOfType<AudioManager>().Stop("Theme");
 
         SetHighScore();
         Unlock();
@@ -152,6 +155,7 @@ public class LevelManager : MonoBehaviour
         pauseButton.SetActive(false);
 
         FindObjectOfType<AudioManager>().Play("Lose");
+        FindObjectOfType<AudioManager>().Stop("Theme");
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 

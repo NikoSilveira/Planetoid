@@ -63,7 +63,7 @@ public class TimeyController : MonoBehaviour
         if (collision.collider.tag == "Player" && FindObjectOfType<LevelManager>().GetLevelIsActive())
         {
             canCollide = false;
-            FindObjectOfType<Timer>().SetCurrentTime(45);
+            FindObjectOfType<Timer>().SetCurrentTime(25); //extra secs
             FindObjectOfType<Score>().SetScore(20, false);
 
             //Animation effects
