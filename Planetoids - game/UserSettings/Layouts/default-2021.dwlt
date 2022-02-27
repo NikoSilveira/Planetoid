@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 16
+  controlID: 98
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 17
+  controlID: 99
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 18
+  controlID: 100
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -595,13 +595,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts/Player & NPCs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts/Player & NPCs
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\NicolasSilveira\Documents\Projects\Planetoid-master\Planetoids
     - game
@@ -609,23 +609,23 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 225}
-    m_SelectedIDs: 30660000
-    m_LastClickedID: 26160
+    m_SelectedIDs: 6e660000
+    m_LastClickedID: 26222
     m_ExpandedIDs: 000000002c6600002e66000030660000326600003466000036660000386600003a66000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: W2
-      m_OriginalName: W2
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 26202
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -769,9 +769,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 44800000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 66c5ffff9accffff90cfffffaed2ffffa0d5ffffb8d8ffffeadbffff4edfffff82e2ffffe4e5ffff3ae8ffff0aecffffdef7fffffafaffff
+      m_ExpandedIDs: aea5feff02a6feff78adfeff10b3feffc8b7feffbabcfeffa8c1feff72c5feff26cafeff1ccefeff4ad2feff02d7feff08dbfeff3ae9feffa4f7feff50fefeff720cffff6e12ffff0218ffff9822fffffe2dffffa63bffffac41ffff1447ffffc04effff7855ffff865afffff863ffff4e69ffff5675ffffe292ffffd8a4ffff0aa5ffff30a8ffff66a8ffff4cabffffd4e1ffffbaefffffc4f9fffffafaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 378.53702, y: 302.9138, z: 35.717712}
     speed: 2
-    m_Value: {x: -32.8786, y: 265.8319, z: -214.01822}
+    m_Value: {x: 378.53702, y: 302.9138, z: 35.717712}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1076,7 +1076,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 293.1773
     speed: 2
-    m_Value: 225.4599
+    m_Value: 293.1773
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1163,7 +1163,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
