@@ -36,7 +36,7 @@ public class BoosterSpawner : MonoBehaviour
         if(timer <= 0f)
         {
             SpawnBooster();
-            timer = 18f; //Next spawn attempts come each x seconds
+            timer = 16f; //Next spawn attempts come each x seconds
         }
     }
 
