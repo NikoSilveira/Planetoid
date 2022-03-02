@@ -10,8 +10,6 @@ Nicolas Silveira (OutFasted) with Unity
 SOUNDTRACK & SFX
 
 
-slot
-
 Epic Sounds and FX - Epic Game Hits SFX
 
 Saurabh Chaudhary - Lo-Fi Chillout Music For Games
@@ -75,8 +73,10 @@ Juan Pieschacon
 
 
 
+
 Nicolas Silveira is the author of this software
 for purpose of copyright. All rights reserved.
+
 
 
 

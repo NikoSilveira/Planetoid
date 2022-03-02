@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
     //Running out - SFX
     private void TimerSFX()
     {
-        float[] soundInstant = {50f,10f,9f,8f,7f,6f,5f,4f,3f,2f,1f};
+        float[] soundInstant = {10f,9f,8f,7f,6f,5f,4f,3f,2f,1f};
 
         for (int i = 0; i < soundInstant.Length; i++)
         {
