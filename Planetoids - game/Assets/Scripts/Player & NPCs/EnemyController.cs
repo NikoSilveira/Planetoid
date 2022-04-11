@@ -72,10 +72,24 @@ public class EnemyController : MonoBehaviour
                 canCollide = false;
                 FindObjectOfType<LevelManager>().Lose();
             }
+
+            //Destroy the enemy on collision
+            canCollide = false;
+            LeanTween.scale(gameObject, new Vector3(0.01f, 0.01f, 0.01f), 0.25f);
+            LeanTween.scale(flameParticles, new Vector3(1.6f, 1.6f, 1.6f), 0.2f);
+            flameParticles.GetComponent<ParticleSystem>().Stop();
+
+            StartCoroutine(Destroy());
         }
 
         RandomHorizontalDir();
         RandomVerticalDir();
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(0.45f);
+        Destroy(gameObject);
     }
 
     //------------------
