@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.ads": "3.7.5",
     "com.unity.cinemachine": "2.8.0",
     "com.unity.collab-proxy": "1.13.5",
     "com.unity.ext.nunit": "1.0.6",
